@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="./css/registration.css">
+		<title>Inscription</title>
+	</head>
+	<body id="body_register">
+
+		{% block registration %}
+			<div id="modal_register">
+				<H1>S'inscrire</H1>
+				<p id="introduction">Rejoignez des milliers d’utilisateurs !</p>
+				<form action="">
+					<div class="input_form">
+						<img src="./img/user.png" alt="user">
+						<input type="text" placeholder="Nom d’utilisateur" name="username">
+					</div>
+					<div class="input_form">
+						<img src="./img/mail.png" alt="mail">
+						<input type="text" placeholder="Email" name="mail">
+					</div>
+					<div class="input_form">
+						<img src="./img/password.png" alt="password">
+						<input type="password" placeholder="Mot de passe" name="password">
+					</div>
+				</form>
+				<button>Valider</button>
+				<a href="" id="connection_redirect">Vous avez déjà un compte ?</a>
+			</div>
+		{% endblock %}
+
+	</body>
+</html>

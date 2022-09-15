@@ -11,5 +11,26 @@ visitorRouter.get("/", async (req, res) => {
     }
   });
 
+  // Route registration temporaire /!\
+
+  visitorRouter.get("/registration", async (req, res) => {
+    try {
+  res.render("pages/registration.twig")
+    } catch (error) {
+      res.send(error);
+    }
+  });
+
+   // Route lostPassword temporaire /!\
+
+   visitorRouter.get("/lostPassword", async (req, res) => {
+    try {
+  res.render("pages/lostPassword.twig")
+    } catch (error) {
+      res.send(error);
+    }
+  });
+
+
 
 export default visitorRouter;
