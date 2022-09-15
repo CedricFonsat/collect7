@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'ubuntu';
+    src: url(../fonts/Ubuntu-Regular.ttf);
+}
+
+body{
+
+    margin: 0;
+    padding: 0;
+    background-color: #2a2a2a;
+    color: white;
+    font-family: 'ubuntu';
+}
+header{
+    margin-right: 20px;
+    margin-top: 20px;
+margin-bottom: 72px;
+display: flex;
+justify-content: flex-end;
+}
+#register{
+    background-color: white;
+    border: none;
+    color: #2a2a2a;
+    border-radius: 52px;
+    width: 90px;
+    height: 39.67px;
+    font-weight: 1000;
+    margin-right: 15px;
+    }
+    #login{
+        background-color: #ffce1f;
+        border: none;
+        color: #2a2a2a;
+        border-radius: 52px;
+        width: 120px;
+        height: 39.67px;
+        font-weight: 1000;
+        }
+#collect7{
+    margin-left: 21px;
+}        
+h1{
+    margin-bottom: 48px;
+}
+h2{
+margin-bottom: 128px;
+}
+#cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 430px;
+    height: 224px;
+    background-image: url('../img/home.gif');
+}
+img{
+    width: 368.29px;
+    height: 197.7px;
+}
+h3{
+    text-align: center;
+    margin: 0;
+}
+#collect{
+    width: 358px;
+    height: 175px;
+    background-color: #3f3f3f;
+    padding: 36px;
+}
