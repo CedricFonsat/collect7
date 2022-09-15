@@ -38,15 +38,5 @@ visitorRouter.get("/connection", async (req, res) => {
   }
 });
 
-visitorRouter.get("/lalala", async (req, res) => {
-  try {
-    res.render("fadaaaaaa");
-  } catch (error) {
-    res.send(error);
-  }
-});
-
-
-
 
 export default visitorRouter;
