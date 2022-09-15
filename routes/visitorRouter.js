@@ -39,6 +39,14 @@ visitorRouter.get("/connection", async (req, res) => {
   }
 });
 
+visitorRouter.get("/tomtometnana", async (req, res) => {
+  try {
+    res.render("pages/connection.twig")
+  } catch (error) {
+    res.send(error);
+  }
+});
+
 
 
 
