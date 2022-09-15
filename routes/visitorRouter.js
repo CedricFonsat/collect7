@@ -39,15 +39,6 @@ visitorRouter.get("/connection", async (req, res) => {
 });
 
 
-visitorRouter.get("/luluberlu", async (req, res) => {
-  try {
-    res.render("berlu");
-  } catch (error) {
-    res.send(error);
-  }
-});
-
-
 
 
 
