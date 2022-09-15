@@ -39,7 +39,4 @@ visitorRouter.get("/connection", async (req, res) => {
 });
 
 
-
-
-
 export default visitorRouter;
