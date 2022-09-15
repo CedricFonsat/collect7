@@ -1,11 +1,10 @@
 import { Router } from "express";
 
-
 const visitorRouter = Router();
 
 visitorRouter.get("/", async (req, res) => {
   try {
-    res.render("index.twig")
+    res.render("index.twig");
   } catch (error) {
     res.send(error);
   }
@@ -15,7 +14,7 @@ visitorRouter.get("/", async (req, res) => {
 
 visitorRouter.get("/registration", async (req, res) => {
   try {
-    res.render("pages/registration.twig")
+    res.render("pages/registration.twig");
   } catch (error) {
     res.send(error);
   }
@@ -25,15 +24,23 @@ visitorRouter.get("/registration", async (req, res) => {
 
 visitorRouter.get("/lostPassword", async (req, res) => {
   try {
-    res.render("pages/lostPassword.twig")
+    res.render("pages/lostPassword.twig");
   } catch (err) {
     res.send(err);
   }
-})
+});
 
 visitorRouter.get("/connection", async (req, res) => {
   try {
-    res.render("pages/connection.twig")
+    res.render("pages/connection.twig");
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+visitorRouter.get("/mamanmavu", async (req, res) => {
+  try {
+    res.render("tartanpion");
   } catch (error) {
     res.send(error);
   }
@@ -41,13 +48,10 @@ visitorRouter.get("/connection", async (req, res) => {
 
 visitorRouter.get("/tomtometnana", async (req, res) => {
   try {
-    res.render("pages/connection.twig")
+    res.render("pages/connection.twig");
   } catch (error) {
     res.send(error);
   }
 });
-
-
-
 
 export default visitorRouter;
