@@ -22,7 +22,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 
 }
 
@@ -63,7 +63,6 @@
     color: white;
     font-size: 14px;
     outline: none;
-    cursor: pointer;
 }
 
 #modal_register input::placeholder {
@@ -95,6 +94,10 @@
     cursor: pointer;
 }
 
+#modal_register button:hover {
+    background-color: #eebe12;
+}
+
 #connection_redirect {
     display: flex;
     justify-content: center;
@@ -103,4 +106,8 @@
     color: white;
     text-decoration: none;
     cursor: pointer;
+}
+
+#connection_redirect:hover {
+    color: #FFCE1F;
 }

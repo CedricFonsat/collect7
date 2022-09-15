@@ -1,0 +1,71 @@
+@font-face {
+    font-family: ubuntu;
+    src: url(../fonts/Ubuntu-Regular.ttf);
+}
+
+* {
+    font-family: ubuntu;
+}
+
+body {
+    background-color: #2a2a2a;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#userManual {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.accordion {
+    background-color: #414141;
+    color: white;
+    cursor: pointer;
+    width: 408px;
+    padding: 20px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.firstAcc {
+    border-radius: 5px 5px 0 0;
+}
+
+.lastAcc {
+    border-radius: 0 0 5px 5px;
+}
+
+img {
+    margin-right: 20px;
+}
+
+.panel {
+    width: 372px;
+    padding: 0 18px;
+    background-color: #414141;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 1px;
+}
