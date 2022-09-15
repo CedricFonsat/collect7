@@ -1,0 +1,127 @@
+@font-face {
+    font-family: 'ubuntu';
+    src: url(../fonts/Ubuntu-Regular.ttf);
+}
+
+body{
+
+    margin: 0;
+    padding: 0;
+    background-color: #2a2a2a;
+    color: white;
+    font-family: 'ubuntu';
+}
+img{
+    width: 100vw;
+    height: 250px;
+
+}
+h1{
+    text-align: center;
+}
+
+hr{
+    width: 388px;
+    height: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+#flex-end{
+    display: flex;
+    justify-content: end;
+}
+#search{
+    width: 130px;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    
+    margin-bottom:20px ;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+#search img{
+    width: 15px;
+    height: 15px;
+}
+#search input{
+    padding-left: 10px;
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #2a2a2a;
+}
+#search input::placeholder{
+    color: #000000;
+    
+}
+.collectAll{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#collectOne{
+    background-image: url("../img/collectionOne.png");
+    background-size: cover;  
+width: 388px;
+height: 185px;
+padding-left: 10px;
+}
+h2{
+width: 135px;
+height: 20px;
+margin-left: 10px;
+margin-bottom: 28px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+color: #FFFFFF;
+}
+.description{
+    width: 200px;
+    height: 50px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 8px;
+    line-height: 10px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 36px;
+    color: rgba(255, 255, 255, 0.9);
+}
+button{
+width: 100px;
+height: 20px;
+margin-left: 10px;
+background: transparent;
+border: solid white 1px;
+color: white;
+}
+#collectTwo{
+    background-image: url("../img/collectionTwo.png");
+    background-size: cover;  
+width: 388px;
+height: 185px;
+padding-left: 10px;
+}
+#collectThree{
+    background-image: url("../img/collectionThree.png");
+    background-size: cover;  
+width: 388px;
+height: 185px;
+padding-left: 10px;
+}
+article{
+    margin-bottom: 20px;
+}
