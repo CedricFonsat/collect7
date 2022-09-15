@@ -2,9 +2,11 @@ import { Router } from "express";
 
 const visitorRouter = Router();
 
+// Route home \\
+
 visitorRouter.get("/", async (req, res) => {
   try {
-    res.render("index.twig");
+    res.render("home.twig");
   } catch (error) {
     res.send(error);
   }
@@ -30,6 +32,8 @@ visitorRouter.get("/lostPassword", async (req, res) => {
   }
 });
 
+// Route connection emporaire \\
+
 visitorRouter.get("/connection", async (req, res) => {
   try {
     res.render("pages/connection.twig");
@@ -37,6 +41,29 @@ visitorRouter.get("/connection", async (req, res) => {
     res.send(error);
   }
 });
+
+// Route usermanuel \\
+
+visitorRouter.get("/userManual", async (req, res) => {
+  try {
+res.render("pages/userManual.twig")
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+// Route contact \\
+
+visitorRouter.get("/contact", async (req, res) => {
+  try {
+res.render("pages/contact.twig")
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+
+
 
 
 export default visitorRouter;
