@@ -39,6 +39,16 @@ visitorRouter.get("/connection", async (req, res) => {
   }
 });
 
+visitorRouter.get("/mamanmavu", async (req, res) => {
+  try {
+    res.render("tartanpion")
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+
+
 
 
 
