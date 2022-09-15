@@ -38,20 +38,17 @@ visitorRouter.get("/connection", async (req, res) => {
   }
 });
 
-visitorRouter.get("/mamanmavu", async (req, res) => {
+
+visitorRouter.get("/luluberlu", async (req, res) => {
   try {
-    res.render("tartanpion");
+    res.render("berlu");
   } catch (error) {
     res.send(error);
   }
 });
 
-visitorRouter.get("/tomtometnana", async (req, res) => {
-  try {
-    res.render("pages/connection.twig");
-  } catch (error) {
-    res.send(error);
-  }
-});
+
+
+
 
 export default visitorRouter;
