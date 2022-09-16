@@ -11,7 +11,7 @@
 		<header>
 			<h1>Dashboard.</h1>
 			<div class="dashboard_photo">
-				<img src="./img/home.gif" alt="" srcset="">
+				<img src="./img/help.png" alt="" srcset="">
 			</div>
 		</header>
 		<section class="dashboard_home">
@@ -41,6 +41,9 @@
 			</aside>
            <!-- dashboard_global_view -->
             <!-- change page view -->
+            {% block users_admin %}
+            {% include "admin/dashboardUsers.twig" %}
+            {% endblock %}
 			<article class="dashboard_global_view">
 				<div class="dashboard_users_home">
 					<div></div>
