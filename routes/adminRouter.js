@@ -11,25 +11,25 @@ adminRouter.get("/dashboardHome", async (req, res) => {
     }
   });
 
-  adminRouter.get("/dashboardUser", async (req, res) => {
+  adminRouter.get("/dashboardUsers", async (req, res) => {
     try {
-  res.render("admin/dashboardUser.twig")
+  res.render("admin/dashboardUsers.twig")
     } catch (error) {
       res.send(error);
     }
   });
 
-  adminRouter.get("/dashboardCollection", async (req, res) => {
+  adminRouter.get("/dashboardCollections", async (req, res) => {
     try {
-  res.render("admin/dashboardCollection.twig")
+  res.render("admin/dashboardCollections.twig")
     } catch (error) {
       res.send(error);
     }
   });
 
-  adminRouter.get("/dashboardOther", async (req, res) => {
+  adminRouter.get("/dashboardOthers", async (req, res) => {
     try {
-  res.render("admin/dashboardOther.twig")
+  res.render("admin/dashboardOthers.twig")
     } catch (error) {
       res.send(error);
     }
