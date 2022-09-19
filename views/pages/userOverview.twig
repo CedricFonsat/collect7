@@ -4,22 +4,25 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<link rel="stylesheet" href="./css/userOverview.css">
-        <title>Profil Aperçu</title>
+		<link rel="stylesheet" href="./css/userOverview.css">
+		<title>Profil Aperçu</title>
 	</head>
 	<body>
 		<section id="user_account_overview">
-			<article>
-				<div id="banner">
-					<img id="banner_img" src="./img/banner.png" alt="banner">
+			{% block headerProfil %}
+				{% include "pages/headerProfil.twig" %}
+			{% endblock %}
+			<article id="overView">
+				<div id="favorite_cards">
+					<h2>Cartes Favoris</h2>
+					<div id="card_container">
+						<div class="card_slot"><img src="./img/usopp.png" alt="card"></div>
+						<div class="card_slot"><img src="" alt=""></div>
+						<div class="card_slot"><img src="" alt=""></div>
+						<div class="card_slot"><img src="" alt=""></div>
+						<div class="card_slot"><img src="" alt=""></div>
+					</div>
 				</div>
-				<div id="avatar">
-					<img id="avatar_img" src="./img/help_logo.png" alt="avatar">
-				</div>
-				<div id="settings">
-					<a href=""><img id="settings_img" src="./img/settings.png" alt="settings"></a>
-				</div>
-                <p id="pseudo"></p>
 			</article>
 		</section>
 	</body>
