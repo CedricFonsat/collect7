@@ -28,7 +28,7 @@ hr{
 }
 #flex-end{
     display: flex;
-    justify-content:space-between;
+    justify-content:end;
     align-items: center;
 }
 #community{
@@ -70,68 +70,31 @@ hr{
     color: #000000;
     
 }
-.collectAll{
+section{
     display: flex;
-    align-items: center;
+    flex-direction: row;
+flex-wrap: wrap;
+}
+.card{
+    margin-left: 20px;
+    width: 173px;
+    height: 245px;
+}
+#row{
+    width: 173px;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-}
-#collectOne{
-    background-image: url("../img/collectionOne.png");
-    background-size: cover;  
-width: 388px;
-height: 185px;
-padding-left: 10px;
-}
-h2{
-width: 135px;
-height: 20px;
-margin-left: 10px;
-margin-bottom: 28px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 16px;
-line-height: 19px;
-display: flex;
-align-items: center;
-color: #FFFFFF;
-}
-.description{
-    width: 200px;
-    height: 50px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 8px;
-    line-height: 10px;
-    margin-left: 10px;
-    display: flex;
     align-items: center;
-    margin-bottom: 36px;
-    color: rgba(255, 255, 255, 0.9);
+    margin-left: 20px;
 }
-button{
-width: 100px;
-height: 20px;
-margin-left: 10px;
-background: transparent;
-border: solid white 1px;
-color: white;
+p{
+    margin-right:22px ;
 }
-#collectTwo{
-    background-image: url("../img/collectionTwo.png");
-    background-size: cover;  
-width: 388px;
-height: 185px;
-padding-left: 10px;
-}
-#collectThree{
-    background-image: url("../img/collectionThree.png");
-    background-size: cover;  
-width: 388px;
-height: 185px;
-padding-left: 10px;
-}
-article{
-    margin-bottom: 20px;
+.buy{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 2px;
+    width: 75px;
+    height: 25px;
 }
