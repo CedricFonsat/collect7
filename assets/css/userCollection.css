@@ -102,11 +102,11 @@ a {
     border-radius: 44px 44px 0 0;
 }
 
-#txt_ov {
+#txt_collection {
     color: #FFCE1F;
 }
 
-#div_ov {
+#div_collection {
     background-color: #FFCE1F;
 }
 
@@ -122,58 +122,81 @@ a {
     width: 90%;
 }
 
-h2 {
+#flex-end {
+    display: flex;
+    justify-content: end;
+}
+
+#title_search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
     color: white;
     font-weight: 700;
     font-size: 16px;
-    line-height: 24px;
-    margin: 10px 0 30px 20px;
+    line-height: 19px;
+    margin-left: 5%;
 }
 
-#favorite_cards {
-    background: linear-gradient(90deg, #3F3F3F 0%, rgba(42, 42, 42, 0.75) 100%);
-    border-radius: 15px;
-    width: 388px;
-    height: 295px;
-}
-
-#overView {
+#search {
+    width: 140px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 7px;
     display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+#search img {
+    width: 16px;
+    height: 16px;
+}
+
+#search input {
+    padding-left: 10px;
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #2a2a2a;
+}
+
+#search input::placeholder {
+    color: #3F3F3F;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+#collection_list {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-#card_container {
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    display: flex;
-    overflow-x: scroll;
-    width: 388px;
-    height: 171px;
-    white-space: nowrap;
-    padding-bottom: 20px;
+.card_style:nth-child(even) {
+    margin-right: 0px;
 }
 
-.card_slot {
-    width: 120.75px;
-    height: 168px;
-    margin-left: 20px;
+.card_style {
+    width: 173px;
+    height: 245px;
     border-radius: 6px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
-.card_slot img {
-    width: 120.75px;
-    height: 171px;
+.card_style img {
+    width: 173px;
+    height: 245px;
     border-radius: 6px;
-}
-
-::-webkit-scrollbar {
-    height: 3px;
-}
-
-::-webkit-scrollbar-track {
-    background: #2A2A2A;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #FFCE1F;
 }
