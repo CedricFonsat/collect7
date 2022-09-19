@@ -1,0 +1,62 @@
+@font-face {
+    font-family: ubuntu;
+    src: url(../fonts/Ubuntu-Regular.ttf);
+}
+
+* {
+    font-family: ubuntu;
+}
+
+body {
+    background-color: #2A2A2A;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 90px;
+}
+
+div {
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+a {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #FFCE1F;
+}
+
+img {
+    margin-right: 20px;
+}
+
+#logout_container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+}
+
+#logout_container img {
+    margin-right: 5px;
+}

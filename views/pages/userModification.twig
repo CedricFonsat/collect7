@@ -17,12 +17,24 @@
 				<h1>Modifier profil</h1>
 			</article>
 			<article>
-				<div id="banner">
-					<img id="banner_img" src="./img/banner.png" alt="banner">
+
+				<div id="opacity_banner_container"></div>
+				<div id="banner_container">
+					<div id="edit_banner_container">
+						<a href=""><img id="edit_banner_img" src="./img/edit.png" alt="edit"></a>
+					</div>
 				</div>
-				<div id="avatar">
+				<img id="banner_img" src="./img/banner.png" alt="banner">
+
+				<div id="opacity_avatar_container"></div>
+				<div id="avatar_container">
 					<img id="avatar_img" src="./img/help_logo.png" alt="avatar">
+					<div id="edit_avatar_container">
+						<a href=""><img id="edit_avatar_img" src="./img/edit.png" alt="edit"></a>
+					</div>
 				</div>
+
+
 			</article>
 			<article>
 				<form action="">
@@ -35,14 +47,22 @@
 					</div>
 					<div>
 						<p class="input_title">Email</p>
-						<input type="text" name="mail" placeholder="userMail">
+						<div class="input_style">
+							<img src="./img/mail.png" alt="user">
+							<input type="text" name="mail" placeholder="userMail">
+						</div>
 					</div>
 					<div>
 						<p class="input_title">Mot de passe</p>
-						<input type="password" name="password" placeholder="*********">
+						<div class="input_style">
+							<img src="./img/password.png" alt="user">
+							<input type="password" name="user" placeholder="*********">
+						</div>
 					</div>
 				</form>
-				<button>Supprimer le compte</button>
+				<div id="delete_container">
+					<button id="delete">Supprimer le compte</button>
+				</div>
 			</article>
 		</section>
 	</body>
