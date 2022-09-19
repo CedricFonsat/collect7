@@ -43,9 +43,9 @@ adminRouter.get("/dashboardHome", async (req, res) => {
     }
   });
 
-  adminRouter.get("/dashboardCollectionAdd", async (req, res) => {
+  adminRouter.get("/dashboardCardAdd", async (req, res) => {
     try {
-  res.render("admin/dashboardCollectionAdd.twig")
+  res.render("admin/dashboardCardAdd.twig")
     } catch (error) {
       res.send(error);
     }
