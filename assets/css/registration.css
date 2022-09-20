@@ -1,29 +1,32 @@
-@font-face {
-    font-family: ubuntu;
-    src: url(../fonts/Ubuntu-Regular.ttf);
-}
-
-* {
-    font-family: ubuntu;
-}
-
-#body_register {
-    background-color: #2a2a2a50;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-
 #modal_register {
     background-color: #2A2A2A;
     width: 408px;
     height: 504px;
     border-radius: 25px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+}
 
+.close {
+    background: #3F3F3F;
+    border-radius: 5px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 355px;
+    cursor: pointer;
+}
+
+.close:hover {
+    background: #504e4e;
+}
+
+#close_img {
+    padding: 0;
 }
 
 #modal_register h1 {
@@ -48,7 +51,7 @@
     align-items: center;
 }
 
-#modal_register img {
+.input_form img {
     width: 25.5px;
     height: 25.5px;
     padding: 0 10px 0 20px;
@@ -81,7 +84,7 @@
     margin-bottom: 10px;
 }
 
-#modal_register button {
+#validate {
     background-color: #FFCE1F;
     color: #2A2A2A;
     width: 345.52px;
@@ -94,7 +97,7 @@
     cursor: pointer;
 }
 
-#modal_register button:hover {
+#validate:hover {
     background-color: #eebe12;
 }
 
