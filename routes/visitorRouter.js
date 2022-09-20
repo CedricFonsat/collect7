@@ -1,6 +1,25 @@
 import { Router } from "express";
+import multer from "multer";
+import userModel from "../models/userModel.js";
+import 'dotenv/config'
+import userController from "../controllers/userController.js";
 
 const visitorRouter = Router();
+
+const storage = multer.diskStorage({
+  destination:function(req,file,callback){
+    callback(null,'./assets/uploads/images' )
+  },
+  filename:function (req,file,callback) {
+    callback(null,Date.now() + file.originalname)
+  },
+})
+const upload = multer({
+  storage:storage,
+  limits:{
+    fieldSize:1024*1024*3,
+  },
+});
 
 // Route home \\
 
@@ -12,11 +31,31 @@ visitorRouter.get("/", async (req, res) => {
   }
 });
 
-// Route registration temporaire /!\
+// Registration
 
 visitorRouter.get("/registration", async (req, res) => {
   try {
     res.render("pages/registration.twig");
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+visitorRouter.post("/registration",upload.single('image'), async (req, res) => {
+  try {
+    await userController.setRegistration(req,res)
+    res.redirect("/connection")
+    console.log('patrick');
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+// Route connection emporaire \\
+
+visitorRouter.get("/connection", async (req, res) => {
+  try {
+    res.render("pages/connection.twig");
   } catch (error) {
     res.send(error);
   }
@@ -29,16 +68,6 @@ visitorRouter.get("/lostPassword", async (req, res) => {
     res.render("pages/lostPassword.twig");
   } catch (err) {
     res.send(err);
-  }
-});
-
-// Route connection emporaire \\
-
-visitorRouter.get("/connection", async (req, res) => {
-  try {
-    res.render("pages/connection.twig");
-  } catch (error) {
-    res.send(error);
   }
 });
 

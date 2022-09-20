@@ -13,10 +13,10 @@
 			<div id="modal_register">
 				<H1>S'inscrire</H1>
 				<p id="introduction">Rejoignez des milliers d’utilisateurs !</p>
-				<form action="">
+				<form action="/registration" method="post" enctype="multipart/form-data">
 					<div class="input_form">
 						<img src="./img/user.png" alt="user">
-						<input type="text" placeholder="Nom d’utilisateur" name="username">
+						<input type="text" placeholder="Nom d’utilisateur" name="userName">
 					</div>
 					<div class="input_form">
 						<img src="./img/mail.png" alt="mail">
@@ -27,8 +27,8 @@
 						<input type="password" placeholder="Mot de passe" name="password">
 					</div>
 				</form>
-				<button>Valider</button>
-				<a href="" id="connection_redirect">Vous avez déjà un compte ?</a>
+				<button type="submit">Valider</button>
+				<a href="/connection" id="connection_redirect">Vous avez déjà un compte ?</a>
 			</div>
 		{% endblock %}
 
