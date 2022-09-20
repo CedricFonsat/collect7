@@ -10,7 +10,7 @@ export class userController {
         req.session.user = user._id
     }
 
-    static async login(req) {
+    static async setLogin(req) {
         let user = await userModel.findOne({mail: req.body.mail })
         if (user) {
             if (await comparePassword(req.body.password, user.password)) {

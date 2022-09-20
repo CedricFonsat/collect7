@@ -1,4 +1,5 @@
 import { Router } from "express";
+import userModel from "../models/userModel.js";
 
 
 const userRouter = Router();
@@ -47,7 +48,13 @@ userRouter.get("/changePassword", async (req, res) => {
   
   userRouter.get("/userOverview", async (req, res) => {
     try {
-  res.render("pages/userOverview.twig")
+      let userConnect = await userModel.findOne({ _id: req.session.user });
+      if (userConnect) {
+        userConnect = userConnect.userName;
+      }
+        res.render("pages/userOverview.twig", {
+          userConnect: userConnect,
+        });
     } catch (error) {
       res.send(error);
     }

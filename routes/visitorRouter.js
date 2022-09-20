@@ -3,6 +3,7 @@ import multer from "multer";
 import userModel from "../models/userModel.js";
 import 'dotenv/config'
 import userController from "../controllers/userController.js";
+import userRouter from "./userRouter.js"
 
 const visitorRouter = Router();
 
@@ -41,7 +42,7 @@ visitorRouter.get("/registration", async (req, res) => {
   }
 });
 
-visitorRouter.post("/registration",upload.single('image'), async (req, res) => {
+visitorRouter.post("/registration",upload.single('avatar'), async (req, res) => {
   try {
     await userController.setRegistration(req,res)
     res.redirect("/connection")
@@ -51,7 +52,7 @@ visitorRouter.post("/registration",upload.single('image'), async (req, res) => {
   }
 });
 
-// Route connection emporaire \\
+// Connection
 
 visitorRouter.get("/connection", async (req, res) => {
   try {
@@ -59,6 +60,30 @@ visitorRouter.get("/connection", async (req, res) => {
   } catch (error) {
     res.send(error);
   }
+});
+
+visitorRouter.post("/connection", async (req, res) => {
+  try {
+    let user = await userController.setLogin(req,res)
+    if (user) {
+      req.session.user = user._id
+      res.redirect("/userOverview") 
+    } else {
+      req.session.error = "vous n'etes pas connecté"
+      res.redirect("/connection")
+    }
+  }
+  catch(error) {
+    res.send(error);
+  }
+});
+
+
+// Logout
+
+visitorRouter.get('/logout', function(req, res) {
+  req.session.destroy()
+ res.redirect('/');
 });
 
 // Route lostPassword temporaire /!\
@@ -90,6 +115,7 @@ res.render("pages/contact.twig")
     res.send(error);
   }
 });
+
 
 
 
