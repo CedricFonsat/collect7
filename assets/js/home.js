@@ -33,8 +33,7 @@ connection_btn.onclick = function () {
     document.querySelector("#connection_modal").style.display = "block"
 }
 
-document.querySelector("#btn_close_connection").addEventListener('click', function () {
-    console.log("gjch");
+document.querySelector("#connection_close").addEventListener('click', function () {
     document.querySelector("#connection_modal").style.display = "none"
 })
 

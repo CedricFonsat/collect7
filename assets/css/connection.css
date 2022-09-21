@@ -16,7 +16,7 @@
     padding-top: 30px;
 }
 
-.connection_close {
+#connection_close {
     background: #3F3F3F;
     border-radius: 5px;
     width: 32px;
@@ -31,7 +31,7 @@
     cursor: pointer;
 }
 
-.close:hover {
+#connection_close:hover {
     background: #504e4e;
 }
 
