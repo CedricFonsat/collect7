@@ -1,24 +1,27 @@
 {% block registrationModal %}
-	<div id="modal_register">
-		<H1>S'inscrire</H1>
-		<button class="register_close"><img id="close_img" src="./img/cross.png" alt="close"></button>
-		<p id="introduction">Rejoignez des milliers d’utilisateurs !</p>
-		<form action="/registration" method="post" enctype="multipart/form-data">
-			<div class="input_form">
-				<img src="./img/user.png" alt="user">
-				<input type="text" placeholder="Nom d’utilisateur" name="userName">
+	<div id="register_modal" class="modal_register">
+		<div class="modal-content">
+			<div id="modal_register">
+				<H1>S'inscrire</H1>
+				<button id="register_close"><img id="close_img" src="./img/cross.png" alt="close"></button>
+				<p id="introduction">Rejoignez des milliers d’utilisateurs !</p>
+				<form action="/registration" method="post" enctype="multipart/form-data">
+					<div class="input_form">
+						<img src="./img/user.png" alt="user">
+						<input type="text" placeholder="Nom d’utilisateur" name="userName">
+					</div>
+					<div class="input_form">
+						<img src="./img/mail.png" alt="mail">
+						<input type="text" placeholder="Email" name="mail">
+					</div>
+					<div class="input_form">
+						<img src="./img/password.png" alt="password">
+						<input type="password" placeholder="Mot de passe" name="password">
+					</div>
+					<button id="validate" type="submit">Valider</button>
+				</form>
+				<a href="" id="connection_redirect">Vous avez déjà un compte ?</a>
 			</div>
-			<div class="input_form">
-				<img src="./img/mail.png" alt="mail">
-				<input type="text" placeholder="Email" name="mail">
-			</div>
-			<div class="input_form">
-				<img src="./img/password.png" alt="password">
-				<input type="password" placeholder="Mot de passe" name="password">
-			</div>
-			<button id="validate" type="submit">Valider</button>
-		</form>
-		<a href="" id="connection_redirect">Vous avez déjà un compte ?</a>
+		</div>
 	</div>
 {% endblock %}
-

@@ -1,12 +1,15 @@
-#modal_register {
-    background-color: #2A2A2A;
-    width: 408px;
-    height: 504px;
-    border-radius: 25px;
-    position: relative;
+/* TOP CONTAINER */
+
+#modal_register h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFCE1F;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
 
-.register_close {
+#register_close {
     background: #3F3F3F;
     border-radius: 5px;
     width: 32px;
@@ -21,21 +24,8 @@
     cursor: pointer;
 }
 
-.register_close:hover {
+#register_close:hover {
     background: #504e4e;
-}
-
-#close_img {
-    padding: 0;
-}
-
-#modal_register h1 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #FFCE1F;
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 10px;
 }
 
 #modal_register #introduction {
@@ -45,10 +35,33 @@
     padding-bottom: 5px;
 }
 
+
+/* MIDDLE CONTAINER */
+
+
 #modal_register form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#modal_register {
+    background-color: #2A2A2A;
+    width: 408px;
+    height: 504px;
+    border-radius: 25px;
+    position: relative;
+}
+
+#modal_register .input_form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #3F3F3F;
+    width: 345.52px;
+    height: 63.75px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .input_form img {
@@ -73,16 +86,8 @@
     color: #D2D2D2;
 }
 
-#modal_register .input_form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #3F3F3F;
-    width: 345.52px;
-    height: 63.75px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
+
+/* BOTTOM CONTAINER */
 
 #validate {
     background-color: #FFCE1F;

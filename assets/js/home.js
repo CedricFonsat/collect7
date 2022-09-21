@@ -1,37 +1,25 @@
 // Registration
 
-let register_modal = document.getElementById("register_modal");
-let register_btn = document.getElementById("register");
-let register_close = document.getElementsByClassName("register_close")[0];
+document.querySelector("#btn_register").addEventListener('click', function () {
+    document.querySelector("#register_modal").style.display = "block"
+})
 
-
-// Connection
-
-let connection_btn = document.getElementById("btn_connection");
-
-
-// Registration
-
-register_btn.onclick = function () {
-    register_modal.style.display = "block";
-}
-
-register_close.onclick = function () {
-    register_modal.style.display = "none";
-}
+document.querySelector("#register_close").addEventListener('click', function () {
+    document.querySelector("#register_modal").style.display = "none"
+})
 
 document.onclick = function (event) {
-    if (event.target == register_modal) {
-        register_modal.style.display = "none";
+    if (event.target == document.querySelector("#register_modal")) {
+        document.querySelector("#register_modal").style.display = "none"
     }
 }
 
 
 // Connection
 
-connection_btn.onclick = function () {
+document.querySelector("#btn_connection").addEventListener('click', function () {
     document.querySelector("#connection_modal").style.display = "block"
-}
+})
 
 document.querySelector("#connection_close").addEventListener('click', function () {
     document.querySelector("#connection_modal").style.display = "none"

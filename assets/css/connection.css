@@ -1,12 +1,4 @@
-#connection {
-    width: 408px;
-    height: 578.47px;
-    background-color: #2A2A2A;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 25px;
-}
+/* TOP CONTAINER */
 
 #connection h2 {
     font-size: 24px;
@@ -33,6 +25,83 @@
 
 #connection_close:hover {
     background: #504e4e;
+}
+
+.subtitle_connection {
+    color: white;
+    font-size: 16px;
+}
+
+
+/* MIDDLE CONTAINER */
+
+.google_auth {
+    width: 344.69px;
+    height: 63.6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #FFCE1F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form_google_auth div,
+.form_connection div {
+    display: flex;
+    align-items: center;
+}
+
+.form_google_auth div img,
+.form_connection div img {
+    width: 25.5px;
+    height: 25.5px;
+    padding: 0px 10px 0px 20px;
+}
+
+.form_google_auth {
+    margin-bottom: 5px;
+}
+
+.google_auth label {
+    width: 80%;
+    height: 63.6px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    color: #D2D2D2;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.create_registration {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.create_registration:hover {
+    color: #FFCE1F;
+}
+
+.separation_connection {
+    width: 344.69px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#connection {
+    width: 408px;
+    height: 578.47px;
+    background-color: #2A2A2A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
 }
 
 #connection a {
@@ -66,6 +135,9 @@
     color: #D2D2D2;
 }
 
+
+/* BOTTOM CONTAINER */
+
 #connection form button {
     width: 344.69px;
     height: 63.6px;
@@ -81,60 +153,6 @@
     background-color: #eebe12;
 }
 
-.form_google_auth div,
-.form_connection div {
-    display: flex;
-    align-items: center;
-}
-
-.form_google_auth div img,
-.form_connection div img {
-    width: 25.5px;
-    height: 25.5px;
-    padding: 0px 10px 0px 20px;
-}
-
-.form_google_auth {
-    margin-bottom: 5px;
-}
-
-.google_auth {
-    width: 344.69px;
-    height: 63.6px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    color: #FFCE1F;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.google_auth label {
-    width: 80%;
-    height: 63.6px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    display: flex;
-    align-items: center;
-    color: #D2D2D2;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.separation_connection {
-    width: 344.69px;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.subtitle_connection {
-    color: white;
-    font-size: 16px;
-}
-
 .lost_password {
     padding-top: 20px;
     color: white;
@@ -144,12 +162,13 @@
     color: #FFCE1F;
 }
 
-.create_registration {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: white;
-}
 
-.create_registration:hover {
-    color: #FFCE1F;
-}
+
+
+
+
+
+
+
+
+

@@ -12,7 +12,7 @@
 
 {% block header %}
 	<header>
-		<button id='register'>S'inscrire</button>
+		<button id='btn_register'>S'inscrire</button>
 		<button id='btn_connection'>Se connecter</button>
 	</header>
 {% endblock %}
@@ -29,22 +29,12 @@
 			</div>
 		</article>
 	</section>
-	{# Modal Register #}
-	<div id="register_modal" class="modal_register">
-		<div class="modal-content">
-			{% block register_modal %}
-				{% include "../layout/registration.twig" %}
-			{% endblock %}
-		</div>
-	</div>
-	{# Modal Connection #}
-	<div id="connection_modal" class="modal_connection">
-		<div class="modal-content">
-			{% block connection_modal %}
-				{% include "../layout/connection.twig" %}
-			{% endblock %}
-		</div>
-	</div>
+	{% block register_modal %}
+		{% include "../layout/registration.twig" %}
+	{% endblock %}
+	{% block connection_modal %}
+		{% include "../layout/connection.twig" %}
+	{% endblock %}
 {% endblock %}
 
 {% block script %}
