@@ -1,38 +1,42 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="./css/userCollection.css">
-		<title>Profil Collection</title>
-	</head>
-	<body>
-		{% block headerProfil %}
-			{% include "pages/headerProfil.twig" %}
-		{% endblock %}
+{% extends "../base.twig" %}
 
-		<section>
-			<article id="title_search">
-				<h1>Cartes</h1>
-				<div id="flex-end">
-					<div id='search'>
-						<input id="searchbar" type="text" name="search" placeholder="Rechercher">
-						<img src="./img/search.png" alt="">
-					</div>
-				</div>
-			</article>
-			<article>
-				<div id="collection_list">
-					<div class="card_style"><img src="./img/usopp.png" alt=""></div>
-					<div class="card_style"><img src="" alt=""></div>
-					<div class="card_style"><img src="" alt=""></div>
-					<div class="card_style"><img src="" alt=""></div>
-					<div class="card_style"><img src="" alt=""></div>
-					<div class="card_style"><img src="" alt=""></div>
-				</div>
-			</article>
-		</section>
+{% block stylesheet %}
+	<link rel="stylesheet" href="./css/userCollection.css">
+{% endblock %}
 
-	</body>
-</html>
+{% block title %}
+	<title>Profil Collection</title>
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block main %}
+	{% block headerProfil %}
+		{% include "pages/headerProfil.twig" %}
+	{% endblock %}
+	<section>
+		<article id="title_search">
+			<h1>Cartes</h1>
+			<div id="flex-end">
+				<div id='search'>
+					<input id="searchbar" type="text" name="search" placeholder="Rechercher">
+					<img src="./img/search.png" alt="">
+				</div>
+			</div>
+		</article>
+		<article>
+			<div id="collection_list">
+				<div class="card_style"><img src="./img/usopp.png" alt=""></div>
+				<div class="card_style"><img src="" alt=""></div>
+				<div class="card_style"><img src="" alt=""></div>
+				<div class="card_style"><img src="" alt=""></div>
+				<div class="card_style"><img src="" alt=""></div>
+				<div class="card_style"><img src="" alt=""></div>
+			</div>
+		</article>
+	</section>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block script %}{% endblock %}

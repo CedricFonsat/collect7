@@ -1,73 +1,77 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="./css/userSell.css">
-		<title>Profil Ventes</title>
-	</head>
-	<body>
-		{% block headerProfil %}
-			{% include "pages/headerProfil.twig" %}
-		{% endblock %}
-		{% block modalSellCard %}
-		    {% include "pages/modalSellCard.twig" %}
-		{% endblock %}
+{% extends "../base.twig" %}
 
-		<section>
-			<article id="title_search">
-				<h1>Cartes mises en vente</h1>
-				<div id="flex-end">
-					<div id='search'>
-						<input id="searchbar" type="text" name="search" placeholder="Rechercher">
-						<img src="./img/search.png" alt="">
-					</div>
-				</div>
-			</article>
-			<article id="sell_list">
-				<div class="main_container">
-					<div class="card_container">
-						<img src="./img/usopp.png" alt="">
-					</div>
-					<div class="informations">
-						<h2>Usopp</h2>
-						<p class="p_info">09-2022 - One Piece</p>
-						<p class="p_price">25,63 €</p>
-					</div>
-				</div>
-                <div class="main_container">
-					<div class="card_container">
-						<img src="./img/usopp.png" alt="">
-					</div>
-					<div class="informations">
-						<h2>Usopp</h2>
-						<p class="p_info">09-2022 - One Piece</p>
-						<p class="p_price">25,63 €</p>
-					</div>
-				</div>
-                <div class="main_container">
-					<div class="card_container">
-						<img src="./img/usopp.png" alt="">
-					</div>
-					<div class="informations">
-						<h2>Usopp</h2>
-						<p class="p_info">09-2022 - One Piece</p>
-						<p class="p_price">25,63 €</p>
-					</div>
-				</div>
-                <div class="main_container">
-					<div class="card_container">
-						<img src="./img/usopp.png" alt="">
-					</div>
-					<div class="informations">
-						<h2>Usopp</h2>
-						<p class="p_info">09-2022 - One Piece</p>
-						<p class="p_price">25,63 €</p>
-					</div>
-				</div>
-			</article>
-		</section>
+{% block stylesheet %}
+	<link rel="stylesheet" href="./css/userSell.css">
+{% endblock %}
 
-	</body>
-</html>
+{% block title %}
+	<title>Profil Ventes</title>
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block main %}
+	{% block headerProfil %}
+		{% include "pages/headerProfil.twig" %}
+	{% endblock %}
+	{% block modalSellCard %}
+		{% include "pages/modalSellCard.twig" %}
+	{% endblock %}
+	<section>
+		<article id="title_search">
+			<h1>Cartes mises en vente</h1>
+			<div id="flex-end">
+				<div id='search'>
+					<input id="searchbar" type="text" name="search" placeholder="Rechercher">
+					<img src="./img/search.png" alt="">
+				</div>
+			</div>
+		</article>
+		<article id="sell_list">ZZZ
+			<div class="main_container">
+				<div class="card_container">
+					<img src="./img/usopp.png" alt="">
+				</div>
+				<div class="informations">
+					<h2>Usopp</h2>
+					<p class="p_info">09-2022 - One Piece</p>
+					<p class="p_price">25,63 €</p>
+				</div>
+			</div>
+			<div class="main_container">
+				<div class="card_container">
+					<img src="./img/usopp.png" alt="">
+				</div>
+				<div class="informations">
+					<h2>Usopp</h2>
+					<p class="p_info">09-2022 - One Piece</p>
+					<p class="p_price">25,63 €</p>
+				</div>
+			</div>
+			<div class="main_container">
+				<div class="card_container">
+					<img src="./img/usopp.png" alt="">
+				</div>
+				<div class="informations">
+					<h2>Usopp</h2>
+					<p class="p_info">09-2022 - One Piece</p>
+					<p class="p_price">25,63 €</p>
+				</div>
+			</div>
+			<div class="main_container">
+				<div class="card_container">
+					<img src="./img/usopp.png" alt="">
+				</div>
+				<div class="informations">
+					<h2>Usopp</h2>
+					<p class="p_info">09-2022 - One Piece</p>
+					<p class="p_price">25,63 €</p>
+				</div>
+			</div>
+		</article>
+	</section>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block script %}{% endblock %}

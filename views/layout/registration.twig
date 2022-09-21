@@ -1,7 +1,7 @@
 {% block registrationModal %}
 	<div id="modal_register">
 		<H1>S'inscrire</H1>
-		<button class="close"><img id="close_img" src="./img/cross.png" alt="close"></button>
+		<button class="register_close"><img id="close_img" src="./img/cross.png" alt="close"></button>
 		<p id="introduction">Rejoignez des milliers d’utilisateurs !</p>
 		<form action="/registration" method="post" enctype="multipart/form-data">
 			<div class="input_form">
@@ -18,7 +18,6 @@
 			</div>
 			<button id="validate" type="submit">Valider</button>
 		</form>
-		<a href="/connection" id="connection_redirect">Vous avez déjà un compte ?</a>
+		<a href="" id="connection_redirect">Vous avez déjà un compte ?</a>
 	</div>
 {% endblock %}
-<script src="./js/home.js"></script>

@@ -33,7 +33,7 @@ header {
     margin-right: 15px;
 }
 
-#login {
+#btn_connection {
     background-color: #ffce1f;
     border: none;
     color: #2a2a2a;
@@ -62,6 +62,17 @@ header {
     line-height: 30px;
 }
 
+/*  */
+
+#intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
+
 #cards {
     display: flex;
     align-items: center;
@@ -74,6 +85,12 @@ header {
 #img_home {
     width: 368.29px;
     height: 197.7px;
+}
+
+#collect {
+    width: 428px;
+    height: 175px;
+    background: #3F3F3F;
 }
 
 #h3_home {
@@ -92,26 +109,36 @@ header {
     text-align: center;
 }
 
-#intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-}
-
-#collect {
-    width: 358px;
-    height: 175px;
-    background-color: #3f3f3f;
-    padding: 36px;
-}
-
 /* modal */
 
-.modal {
+.modal_register {
     display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#connection_modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal_connection {
+
     position: fixed;
     z-index: 1;
     left: 0;

@@ -1,63 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="./css/shopCollections.css">
-		<link rel="icon" type="image/png" sizes="16x16" href="/img/ico.png">
-		<title>Document</title>
-	</head>
-	<body>
+{% extends "../base.twig" %}
 
-		<img src="./img/carouselOne.png" alt="">
-		<h1>Boutique</h1>
-		<hr>
-     <div id="flex-end">
-     <a href="/shopCommunity"><button id='community'>communauté</button></a>
-    <div id='search'>
+{% block stylesheet %}
+	<link rel="stylesheet" href="./css/shopCollections.css">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/ico.png">
+{% endblock %}
+
+{% block title %}
+	<title>Document</title>
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block main %}
+	<img src="./img/carouselOne.png" alt="">
+	<h1>Boutique</h1>
+	<hr>
+	<div id="flex-end">
+		<a href="/shopCommunity">
+			<button id='community'>communauté</button>
+		</a>
+		<div id='search'>
 			<input id="searchbar" type="text" name="search" placeholder="Rechercher">
 			<img src="./img/search.png" alt="">
 		</div>
-    </div>
-		
-		<section>
-			<article class="collectAll">
-				<div id='collectOne'>
-					<h2>One Piece</h2>
-					<p class='description'>"Fortune ,gloire et pouvoir !Cet homme avait 
-						      amasse toutes les richesses du monde !!Son nom Gold Roger Roi des 
-						      pirates !!Ses dernieres paroles incitèrent les hommes des toute la
-						      planète a s' aventurer en mer : Mon tresor je le laisse si vous 
-						      voulez ,TROUVEZ LE ,je l ai laissé quelque part dans ce monde !!</p>
-					<a href="/shopCards"><button>voir collection</button></a>
-				</div>
-			</article>
+	</div>
+	<section>
+		<article class="collectAll">
+			<div id='collectOne'>
+				<h2>One Piece</h2>
+				<p class='description'>"Fortune ,gloire et pouvoir !Cet homme avait 
+											      amasse toutes les richesses du monde !!Son nom Gold Roger Roi des 
+											      pirates !!Ses dernieres paroles incitèrent les hommes des toute la
+											      planète a s' aventurer en mer : Mon tresor je le laisse si vous 
+											      voulez ,TROUVEZ LE ,je l ai laissé quelque part dans ce monde !!</p>
+				<a href="/shopCards">
+					<button>voir collection</button>
+				</a>
+			</div>
+		</article>
+		<article class="collectAll">
+			<div id='collectTwo'>
+				<h2>Naruto</h2>
+				<p class='/shopCards'></p>
+				<p class="description">"Aucune chose n’est parfaite par elle-même.
+					           C’est pourquoi nous sommes nés pour attirer d’autres choses pour
+					            compenser ce qui nous manque. Je pense que nous commençons à 
+					            marcher dans la bonne direction seulement après que nous avons 
+					            commencé à obtenir nos homologues à côté de nous." - Itachi Uchiha</p>
+				<a href="/connection">
+					<button>voir collection</button>
+				</a>
+			</div>
+		</article>
+		<article class="collectAll">
+			<div id='collectThree'>
+				<h2>Demon Slayer</h2>
+				<p class='description'>« Peu importe le nombre de personnes 
+					          que vous pouvez perdre. Vous n’avez pas d’autre choix que de
+					           continuer à vivre. Peu importe à quel point les coups sont 
+					           écrasants.” – Tanjiro Kamado</p>
+				<a href="/shopCards">
+					<button>voir collection</button>
+				</a>
+			</div>
+		</article>
+	</section>
+{% endblock %}
 
-			<article class="collectAll">
-				<div id='collectTwo'>
-					<h2>Naruto</h2>
-					<p class='/shopCards'><p class="description">"Aucune chose n’est parfaite par elle-même.
-           C’est pourquoi nous sommes nés pour attirer d’autres choses pour
-            compenser ce qui nous manque. Je pense que nous commençons à 
-            marcher dans la bonne direction seulement après que nous avons 
-            commencé à obtenir nos homologues à côté de nous." - Itachi Uchiha</p>
-					<a href="/connection"><button>voir collection</button></a>
-				</div>
-			</article>
+{% block footer %}{% endblock %}
 
-			<article class="collectAll">
-				<div id='collectThree'>
-					<h2>Demon Slayer</h2>
-					<p class='description'>« Peu importe le nombre de personnes 
-          que vous pouvez perdre. Vous n’avez pas d’autre choix que de
-           continuer à vivre. Peu importe à quel point les coups sont 
-           écrasants.” – Tanjiro Kamado</p>
-					<a href="/shopCards"><button>voir collection</button></a>
-				</div>
-			</article>
-		</section>
-
-
-	</body>
-</html>
+{% block script %}{% endblock %}

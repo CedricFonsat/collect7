@@ -1,0 +1,52 @@
+{% extends "../base.twig" %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="./css/home.css">
+	<link rel="stylesheet" href="./css/registration.css">
+	<link rel="stylesheet" href="./css/connection.css">
+{% endblock %}
+
+{% block title %}
+	<title>Accueil</title>
+{% endblock %}
+
+{% block header %}
+	<header>
+		<button id='register'>S'inscrire</button>
+		<button id='btn_connection'>Se connecter</button>
+	</header>
+{% endblock %}
+
+{% block main %}
+	<section>
+		<h1 id="h1_home">Collect7</h1>
+		<h2 id="h2_home">Collectionne, achète, et revends<br>des cartes numériques.</h2>
+		<article id="intro">
+			<div id='cards'><img id="img_home" src="./img/cards.png" alt=""></div>
+			<div id='collect'>
+				<h3 id="h3_home">Collectionne</h3>
+				<p id="p_firstActu">commence ta collection avec la première édition qui regroupe 58 cartes One piece !</p>
+			</div>
+		</article>
+	</section>
+	{# Modal Register #}
+	<div id="register_modal" class="modal_register">
+		<div class="modal-content">
+			{% block register_modal %}
+				{% include "./registration.twig" %}
+			{% endblock %}
+		</div>
+	</div>
+	{# Modal Connection #}
+	<div id="connection_modal" class="modal_connection">
+		<div class="modal-content">
+			{% block connection_modal %}
+				{% include "./connection.twig" %}
+			{% endblock %}
+		</div>
+	</div>
+{% endblock %}
+
+{% block script %}
+	<script src="./js/home.js"></script>
+{% endblock %}

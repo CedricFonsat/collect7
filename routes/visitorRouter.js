@@ -26,7 +26,7 @@ const upload = multer({
 
 visitorRouter.get("/", async (req, res) => {
   try {
-    res.render("home.twig");
+    res.render("pages/home.twig");
   } catch (error) {
     res.send(error);
   }

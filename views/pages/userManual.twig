@@ -1,48 +1,53 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Centre d'aide</title>
-		<link rel="stylesheet" href="./css/userManual.css">
-	</head>
-	<body>
+{% extends "../base.twig" %}
 
-		<section id="userManual">
-			<h1>Besoin d'aide ?</h1>
+{% block stylesheet %}
+	<link rel="stylesheet" href="./css/userManual.css">
+{% endblock %}
 
-			<button class="accordion firstAcc"><img src="./img/help_logo.png" alt="">Qu’est ce que Collect7 ?</button>
-			<div class="panel">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit ratione quae. Doloremque totam atque omnis distinctio incidunt facilis, minima deleniti praesentium autem. Nostrum esse eius inventore maxime sit exercitationem.</p>
-			</div>
+{% block title %}
+	<title>Centre d'aide</title>
+{% endblock %}
 
-			<button class="accordion"><img src="./img/help_bag.png" alt="">Comment acheter des cartes ?</button>
-			<div class="panel">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit ratione quae. Doloremque totam atque omnis distinctio incidunt facilis, minima deleniti praesentium autem. Nostrum esse eius inventore maxime sit exercitationem.</p>
-			</div>
+{% block header %}{% endblock %}
 
-			<button class="accordion"><img src="./img/help_card.png" alt="">Comment mettre en vente ses cartes ?</button>
-			<div class="panel">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit ratione quae. Doloremque totam atque omnis distinctio incidunt facilis, minima deleniti praesentium autem. Nostrum esse eius inventore maxime sit exercitationem.</p>
-			</div>
+{% block main %}
+	<section id="userManual">
+		<h1>Besoin d'aide ?</h1>
 
-			<button class="accordion"><img src="./img/help_lock.png" alt="">Vous avez perdu à vos identifiant ?</button>
-			<div class="panel">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit ratione quae. Doloremque totam atque omnis distinctio incidunt facilis, minima deleniti praesentium autem. Nostrum esse eius inventore maxime sit exercitationem.</p>
-			</div>
+		<button class="accordion firstAcc"><img src="./img/help_logo.png" alt="">Qu’est ce que Collect7 ?</button>
+		<div class="panel">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit ratione quae. Doloremque totam atque omnis distinctio incidunt facilis, minima deleniti praesentium autem. Nostrum esse eius inventore maxime sit exercitationem.</p>
+		</div>
 
-			<button class="accordion"><img src="./img/help_contact.png" alt="">Comment nous contacter ?</button>
-			<div class="panel">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit ratione quae. Doloremque totam atque omnis distinctio incidunt facilis, minima deleniti praesentium autem. Nostrum esse eius inventore maxime sit exercitationem.</p>
-			</div>
+		<button class="accordion"><img src="./img/help_bag.png" alt="">Comment acheter des cartes ?</button>
+		<div class="panel">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit ratione quae. Doloremque totam atque omnis distinctio incidunt facilis, minima deleniti praesentium autem. Nostrum esse eius inventore maxime sit exercitationem.</p>
+		</div>
 
-			<button class="accordion lastAcc"><img src="./img/help_delete.png" alt="">Comment supprimer son compte ?</button>
-			<div class="panel">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit ratione quae. Doloremque totam atque omnis distinctio incidunt facilis, minima deleniti praesentium autem. Nostrum esse eius inventore maxime sit exercitationem.</p>
-			</div>
-		</section>
+		<button class="accordion"><img src="./img/help_card.png" alt="">Comment mettre en vente ses cartes ?</button>
+		<div class="panel">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit ratione quae. Doloremque totam atque omnis distinctio incidunt facilis, minima deleniti praesentium autem. Nostrum esse eius inventore maxime sit exercitationem.</p>
+		</div>
 
-		<script src="./js/components/accordion.js"></script>
-	</body>
-</html>
+		<button class="accordion"><img src="./img/help_lock.png" alt="">Vous avez perdu à vos identifiant ?</button>
+		<div class="panel">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit ratione quae. Doloremque totam atque omnis distinctio incidunt facilis, minima deleniti praesentium autem. Nostrum esse eius inventore maxime sit exercitationem.</p>
+		</div>
+
+		<button class="accordion"><img src="./img/help_contact.png" alt="">Comment nous contacter ?</button>
+		<div class="panel">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit ratione quae. Doloremque totam atque omnis distinctio incidunt facilis, minima deleniti praesentium autem. Nostrum esse eius inventore maxime sit exercitationem.</p>
+		</div>
+
+		<button class="accordion lastAcc"><img src="./img/help_delete.png" alt="">Comment supprimer son compte ?</button>
+		<div class="panel">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit ratione quae. Doloremque totam atque omnis distinctio incidunt facilis, minima deleniti praesentium autem. Nostrum esse eius inventore maxime sit exercitationem.</p>
+		</div>
+	</section>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block script %}
+	<script src="./js/components/accordion.js"></script>
+{% endblock %}
