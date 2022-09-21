@@ -19,13 +19,21 @@
 
 	<!-- change page view -->
 	<div class="dashboard_view_users_data">
-	
-		<div class="data_collections">
-			<p>Name</p>
-			<img src="./img/collectionAdmin.png" alt="">
-			<img src="./img/edit.png" alt="">
-			<img src="./img/delete.png" alt="">
-		</div>
+
+		{% for collection in collection %}
+			<div class="data_collections">
+				<p>{{collection.nameCollection}}</p>
+				<div class="dashboard_image_collection">
+					{% if collection.img == "carouselOne.png" %}
+						<img src="./img/carouselOne.png" alt="image collection">
+					{% else %}
+						<img src="./uploads/collections/{{collection.imageCollection}}" alt="image collection">
+					{% endif %}
+				</div>
+				<a href=""><img src="./img/edit.png" alt=""></a>
+				<a href=""><img src="./img/delete.png" alt=""></a>
+			</div>
+		{% endfor %}
 
 	</div>
 </article>

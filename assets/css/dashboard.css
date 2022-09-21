@@ -72,7 +72,7 @@ header div {
 .dashboard_global_view {
   height: 94%;
   width: 74%;
-  display: none;
+ /*   display: none;      */
 }
 
 .dashboard_menu{
@@ -305,6 +305,16 @@ header div {
 
 .margin_left{
     margin-left: 95px;
+}
+
+.dashboard_image_collection{
+  width: 120px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.dashboard_image_collection img{
+  width: 100%;
 }
 
 /********************************* dashboard Others ********************/

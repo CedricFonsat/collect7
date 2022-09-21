@@ -36,7 +36,7 @@ visitorRouter.get("/", async (req, res) => {
 
 visitorRouter.get("/registration", async (req, res) => {
   try {
-    res.render("pages/registration.twig");
+    res.render("layout/registration.twig");
   } catch (error) {
     res.send(error);
   }
@@ -56,7 +56,7 @@ visitorRouter.post("/registration",upload.single('avatar'), async (req, res) => 
 
 visitorRouter.get("/connection", async (req, res) => {
   try {
-    res.render("pages/connection.twig");
+    res.render("layout/connection.twig");
   } catch (error) {
     res.send(error);
   }
