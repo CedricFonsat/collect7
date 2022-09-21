@@ -1,42 +1,31 @@
 {% block headerProfil %}
-				<article>
-					<div id="banner">
-						<img id="banner_img" src="./img/banner.png" alt="banner">
-					</div>
-					<div id="avatar">
-
-
-
-
-						{% for project in project %}
-			{% if project.img == "blank.png" %}
-				<img src="./img/blank.jpeg" alt="image projet">
-			{% else %}
-				<img src="./uploads/images/{{project.img}}" alt="image projet">
-				<img id="avatar_img" src="./uploads/images/{{userConnect.avatar}}" alt="avatar">
-			{% endif %}
-	{% endfor %}
-					</div>
-					<div id="settings">
-						<a href=""><img id="settings_img" src="./img/settings.png" alt="settings"></a>
-					</div>
-					<p id="pseudo">{{userConnect}}</p>
-					<nav>
-						<div class="div_nav" id="overView">
-							<a href="" id="txt_ov">Aperçu</a>
-							<div id="div_ov" class="style_nav"></div>
-						</div>
-						<div class="div_nav" id="collection">
-							<a href="" id="txt_collection">Collection</a>
-							<div id="div_collection" class="style_nav"></div>
-						</div>
-						<div class="div_nav" id="sell">
-							<a href="" id="txt_sell">Ventes</a>
-							<div id="div_sell" class="style_nav"></div>
-						</div>
-					</nav>
-					<div id="separation">
-						<span></span>
-					</div>
-				</article>
-			{% endblock %}
+	<article>
+		<div id="banner">
+			<img id="banner_img" src="./img/banner.png" alt="banner">
+		</div>
+		<div id="avatar">
+			<img src="./img/help_logo.png" alt="image projet">
+		</div>
+		<div id="settings">
+			<a href=""><img id="settings_img" src="./img/settings.png" alt="settings"></a>
+		</div>
+		<p id="pseudo">{{userConnect}}</p>
+		<nav>
+			<div class="div_nav" id="overView">
+				<a href="" id="txt_ov">Aperçu</a>
+				<div id="div_ov" class="style_nav"></div>
+			</div>
+			<div class="div_nav" id="collection">
+				<a href="" id="txt_collection">Collection</a>
+				<div id="div_collection" class="style_nav"></div>
+			</div>
+			<div class="div_nav" id="sell">
+				<a href="" id="txt_sell">Ventes</a>
+				<div id="div_sell" class="style_nav"></div>
+			</div>
+		</nav>
+		<div id="separation">
+			<span></span>
+		</div>
+	</article>
+{% endblock %}
