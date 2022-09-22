@@ -13,10 +13,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         required: [true, "Pas de mot de passe"]
     },
-    avatar: {
-        type:String,
-        default: "help_logo.png"
-    },
+  
 })
 
 const userModel = mongoose.model('users', userSchema)

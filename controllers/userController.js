@@ -3,7 +3,6 @@ import { cryptPassword, comparePassword } from "../dependencies/bcrypt.js";
 export class userController {
   static async setRegistration(req) {
     req.body.password = await cryptPassword(req.body.password);
-    req.body.avatar = req.file.filename;
     let user = new userModel(req.body);
     await user.save();
     req.session.user = user._id;
