@@ -27,30 +27,31 @@
 	</div>
 	<section>
 		{% for collection in collection %}
-			<article class="collectAll">
-			<div class="divImg">
-			<img src="../uploads/collections/{{collection.imageCollection}}" alt="">
-			</div>
-				<div class="divDescription">
-					<h2>{{collection.nameCollection}}</h2>
-					<p>{{collection.descriptionCollection}}</p>
-					<a href="/shopCards">
-					<button>voir collection</button>
-				</a>
-				</div>
-				
+			<a href="/shopCards">
+				<article class="collectAll">
+					<div class="divImg">
+						<img src="../uploads/collections/{{collection.imageCollection}}" alt="">
+					</div>
+					<div class="divDescription">
+						<h2>{{collection.nameCollection}}</h2>
+						<p>{{collection.descriptionCollection}}</p>
+
+						<button>voir collection</button>
+
+					</div>
 
 
-			</article>
+				</article>
+			</a>
 		{% endfor %}
 		<article class="collectAll">
 			<div id='collectOne'>
 				<h2>One Piece</h2>
 				<p class='description'>"Fortune ,gloire et pouvoir !Cet homme avait 
-																										      amasse toutes les richesses du monde !!Son nom Gold Roger Roi des 
-																										      pirates !!Ses dernieres paroles incitèrent les hommes des toute la
-																										      planète a s' aventurer en mer : Mon tresor je le laisse si vous 
-																										      voulez ,TROUVEZ LE ,je l ai laissé quelque part dans ce monde !!</p>
+																															      amasse toutes les richesses du monde !!Son nom Gold Roger Roi des 
+																															      pirates !!Ses dernieres paroles incitèrent les hommes des toute la
+																															      planète a s' aventurer en mer : Mon tresor je le laisse si vous 
+																															      voulez ,TROUVEZ LE ,je l ai laissé quelque part dans ce monde !!</p>
 				<a href="/shopCards">
 					<button>voir collection</button>
 				</a>
@@ -61,10 +62,10 @@
 				<h2>Naruto</h2>
 				<p class='/shopCards'></p>
 				<p class="description">"Aucune chose n’est parfaite par elle-même.
-																				           C’est pourquoi nous sommes nés pour attirer d’autres choses pour
-																				            compenser ce qui nous manque. Je pense que nous commençons à 
-																				            marcher dans la bonne direction seulement après que nous avons 
-																				            commencé à obtenir nos homologues à côté de nous." - Itachi Uchiha</p>
+																									           C’est pourquoi nous sommes nés pour attirer d’autres choses pour
+																									            compenser ce qui nous manque. Je pense que nous commençons à 
+																									            marcher dans la bonne direction seulement après que nous avons 
+																									            commencé à obtenir nos homologues à côté de nous." - Itachi Uchiha</p>
 				<a href="/connection">
 					<button>voir collection</button>
 				</a>
@@ -74,9 +75,9 @@
 			<div id='collectThree'>
 				<h2>Demon Slayer</h2>
 				<p class='description'>« Peu importe le nombre de personnes 
-																				          que vous pouvez perdre. Vous n’avez pas d’autre choix que de
-																				           continuer à vivre. Peu importe à quel point les coups sont 
-																				           écrasants.” – Tanjiro Kamado</p>
+																									          que vous pouvez perdre. Vous n’avez pas d’autre choix que de
+																									           continuer à vivre. Peu importe à quel point les coups sont 
+																									           écrasants.” – Tanjiro Kamado</p>
 				<a href="/shopCards">
 					<button>voir collection</button>
 				</a>
