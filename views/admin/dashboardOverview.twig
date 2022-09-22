@@ -1,0 +1,44 @@
+{% extends "../base.twig" %}
+
+{% block stylesheet %}{% endblock %}
+
+{% block title %}
+<title>Dashboard Overview</title>
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block main %}
+<section id="dashboard_overview">
+<form action="/dashboardOverview" method="post" enctype="multipart/form-data">
+    <div>
+    <label for="titleOverview">Titre</label>
+    <input type="text" name="titleOverview" placeholder="entrer votre titre">
+    </div>
+
+        <div>
+    <label for="descriptionOverview">Description</label>
+    <textarea name="descriptionOverview" id="" cols="30" rows="10"></textarea>
+    </div>
+
+    <div class="backgroundImageOverview">
+    <label for="backgroundImageOverview">background ImageOverview</label>
+    <input type="file" name="backgroundImageOverview">
+    </div>
+
+        <div class="imageOverview">
+        <label for="imageOverview">image Overview</label>
+    <input type="file" name="imageOverview">
+    </div>
+
+    <div>
+    <button type="submit">Envoyer</button>
+    </div>
+</form>
+</section>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block script %}{% endblock %}
+

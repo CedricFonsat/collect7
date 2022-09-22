@@ -2,6 +2,7 @@ import { Router } from "express";
 import multer from "multer";
 import collectionController from "../controllers/collectionController.js";
 import collectionModel from "../models/collectionModel.js";
+import overviewController from "../controllers/overviewController.js";
 
 const adminRouter = Router();
 
@@ -20,6 +21,24 @@ const upload = multer({
   },
 });
 
+
+/***hjcddjdddd */
+
+const storaget = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./assets/uploads/overviews/background");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + file.originalname);
+  },
+});
+ 
+const uploadt = multer({ storage: storaget });
+ 
+const uploadMultiple = uploadt.fields([{ name: 'backgroundImageOverview', maxCount: 10 }, { name: 'imageOverview', maxCount: 10 }])
+ 
+/********** */
+
 adminRouter.get("/dashboardHome", async (req, res) => {
   try {
     let collection = await collectionModel.find(req.body);
@@ -31,7 +50,7 @@ adminRouter.get("/dashboardHome", async (req, res) => {
   }
 });
 
-adminRouter.post("/dashboardHome",upload.single("imageCollection"), async (req, res) => {
+adminRouter.post("/dashboardHome",   async (req, res) => {
     try {
       await collectionController.setAddCollection(req, res);
       res.redirect("/dashboardHome");
@@ -40,6 +59,29 @@ adminRouter.post("/dashboardHome",upload.single("imageCollection"), async (req, 
       res.send(error);
     }
   }
+);
+
+
+//-----------------------------
+
+adminRouter.get("/dashboardOverview", async (req, res) => {
+  try {
+    res.render("admin/dashboardOverview.twig")
+  } catch (error) {
+    res.send(error);
+  }
+}
+);
+
+adminRouter.post("/dashboardOverview", uploadMultiple, async (req, res) => {
+  try {
+    await overviewController.setAddOverview(req);
+    res.redirect("/dashboardOverview");
+    console.log("cvsjhcvqksvqqflsdljajadyueuyufzeuyj");
+  } catch (error) {
+    res.send(error);
+  }
+}
 );
 
 //----------------------------------------------
