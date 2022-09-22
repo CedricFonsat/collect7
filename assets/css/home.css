@@ -9,13 +9,21 @@ body {
     background-color: #2a2a2a;
     color: white;
     font-family: 'ubuntu';
+    height: 1500px;
 }
 
 
 
 /* TOP CONTAINER */
 
-header {
+#top_container {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 30px 0 30px;
+}
+
+#btn_container {
+    top: 0;
     margin-right: 20px;
     margin-top: 40px;
     margin-bottom: 50px;
@@ -29,8 +37,8 @@ header {
     border: none;
     color: #2a2a2a;
     border-radius: 100px;
-    width: 90px;
-    height: 40px;
+    width: 95px;
+    height: 41px;
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
@@ -42,7 +50,7 @@ header {
     border: none;
     color: #2a2a2a;
     border-radius: 100px;
-    width: 120px;
+    width: 131.86px;
     height: 40px;
     font-weight: 700;
     font-size: 16px;
@@ -54,21 +62,24 @@ header {
 /* MIDDLE CONTAINER */
 
 #h1_home {
+    width: 378px;
     height: 80px;
-    margin-bottom: 10px;
-    margin-left: 20px;
     font-weight: 700;
     font-size: 48px;
     line-height: 30px;
+    color: #FFFFFF;
+    margin: 40px 0 0 20px;
 }
 
 #h2_home {
+    width: 378px;
     height: 80px;
-    margin-left: 20px;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 30px;
+    margin: 30px 0 30px 20px;
 }
+
 
 /* BOTTOM CONTAINER */
 
@@ -79,9 +90,11 @@ header {
     justify-content: center;
     position: absolute;
     bottom: 0;
+    height: 408px;
+    width: 428;
 }
 
-#cards {
+.cards {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,31 +103,56 @@ header {
     background-image: url('../img/home.gif');
 }
 
-#img_home {
-    width: 368.29px;
-    height: 197.7px;
+.img_home {
+    width: 428px;
+    height: 224px;
+    position: absolute;
+}
+
+#first {
+    width: 428px;
+    height: 224px;
+    background: rgba(160, 43, 43, 0.65);
 }
 
 #collect {
     width: 428px;
     height: 175px;
-    background: #3F3F3F;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-#h3_home {
+.h3_article {
     height: 40px;
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
     text-align: center;
+    margin: 10px 0 0 0;
 }
 
-#p_firstActu {
+.p_article {
     height: 45px;
     font-weight: 500;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 16px;
     text-align: center;
+    margin: 0;
+}
+
+#start {
+    background: #FFFFFF;
+    border-radius: 101px;
+    width: 117px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    height: 40px;
+    color: #2A2A2A;
+    border: none;
+    margin-bottom: 30px;
 }
 
 /* MODALES */

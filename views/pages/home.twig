@@ -10,24 +10,48 @@
 	<title>Accueil</title>
 {% endblock %}
 
-{% block header %}
-	<header>
-		<button id='btn_register'>S'inscrire</button>
-		<button id='btn_connection'>Se connecter</button>
-	</header>
-{% endblock %}
+{% block header %}{% endblock %}
 
 {% block main %}
 	<section>
-		<h1 id="h1_home">Collect7</h1>
-		<h2 id="h2_home">Collectionne, achète, et revends<br>des cartes numériques.</h2>
-		<article id="intro">
-			<div id='cards'><img id="img_home" src="./img/cards.png" alt=""></div>
-			<div id='collect'>
-				<h3 id="h3_home">Collectionne</h3>
-				<p id="p_firstActu">commence ta collection avec la première édition qui regroupe 58 cartes One piece !</p>
+		<article>
+			<div id="top_container">
+				<img src="./img/logo.png" alt="logo">
+				<div>
+					<button id='btn_register'>S'inscrire</button>
+					<button id='btn_connection'>Se connecter</button>
+				</div>
 			</div>
 		</article>
+		<h1 id="h1_home">Titre</h1>
+		<h2 id="h2_home">Collectionne, achète, et revends des cartes numériques d’animés.</h2>
+
+		<article>
+			<div class="main_container">
+				<div class="top_container">
+					<img class="first_img" src="./img/article.jp" alt="first_img">
+					<div class="second_container">
+						<h4 class="h4_timer">71:59:23</h4>
+						<p class="p_subTimer">Bientôt disponible</p>
+						<img class="second_img" src="" alt="second_img">
+					</div>
+				</div>
+				<div class="bottom_container">
+					<h3 class="h3_article">Nouvelle collection</h3>
+					<p class="p_article">Overlord arrive sur Collect7 préparez vous à servir le Grand Tombeau de Nazarick.</p>
+				</div>
+			</div>
+		</article>
+
+		{# <article id="intro">
+																	<div class='cards'><img class="img_home" src="./img/cards.png" alt=""></div>
+																	<div id='collect'>
+																		<h3 id="h3_home">Collectionne</h3>
+																		<p id="p_firstActu">commence ta collection avec la première édition qui<br>regroupe 58 cartes One piece !</p>
+																		<button id="start">Commencer</button>
+																	</div>
+																</article> #}
+
 	</section>
 	{% block register_modal %}
 		{% include "../layout/registration.twig" %}
