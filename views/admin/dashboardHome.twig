@@ -18,36 +18,36 @@
 {% endblock %}
 
 {% block main %}
-	<section class="dashboard_home">
-		<aside class="dashboard_menu">
-			<nav class="dashboard_navigation">
-				<div>
-					<img src="./img/bx_home.png" alt="" srcset="">
-					<a href="">Accueil</a>
-				</div>
-				<div>
-					<img src="./img/bx_user.png" alt="" srcset="">
-					<a href="">Utilisateur</a>
-				</div>
-				<div>
-					<img src="./img/bx_data.png" alt="" srcset="">
-					<a href="/dashboardCollections">Collection</a>
-				</div>
-				<div>
-					<img src="./img/bx_three-dots.png" alt="" srcset="">
-					<a href="">Autre</a>
-				</div>
-			</nav>
-			<span class="logout_dashboard">
-				<img src="./img/logout.png" alt="" srcset="">
-				<a href="">Deconnexion</a>
-			</span>
-		</aside>
-		<!-- dashboard_global_view -->
-		<!-- change page view -->
-		{# {% block users_admin %}
-			{% include "admin/layer/dashboardCollections.twig" %}
-		{% endblock %} #}
+<section class="dashboard_home">
+	<aside class="dashboard_menu">
+		<nav class="dashboard_navigation">
+			<div>
+				<img src="./img/bx_home.png" alt="" srcset="">
+				<a href="">Accueil</a>
+			</div>
+			<div>
+				<img src="./img/bx_user.png" alt="" srcset="">
+				<a href="">Utilisateur</a>
+			</div>
+			<div>
+				<img src="./img/bx_data.png" alt="" srcset="">
+				<a href="/dashboardCollections">Collection</a>
+			</div>
+			<div>
+				<img src="./img/bx_three-dots.png" alt="" srcset="">
+				<a href="">Autre</a>
+			</div>
+		</nav>
+		<span class="logout_dashboard">
+			<img src="./img/logout.png" alt="" srcset="">
+			<a href="">Deconnexion</a>
+		</span>
+	</aside>
+	<!-- dashboard_global_view -->
+	<!-- change page view -->
+	 {% block users_admin %}
+			{% include "admin/layer/dashboardCollectionAdd.twig" %}
+		{% endblock %} 
 		<article class="dashboard_global_view">
 			<div class="dashboard_users_home">
 				<div></div>
@@ -57,46 +57,12 @@
 							<th>Nom d'utilisateur</th>
 							<th>Email</th>
 						</tr>
-						<tr>
-							<td>Jack C'est L'heure</td>
-							<td>tesVire@lulu.berlu</td>
-						</tr>
-						<tr>
-							<td>Jack C'est L'heure</td>
-							<td>tesVire@lulu.berlu</td>
-						</tr>
-						<tr>
-							<td>Jack C'est L'heure</td>
-							<td>tesVire@lulu.berlu</td>
-						</tr>
-						<tr>
-							<td>Jack C'est L'heure</td>
-							<td>tesVire@lulu.berlu</td>
-						</tr>
-						<tr>
-							<td>Jack C'est L'heure</td>
-							<td>tesVire@lulu.berlu</td>
-						</tr>
-						<tr>
-							<td>Jack C'est L'heure</td>
-							<td>tesVire@lulu.berlu</td>
-						</tr>
-						<tr>
-							<td>Jack C'est L'heure</td>
-							<td>tesVire@lulu.berlu</td>
-						</tr>
-						<tr>
-							<td>Jack C'est L'heure</td>
-							<td>tesVire@lulu.berlu</td>
-						</tr>
-						<tr>
-							<td>Jack C'est L'heure</td>
-							<td>tesVire@lulu.berlu</td>
-						</tr>
-						<tr>
-							<td>Jack C'est L'heure</td>
-							<td>tesVire@lulu.berlu</td>
-						</tr>
+						{% for users in users %}
+							<tr>
+								<td>{{users.userName}}</td>
+								<td>{{users.mail}}</td>
+							</tr>
+						{% endfor %}
 					</table>
 				</div>
 			</div>

@@ -638,6 +638,13 @@ header div {
   text-decoration: none;
 }
 
+/******************************** dashboard Overview ********************/
+
+.dashboard_overview{
+  height: 94%;
+  width: 74%;
+ /*   display: none;      */
+}
 
 
 

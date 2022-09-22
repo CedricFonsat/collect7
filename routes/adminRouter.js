@@ -2,6 +2,7 @@ import { Router } from "express";
 import multer from "multer";
 import collectionController from "../controllers/collectionController.js";
 import collectionModel from "../models/collectionModel.js";
+import userModel from "../models/userModel.js"
 import overviewController from "../controllers/overviewController.js";
 
 const adminRouter = Router();
@@ -42,15 +43,18 @@ const uploadMultiple = uploadt.fields([{ name: 'backgroundImageOverview', maxCou
 adminRouter.get("/dashboardHome", async (req, res) => {
   try {
     let collection = await collectionModel.find(req.body);
+    let users = await userModel.find(req.body);
     res.render("admin/dashboardHome.twig", {
       collection: collection,
+      users: users,
     });
   } catch (error) {
     res.send(error);
   }
 });
 
-adminRouter.post("/dashboardHome",   async (req, res) => {
+adminRouter.post("/dashboardHome", upload.single('imageCollection')
+,async (req, res) => {
     try {
       await collectionController.setAddCollection(req, res);
       res.redirect("/dashboardHome");
@@ -66,7 +70,7 @@ adminRouter.post("/dashboardHome",   async (req, res) => {
 
 adminRouter.get("/dashboardOverview", async (req, res) => {
   try {
-    res.render("admin/dashboardOverview.twig")
+    res.render("admin/layer/dashboardOverview.twig")
   } catch (error) {
     res.send(error);
   }
