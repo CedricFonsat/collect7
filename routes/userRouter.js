@@ -1,6 +1,6 @@
 import { Router } from "express";
 import userModel from "../models/userModel.js";
-
+import collectionModel from "../models/collectionModel.js";
 
 const userRouter = Router();
 
@@ -18,7 +18,10 @@ userRouter.get("/changePassword", async (req, res) => {
   
   userRouter.get("/shopCollections", async (req, res) => {
     try {
-  res.render("pages/shopCollections.twig")
+      let collection = await collectionModel.find(req.body);
+  res.render("pages/shopCollections.twig", {
+    collection: collection,
+  });
     } catch (error) {
       res.send(error);
     }
@@ -28,6 +31,7 @@ userRouter.get("/changePassword", async (req, res) => {
   
   userRouter.get("/shopCards", async (req, res) => {
     try {
+    
   res.render("pages/shopCards.twig")
     } catch (error) {
       res.send(error);
