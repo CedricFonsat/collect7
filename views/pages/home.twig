@@ -23,17 +23,17 @@
 				</div>
 			</div>
 		</article>
-		<h1 id="h1_home">Titre</h1>
-		<h2 id="h2_home">Collectionne, achète, et revends des cartes numériques d’animés.</h2>
-
+		<article>
+			<h1 id="h1_home">Collect7</h1>
+			<h2 id="h2_home">Collectionne, achète, et revends des cartes numériques d’animés.</h2>
+		</article>
 		<article>
 			<div class="main_container">
 				<div class="top_container">
-					<img class="first_img" src="./img/article.jp" alt="first_img">
+					<img class="first_img" src="./img/article.jpg" alt="first_img">
 					<div class="second_container">
 						<h4 class="h4_timer">71:59:23</h4>
 						<p class="p_subTimer">Bientôt disponible</p>
-						<img class="second_img" src="" alt="second_img">
 					</div>
 				</div>
 				<div class="bottom_container">
@@ -42,16 +42,26 @@
 				</div>
 			</div>
 		</article>
-
-		{# <article id="intro">
-																	<div class='cards'><img class="img_home" src="./img/cards.png" alt=""></div>
-																	<div id='collect'>
-																		<h3 id="h3_home">Collectionne</h3>
-																		<p id="p_firstActu">commence ta collection avec la première édition qui<br>regroupe 58 cartes One piece !</p>
-																		<button id="start">Commencer</button>
-																	</div>
-																</article> #}
-
+		<div class="separation">
+			<span></span>
+		</div>
+		<article>
+			<div class="main_container">
+				<div class="top_container">
+					<img class="first_img" src="./img/home.gif" alt="first_img">
+					<div class="second_container">
+						<img class="second_img" src="./img/cards.png" alt="second_img">
+					</div>
+				</div>
+				<div class="bottom_container">
+					<h3 class="h3_article">Collectionne</h3>
+					<p class="p_article">Commence ta collection avec la première édition qui regroupe 58 cartes One piece.</p>
+				</div>
+				<div class="button_container">
+					<button id="start">Commencer</button>
+				</div>
+			</div>
+		</article>
 	</section>
 	{% block register_modal %}
 		{% include "../layout/registration.twig" %}

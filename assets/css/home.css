@@ -9,7 +9,6 @@ body {
     background-color: #2a2a2a;
     color: white;
     font-family: 'ubuntu';
-    height: 1500px;
 }
 
 
@@ -83,67 +82,116 @@ body {
 
 /* BOTTOM CONTAINER */
 
-#intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    height: 408px;
-    width: 428;
+.main_container {
+    width: 428px;
+    height: 340px;
 }
 
-.cards {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 430px;
-    height: 220px;
-    background-image: url('../img/home.gif');
+.top_container {
+    width: 428px;
+    height: 224px;
+    position: relative;
 }
 
-.img_home {
+.first_img {
+    width: 428px;
+    height: 224px;
+}
+
+.second_container {
     width: 428px;
     height: 224px;
     position: absolute;
-}
-
-#first {
-    width: 428px;
-    height: 224px;
-    background: rgba(160, 43, 43, 0.65);
-}
-
-#collect {
-    width: 428px;
-    height: 175px;
+    top: 0;
+    left: 0;
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: rgba(42, 42, 42, 0.65);
 }
 
-.h3_article {
+.h4_timer {
+    margin: 0;
+    width: 207px;
     height: 40px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p_subTimer {
+    margin: 0;
+    width: 188px;
+    height: 30px;
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second_img {
+    width: 368.29px;
+    height: 197.7px;
+}
+
+.bottom_container {
+    width: 428px;
+    height: 116px;
+}
+
+.h3_article {
+    width: 100%;
+    height: 40px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
     margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .p_article {
+    width: 100%;
     height: 45px;
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
+}
+
+.separation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+}
+
+.separation span {
+    margin-top: 15px;
+    width: 344.69px;
+    height: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
 }
 
 #start {
     background: #FFFFFF;
-    border-radius: 101px;
+    border-radius: 100px;
     width: 117px;
     height: 40px;
     font-weight: 700;
@@ -154,6 +202,7 @@ body {
     border: none;
     margin-bottom: 30px;
 }
+
 
 /* MODALES */
 
