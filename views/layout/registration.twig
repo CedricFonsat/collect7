@@ -1,5 +1,5 @@
 {% block registrationModal %}
-	<div id="registration" class="modal_register modal">
+	<div id="register_modal" class="modal_register">
 		<div class="modal-content">
 			<div id="error_position">
 				<div id="error_container">
@@ -16,7 +16,7 @@
 				<H1>S'inscrire</H1>
 				<button id="register_close"><img id="close_img" src="./img/cross.png" alt="close"></button>
 				<p id="introduction">Rejoignez des milliers d’utilisateurs !</p>
-				<form action="/registration" method="post" enctype="">
+				<form action="/registration" method="post" enctype="multipart/form-data">
 					<div class="input_form">
 						<img src="./img/user.png" alt="user">
 						<input type="text" placeholder="Nom d’utilisateur" name="userName">
