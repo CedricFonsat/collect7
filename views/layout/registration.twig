@@ -1,6 +1,17 @@
 {% block registrationModal %}
-	<div id="register_modal" class="modal_register">
+	<div id="registration" class="modal_register modal">
 		<div class="modal-content">
+			<div id="error_position">
+				<div id="error_container">
+					<div id="error_left_container">
+						<img src="./img/error_logo.png" alt="error">
+					</div>
+					<div id="error_right_container">
+						<p id="p_error">Erreur</p>
+						<p id="p_error_description">Vous n’avez pas rempli le formulaire correctement</p>
+					</div>
+				</div>
+			</div>
 			<div id="modal_register">
 				<H1>S'inscrire</H1>
 				<button id="register_close"><img id="close_img" src="./img/cross.png" alt="close"></button>
