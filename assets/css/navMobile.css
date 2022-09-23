@@ -16,6 +16,16 @@
     padding-right: 30px;
     margin-bottom: 30px;
 }
-button{
-    background: none;
+#home{
+width: 31px;
+height: 30px;
+}
+#profil{
+width: 74px;
+
+}
+#wallet{
+
+    width: 29px;
+    height: 32px;
 }
