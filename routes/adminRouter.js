@@ -80,7 +80,7 @@ adminRouter.get("/dashboardOverview", async (req, res) => {
 adminRouter.post("/dashboardOverview", uploadMultiple, async (req, res) => {
   try {
     await overviewController.setAddOverview(req);
-    res.redirect("/dashboardOverview");
+    res.redirect("dashboardOverview");
     console.log("cvsjhcvqksvqqflsdljajadyueuyufzeuyj");
   } catch (error) {
     res.send(error);
@@ -92,7 +92,10 @@ adminRouter.post("/dashboardOverview", uploadMultiple, async (req, res) => {
 
 adminRouter.get("/dashboardUsers", async (req, res) => {
   try {
-    res.render("admin/dashboardUsers.twig");
+    let users = await userModel.find(req.body);
+    res.render("admin/layer/dashboardUsers.twig",{
+      users: users,
+    });
   } catch (error) {
     res.send(error);
   }
@@ -100,7 +103,10 @@ adminRouter.get("/dashboardUsers", async (req, res) => {
 
 adminRouter.get("/dashboardCollections", async (req, res) => {
   try {
-    res.render("admin/dashboardCollections.twig")
+    let collections = await collectionModel.find(req.body);
+    res.render("admin/layer/dashboardCollections.twig",{
+      collections: collections
+    })
   } catch (error) {
     res.send(error);
   }
@@ -108,7 +114,7 @@ adminRouter.get("/dashboardCollections", async (req, res) => {
 
 adminRouter.get("/dashboardOthers", async (req, res) => {
   try {
-    res.render("admin/dashboardOthers.twig");
+    res.render("admin/layer/dashboardOthers.twig");
   } catch (error) {
     res.send(error);
   }
@@ -116,7 +122,7 @@ adminRouter.get("/dashboardOthers", async (req, res) => {
 
 adminRouter.get("/dashboardUserAdd", async (req, res) => {
   try {
-    res.render("admin/dashboardUserAdd.twig");
+    res.render("admin/layer/dashboardUserAdd.twig");
   } catch (error) {
     res.send(error);
   }
@@ -124,7 +130,7 @@ adminRouter.get("/dashboardUserAdd", async (req, res) => {
 
 adminRouter.get("/dashboardCardAdd", async (req, res) => {
   try {
-    res.render("admin/dashboardCardAdd.twig");
+    res.render("admin/layer/dashboardCardAdd.twig");
   } catch (error) {
     res.send(error);
   }
