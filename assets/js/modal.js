@@ -1,3 +1,8 @@
+
+  
+
+
+
 // Registration
 
 document.querySelector("#btn_register").addEventListener('click', function () {

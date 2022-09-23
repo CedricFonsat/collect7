@@ -42,7 +42,7 @@ visitorRouter.get("/registration", async (req, res) => {
   }
 });
 
-visitorRouter.post("/registration",upload.single('avatar'), async (req, res) => {
+visitorRouter.post("/registration", async (req, res) => {
   try {
     await userController.setRegistration(req,res)
     res.redirect("/connection")

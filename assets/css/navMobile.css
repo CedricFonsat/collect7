@@ -1,0 +1,21 @@
+#containerNav{
+    display: flex;
+    justify-content: center;
+}
+#nav{
+    position: fixed;
+   bottom: 0;
+    width: 221px;
+    height: 64px;
+    background: #232323;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 30px;
+}
+button{
+    background: none;
+}

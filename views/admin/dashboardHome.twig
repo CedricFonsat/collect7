@@ -23,11 +23,11 @@
 		<nav class="dashboard_navigation">
 			<div>
 				<img src="./img/bx_home.png" alt="" srcset="">
-				<a href="">Accueil</a>
+				<a href="/dashboardHome">Accueil</a>
 			</div>
 			<div>
 				<img src="./img/bx_user.png" alt="" srcset="">
-				<a href="">Utilisateur</a>
+				<a href="/dashboardUsers">Utilisateur</a>
 			</div>
 			<div>
 				<img src="./img/bx_data.png" alt="" srcset="">
@@ -35,7 +35,7 @@
 			</div>
 			<div>
 				<img src="./img/bx_three-dots.png" alt="" srcset="">
-				<a href="">Autre</a>
+				<a href="/dashboardOverview">Autre</a>
 			</div>
 		</nav>
 		<span class="logout_dashboard">
@@ -45,9 +45,6 @@
 	</aside>
 	<!-- dashboard_global_view -->
 	<!-- change page view -->
-	 {% block users_admin %}
-			{% include "admin/layer/dashboardCollectionAdd.twig" %}
-		{% endblock %} 
 		<article class="dashboard_global_view">
 			<div class="dashboard_users_home">
 				<div></div>
