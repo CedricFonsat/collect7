@@ -4,6 +4,7 @@ import collectionController from "../controllers/collectionController.js";
 import collectionModel from "../models/collectionModel.js";
 import userModel from "../models/userModel.js"
 import overviewController from "../controllers/overviewController.js";
+import cardController from "../controllers/cardController.js"
 
 const adminRouter = Router();
 
@@ -17,6 +18,21 @@ const storage = multer.diskStorage({
 });
 const upload = multer({
   storage: storage,
+  limits: {
+    fieldSize: 1024 * 1024 * 3,
+  },
+});
+
+const storageCard = multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, "./assets/uploads/cards");
+  },
+  filename: function (req, file, callback) {
+    callback(null, Date.now() + file.originalname);
+  },
+});
+const uploadCard = multer({
+  storage: storageCard,
   limits: {
     fieldSize: 1024 * 1024 * 3,
   },
@@ -40,18 +56,27 @@ const uploadMultiple = uploadt.fields([{ name: 'backgroundImageOverview', maxCou
  
 /********** */
 
+
+
 adminRouter.get("/dashboardHome", async (req, res) => {
   try {
     let collection = await collectionModel.find(req.body);
     let users = await userModel.find(req.body);
+    let usersCount = await userModel.find(req.body).count();
+    let collectionCount = await collectionModel.find(req.body).count();
     res.render("admin/dashboardHome.twig", {
       collection: collection,
       users: users,
+      usersCount: usersCount,
+      collectionCount: collectionCount,
+
     });
   } catch (error) {
     res.send(error);
   }
 });
+
+
 
 adminRouter.post("/dashboardHome", upload.single('imageCollection')
 ,async (req, res) => {
@@ -64,6 +89,16 @@ adminRouter.post("/dashboardHome", upload.single('imageCollection')
     }
   }
 );
+
+adminRouter.get("/dashboardCollectionAdd", async (req, res) => {
+  try {
+    res.render("admin/layer/dashboardCollectionAdd.twig")
+  } catch (error) {
+    res.send(error);
+  }
+}
+);
+
 
 
 //-----------------------------
@@ -128,9 +163,21 @@ adminRouter.get("/dashboardUserAdd", async (req, res) => {
   }
 });
 
+
+
 adminRouter.get("/dashboardCardAdd", async (req, res) => {
   try {
     res.render("admin/layer/dashboardCardAdd.twig");
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+adminRouter.post("/dashboardCardAdd",uploadCard.single('imageCard'), async (req, res) => {
+  try {
+    await cardController.setAddCard(req, res);
+    res.redirect("/dashboardHome");
+    console.log("card successful");
   } catch (error) {
     res.send(error);
   }

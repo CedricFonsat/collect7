@@ -1,7 +1,7 @@
 {% extends "../base.twig" %}
 
 {% block stylesheet %}
-	<link rel="stylesheet" href="./css/dashboard.css">
+	<link rel="stylesheet" href="./css/dashboardHome.css">
 {% endblock %}
 
 {% block title %}
@@ -47,7 +47,10 @@
 	<!-- change page view -->
 		<article class="dashboard_global_view">
 			<div class="dashboard_users_home">
-				<div></div>
+				<div class="chart_dashboard">
+				<p>Statistique Global</p>
+				<canvas id="myChart"></canvas>
+				</div>
 				<div>
 					<table id="tab_customers">
 						<tr>
@@ -63,11 +66,20 @@
 					</table>
 				</div>
 			</div>
-			<div class="dashboard_cards_home"></div>
+			<div class="dashboard_cards_home">
+			<p>kgdcvfdlvsvfdymsvseyudvvyduyfdyujdbdvjvdd</p>
+			<h1>{{collectionCount}}</h1>
+			<h2>{{usersCount}}</h2>
+			</div>
 		</article>
 	</section>
 {% endblock %}
 
 {% block footer %}{% endblock %}
 
-{% block script %}{% endblock %}
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./js/chart.js"></script>
+
+
+{% endblock %}

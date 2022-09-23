@@ -27,26 +27,34 @@
 			<p>Carte</p>
 		</div>
 
-		<form action="">
+		<form action="/dashboardCardAdd" method="post" enctype="multipart/form-data">
 			<div class="margin_bottom_collection">
 				<label for="">Nom de la carte</label>
-				<input type="text">
+				<input type="text" name="nameCard" placeholder="name">
 			</div>
 			<div class="margin_bottom_collection">
 				<div>
 					<label for="">Image
 					</label>
-					<div class="card_add_input_file"><input type="file"></div>
+					<div class="card_add_input_file">
+					<input type="file" name="imageCard">
+					</div>
+				</div>
+								<div>
+								<select name="categoryCard" >
+								<option value="muzan">Muzan</option>
+								<option value="kim">Kim ou sushi</option>
+								</select>
 				</div>
 				<div>
 					<label for="">Prix
 					</label>
-					<input type="text">
+					<input type="text" name="priceCard">
 				</div>
 			</div>
 			<div class="margin_bottom_collection card_add_button">
 				<div>
-					<button>Ajouter</button>
+					<button type="submit">Ajouter</button>
 				</div>
 				<div>
 					<a href="">Annuler</a>

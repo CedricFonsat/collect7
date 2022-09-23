@@ -18,6 +18,7 @@
   --background: #2a2a2a;
 }
 
+
 body {
   background-color: var(--background);
   display: flex;
@@ -69,21 +70,6 @@ header div {
   height: 80%;
 }
 
-.dashboard_global_view {
-  height: 94%;
-  width: 74%;
-}
-
-.dashboard_menu{
-  height: 94%;
-  width: 24%;
-  background-color: var(--backgroundSection);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-bottom-left-radius: 20px;
-}
-
 .dashboard_users_home {
   width: 100%;
   height: 50%;
@@ -129,11 +115,6 @@ header div {
   cursor: pointer;
 }
 
-.dashboard_navigation div:nth-child(1) {
-  border-left: 4px solid var(--yellow);
-  background-color: #ffce1f2f;
-}
-
 .dashboard_navigation div a {
   margin: 0px 10px;
   color: var(--yellow);
@@ -170,135 +151,38 @@ header div {
     margin-left: 10px;
 }
 
-#tab_customers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+.dashboard_global_view {
+  height: 94%;
+  width: 74%;
 }
 
-#tab_customers td,
-#tab_customers th {
-  padding: 8px;
-}
-
-#tab_customers tr {
-  background-color: #f2f2f2;
-}
-
-#tab_customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: var(--yellow);
-  color: var(--textColorBlack);
-}
-
-/********************************* dashboard User ********************/
-
-.dashboard_view_users{
-    height: 94%;
-    width: 74%;
-    background-color: var(--backgroundSection);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.dashboard_view_users_header{
-    height: 15%;
-    width: 98%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.dashboard_view_users_header img{
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.dashboard_view_users_search{
-    width: 250px;
-    height: 50px;
-    background-color: var(--inputColor);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--textColor);
-}
-
-.dashboard_view_users_search input{
-    height: 90%;
-    width: 80%;
-    background: transparent;
-    outline: none;
-    border: none;
-    color: var(--textColor);
-}
-
-.dashboard_view_users_search input::placeholder{
-    color: var(--textColor);
-    font-size: 16px;
-}
-
-.dashboard_view_users_title{
-    height: 15%;
-    width: 98%;
-    background-color: var(--inputColor);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: var(--textColor);
-}
-
-.dashboard_view_users_title div{
-  width: 20%;
-  height: 100%;
+.dashboard_menu{
+  height: 94%;
+  width: 24%;
+  background-color: var(--backgroundSection);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom-left-radius: 20px;
 }
 
-.dashboard_view_users_data{
-    height: 70%;
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-    overflow: scroll;
-    color: var(--textColor);
-}
 
-.dashboard_view_users_header{
-  height: 50px;
-  margin: 20px 0px;
-}
 
-.data_users{
-    width: 98%;
-    height: 80px;
-    background-color: var(--inputColor);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
-    padding: 20px 0px;
-}
 
-.data_users img{
-    width: 27px;
-    height: 32px;
-    cursor: pointer;
-}
 
-.data_users div{
-  width: 30%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /********************************** dashboard Collections ********************/
 
