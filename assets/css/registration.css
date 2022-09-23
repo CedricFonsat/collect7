@@ -79,7 +79,7 @@
     justify-content: center;
     position: absolute;
     top: 20px;
-    left: 355px;
+    left: 327px;
     cursor: pointer;
 }
 
@@ -106,7 +106,7 @@
 
 #modal_register {
     background-color: #2A2A2A;
-    width: 408px;
+    width: 380px;
     height: 504px;
     border-radius: 25px;
     position: relative;

@@ -1,11 +1,20 @@
 
-  
+
 
 
 
 // Registration
 
+document.querySelector("#create_registration").addEventListener('click', function () {
+    document.querySelector("#connection_modal").style.display = "none"
+    document.querySelector("#register_modal").style.display = "block"
+})
+
 document.querySelector("#btn_register").addEventListener('click', function () {
+    document.querySelector("#register_modal").style.display = "block"
+})
+
+document.querySelector("#start").addEventListener('click', function () {
     document.querySelector("#register_modal").style.display = "block"
 })
 
@@ -21,6 +30,11 @@ document.onclick = function (event) {
 
 
 // Connection
+
+document.querySelector("#connection_redirect").addEventListener('click', function () {
+    document.querySelector("#register_modal").style.display = "none"
+    document.querySelector("#connection_modal").style.display = "block"
+})
 
 document.querySelector("#btn_connection").addEventListener('click', function () {
     document.querySelector("#connection_modal").style.display = "block"
