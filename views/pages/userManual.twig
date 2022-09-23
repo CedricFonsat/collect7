@@ -2,6 +2,7 @@
 
 {% block stylesheet %}
 	<link rel="stylesheet" href="./css/userManual.css">
+		<script src="https://kit.fontawesome.com/68fec65e7d.js" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block title %}
@@ -11,7 +12,13 @@
 {% block header %}{% endblock %}
 
 {% block main %}
+	<div>
+<a href="/settings">
+<i class="fa-solid fa-arrow-left" id="back"></i>
+</a>
+</div>
 	<section id="userManual">
+
 		<h1>Besoin d'aide ?</h1>
 
 		<button class="accordion firstAcc"><img src="./img/help_logo.png" alt="">Qu’est ce que Collect7 ?</button>
@@ -44,11 +51,8 @@
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi odit ratione quae. Doloremque totam atque omnis distinctio incidunt facilis, minima deleniti praesentium autem. Nostrum esse eius inventore maxime sit exercitationem.</p>
 		</div>
 	</section>
-	{% block navMobile %}
-		{% include "../layout/navMobile/navMobile.twig" %}
-	{% endblock %}
-{% endblock %}
 
+{% endblock %}
 {% block footer %}{% endblock %}
 
 {% block script %}

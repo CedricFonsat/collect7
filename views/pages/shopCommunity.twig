@@ -102,8 +102,11 @@
 	{% block navMobile %}
 		{% include "../layout/navMobile/navMobile.twig" %}
 	{% endblock %}
+		{% block wallet_modal %}
+		{% include "../layout/wallet.twig" %}
+	{% endblock %}
 {% endblock %}
 
 {% block footer %}{% endblock %}
 
-{% block script %}{% endblock %}
+{% block script %}<script src="./js/wallet.js"></script>{% endblock %}

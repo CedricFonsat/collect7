@@ -22,7 +22,7 @@
 		</a>
 		<div id='search'>
 			<input id="searchbar" type="text" name="search" placeholder="Rechercher">
-			<img src="./img/search.png" alt="">
+			<img src="./img/search.png" alt=""class="img">
 		</div>
 	</div>
 	<section>
@@ -44,51 +44,15 @@
 				</article>
 			</a>
 		{% endfor %}
-		<article class="collectAll">
-			<div id='collectOne'>
-				<h2>One Piece</h2>
-				<p class='description'>"Fortune ,gloire et pouvoir !Cet homme avait 
-																															      amasse toutes les richesses du monde !!Son nom Gold Roger Roi des 
-																															      pirates !!Ses dernieres paroles incitèrent les hommes des toute la
-																															      planète a s' aventurer en mer : Mon tresor je le laisse si vous 
-																															      voulez ,TROUVEZ LE ,je l ai laissé quelque part dans ce monde !!</p>
-				<a href="/shopCards">
-					<button>voir collection</button>
-				</a>
-			</div>
-		</article>
-		<article class="collectAll">
-			<div id='collectTwo'>
-				<h2>Naruto</h2>
-				<p class='/shopCards'></p>
-				<p class="description">"Aucune chose n’est parfaite par elle-même.
-																									           C’est pourquoi nous sommes nés pour attirer d’autres choses pour
-																									            compenser ce qui nous manque. Je pense que nous commençons à 
-																									            marcher dans la bonne direction seulement après que nous avons 
-																									            commencé à obtenir nos homologues à côté de nous." - Itachi Uchiha</p>
-				<a href="/connection">
-					<button>voir collection</button>
-				</a>
-			</div>
-		</article>
-		<article class="collectAll">
-			<div id='collectThree'>
-				<h2>Demon Slayer</h2>
-				<p class='description'>« Peu importe le nombre de personnes 
-																									          que vous pouvez perdre. Vous n’avez pas d’autre choix que de
-																									           continuer à vivre. Peu importe à quel point les coups sont 
-																									           écrasants.” – Tanjiro Kamado</p>
-				<a href="/shopCards">
-					<button>voir collection</button>
-				</a>
-			</div>
-		</article>
 	</section>
 	{% block navMobile %}
 		{% include "../layout/navMobile/navMobile.twig" %}
+	{% endblock %}
+		{% block wallet_modal %}
+		{% include "../layout/wallet.twig" %}
 	{% endblock %}
 {% endblock %}
 
 {% block footer %}{% endblock %}
 
-{% block script %}{% endblock %}
+{% block script %}<script src="./js/wallet.js"></script>{% endblock %}
