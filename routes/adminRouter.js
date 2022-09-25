@@ -135,12 +135,30 @@ adminRouter.get("/dashboardUsers", async (req, res) => {
   }
 });
 
+adminRouter.get("/dashboardUsers/:id", async (req, res) => {
+  try {
+    await userModel.deleteOne({ _id: req.params.id });
+    res.redirect("/dashboardUsers");
+  } catch (error) {
+    res.send(error);
+  }
+});
+
 adminRouter.get("/dashboardCollections", async (req, res) => {
   try {
     let collections = await collectionModel.find(req.body);
     res.render("admin/layer/dashboardCollections.twig",{
       collections: collections
     })
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+adminRouter.get("/dashboardCollections/:id", async (req, res) => {
+  try {
+    await collectionModel.deleteOne({ _id: req.params.id });
+    res.redirect("/dashboardCollections");
   } catch (error) {
     res.send(error);
   }

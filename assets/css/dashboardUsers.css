@@ -89,7 +89,7 @@
 
 .data_users{
     width: 98%;
-    height: 80px;
+    height: 40px;
     background-color: var(--inputColor);
     display: flex;
     justify-content: space-around;

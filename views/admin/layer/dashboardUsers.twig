@@ -23,7 +23,7 @@
 				</div>
 				<div>
 					<img src="./img/bx_three-dots.png" alt="" srcset="">
-					<a href="/dashboardOverview">Autre</a>
+					<a href="/dashboardOverview">Overview</a>
 				</div>
 			</nav>
 			<span class="logout_dashboard">
@@ -59,7 +59,7 @@
 							<p>{{users.mail}}</p>
 						</div>
 						<div>
-							<img src="./img/delete.png" alt="">
+						<a href="/dashboardUsers/{{users.id}}"><img src="./img/delete.png" alt=""></a>
 						</div>
 					</div>
 				{% endfor %}
