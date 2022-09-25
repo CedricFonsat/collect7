@@ -100,12 +100,11 @@ adminRouter.get("/dashboardCollectionAdd", async (req, res) => {
 );
 
 
-
 //-----------------------------
 
 adminRouter.get("/dashboardOverview", async (req, res) => {
   try {
-    res.render("admin/layer/dashboardOverview.twig")
+    res.render("admin/layer/dashboardOthers.twig")
   } catch (error) {
     res.send(error);
   }

@@ -1,47 +1,79 @@
-{# SOUCOUCHE #}
+{% extends "../dashboardHome.twig" %}
 
-<article class="dashboard_view_collection_add">
-	<div class="collection_add_image">
-		<p>Image</p>
-		<div>
-			
-			<img src="./img/bx_image-add.png" alt="add">
-		</div>
-	</div>
-	<div class="collection_add_form">
-		<div class="collection_add_form_header">
-			<p>Collection</p>
-			<p>Carte</p>
-		</div>
-		<form action="/dashboardHome" method="post" enctype="multipart/form-data">
-		<input type="file" name="imageCollection">
-			<div class="margin_bottom_collection">
-				<label for="">Nom de la collection</label>
-				<input type="text" name="nameCollection">
-			</div>
-			<div class="margin_bottom_collection">
+{% block stylesheet %}
+    <link rel="stylesheet" href="./css/dashboard.css"> 
+	<link rel="stylesheet" href="./css/dashboardCollectionAdd.css">
+{% endblock %}
+
+{% block main %}
+	<section class="dashboard_home">
+		<aside class="dashboard_menu">
+			<nav class="dashboard_navigation">
 				<div>
-					<label for="">Catégorie</label>
-					<input type="text" name="categoryCollection">
+					<img src="./img/bx_home.png" alt="" srcset="">
+					<a href="/dashboardHome">Accueil</a>
 				</div>
 				<div>
-					<label for="">Nombre de cartes
-					</label>
-					<input type="number" name="cardNumberCollection">
-				</div>
-			</div>
-			<div class="margin_bottom_collection">
-				<label for="">Description</label>
-				<textarea name="descriptionCollection" id="" cols="30" rows="10"></textarea>
-			</div>
-			<div class="margin_bottom_collection">
-				<div>
-					<button type="submit">Créer</button>
+					<img src="./img/bx_user.png" alt="" srcset="">
+					<a href="/dashboardUsers">Utilisateur</a>
 				</div>
 				<div>
-					<a href="">Annuler</a>
+					<img src="./img/bx_data.png" alt="" srcset="">
+					<a href="/dashboardCollections">Collection</a>
+				</div>
+				<div>
+					<img src="./img/bx_three-dots.png" alt="" srcset="">
+					<a href="/dashboardOthers">Autre</a>
+				</div>
+			</nav>
+			<span class="logout_dashboard">
+				<img src="./img/logout.png" alt="" srcset="">
+				<a href="">Deconnexion</a>
+			</span>
+		</aside>
+		<article class="dashboard_view_collection_add">
+			<div class="collection_add_image">
+				<p>Image</p>
+				<div>
+					<input type="file" name="imageCollection">
+					<img src="./img/bx_image-add.png" alt="add">
 				</div>
 			</div>
-		</form>
-	</div>
-</article>
+			<div class="collection_add_form">
+				<div class="collection_add_form_header">
+					<p><a href="/dashboardCollectionAdd">Collection</a></p>
+					<p><a href="/dashboardCardAdd">Carte</a></p>
+				</div>
+				<form action="/dashboardHome" method="post" enctype="multipart/form-data">
+					<div class="margin_bottom_collection">
+						<label for="">Nom de la collection</label>
+						<input type="text" name="nameCollection">
+					</div>
+					<div class="margin_bottom_collection">
+						<div>
+							<label for="">Catégorie</label>
+							<input type="text" name="categoryCollection">
+						</div>
+						<div>
+							<label for="">Nombre de cartes
+							</label>
+							<input type="number" name="cardNumberCollection">
+						</div>
+					</div>
+					<div class="margin_bottom_collection">
+						<label for="">Description</label>
+						<textarea name="descriptionCollection" id="" cols="30" rows="10"></textarea>
+					</div>
+					<div class="margin_bottom_collection">
+						<div>
+							<button type="submit">Créer</button>
+						</div>
+						<div>
+							<a href="">Annuler</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</article>
+	</section>
+{% endblock %}

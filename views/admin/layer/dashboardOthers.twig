@@ -1,5 +1,57 @@
-{# SOUCOUCHE #}
+{% extends "../dashboardHome.twig" %}
 
-<article class="dashboard_view_others">
+{% block stylesheet %}
+	<link rel="stylesheet" href="./css/dashboard.css">
+	<link rel="stylesheet" href="./css/dashboardOthers.css">
+{% endblock %}
 
-</article>
+{% block main %}
+	<section class="dashboard_home">
+		<aside class="dashboard_menu">
+			<nav class="dashboard_navigation">
+				<div>
+					<img src="./img/bx_home.png" alt="" srcset="">
+					<a href="/dashboardHome">Accueil</a>
+				</div>
+				<div>
+					<img src="./img/bx_user.png" alt="" srcset="">
+					<a href="/dashboardUsers">Utilisateur</a>
+				</div>
+				<div>
+					<img src="./img/bx_data.png" alt="" srcset="">
+					<a href="/dashboardCollections">Collection</a>
+				</div>
+				<div>
+					<img src="./img/bx_three-dots.png" alt="" srcset="">
+					<a href="/dashboardOverview">Overview</a>
+				</div>
+			</nav>
+			<span class="logout_dashboard">
+				<img src="./img/logout.png" alt="" srcset="">
+				<a href="">Deconnexion</a>
+			</span>
+		</aside>
+		<article class="dashboard_view_others">
+			<h2>Ajouter contenu page acceuil</h2>
+			<form action="/dashboardOverview" method="post" enctype="multipart/form-data">
+				<div class="titleOverview">
+					<input type="text" name="titleOverview" placeholder="entrer votre titre">
+				</div>
+				<div>
+					<textarea name="descriptionOverview" id="" cols="30" rows="10" placeholder="Describe yourself here..."></textarea>
+				</div>
+				<div class="backgroundImageOverview">
+					<label for="backgroundImageOverview">background ImageOverview</label>
+					<input type="file" name="backgroundImageOverview">
+				</div>
+				<div class="imageOverview">
+					<label for="imageOverview">image Overview</label>
+					<input type="file" name="imageOverview">
+				</div>
+				<div>
+					<button type="submit">Envoyer</button>
+				</div>
+			</form>
+		</article>
+	</section>
+{% endblock %}
