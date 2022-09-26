@@ -93,7 +93,8 @@ article p{
     margin-right:22px ;
 }
 .buy{
-    background-color: rgb(255, 255, 255);
+    color: #2a2a2a;
+    background-color: #ffce1f;
     border: none;
     border-radius: 2px;
     width: 75px;

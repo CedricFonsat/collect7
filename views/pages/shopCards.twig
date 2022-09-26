@@ -13,9 +13,9 @@
 
 {% block main %}
 	<div class='head'>
-	<img src="./img/home.gif" alt="">
-	<h1>One Piece</h1>
-	<hr>
+		<img src="./img/home.gif" alt="">
+		<h1>One Piece</h1>
+		<hr>
 	</div>
 	<div id="flex-end">
 		<div id='search'>
@@ -24,43 +24,26 @@
 		</div>
 	</div>
 	<section class="section">
-		<article>
-			<img class='card' src="./img/usopp.png" alt="">
-			<div id='row'>
-				<p>25.63$</p>
-				<button class='buy'>Acheter</button>
-			</div>
-		</article>
-		<article>
-			<img class='card' src="./img/usopp.png" alt="">
-			<div id='row'>
-				<p>25.63$</p>
-				<button class='buy'>Acheter</button>
-			</div>
-		</article>
-		<article>
-			<img class='card' src="./img/usopp.png" alt="">
-			<div id='row'>
-				<p>25.63$</p>
-				<button class='buy'>Acheter</button>
-			</div>
-		</article>
-		<article>
-			<img class='card' src="./img/usopp.png" alt="">
-			<div id='row'>
-				<p>25.63$</p>
-				<button class='buy'>Acheter</button>
-			</div>
-		</article>
+		{% for card in card %}
+			<article>
+				<img class='card' src="../uploads/cards/{{card.imageCard}}"  alt="">
+				<div id='row'>
+					<p>{{card.priceCard}} $</p>
+					<button class='buy'>Acheter</button>
+				</div>
+			</article>
+		{% endfor %}
 	</section>
 	{% block navMobile %}
 		{% include "../layout/navMobile/navMobile.twig" %}
 	{% endblock %}
-		{% block wallet_modal %}
+	{% block wallet_modal %}
 		{% include "../layout/wallet.twig" %}
 	{% endblock %}
 {% endblock %}
 
 {% block footer %}{% endblock %}
 
-{% block script %}<script src="./js/wallet.js"></script>{% endblock %}
+{% block script %}
+	<script src="./js/wallet.js"></script>
+{% endblock %}
