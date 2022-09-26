@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'ubuntu';
+    src: url(../fonts/Ubuntu-Regular.ttf);
+}
+
+footer {
+    height: 100px;
+    background-color: #141414;
+}
+
+svg {
+    cursor: pointer;
+    height: 32px;
+}
+
+#facebook:hover{
+    fill: #3c5a99;
+}
+
+#twitter:hover {
+    fill: #1c98e6;
+}
+
+#tiktok:hover {
+    fill: #23e8e2;
+}
+
+#instagram:hover {
+    fill: #d52b6e;
+}
+
+#youtube:hover {
+    fill: #f20000;
+}
+
+#discord:hover {
+    fill: #5460e6;
+}
+
