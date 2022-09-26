@@ -1,0 +1,47 @@
+ 
+  
+ .dashboard_navigation div:nth-child(1) {
+    border-left: 4px solid var(--yellow);
+    background-color: #ffce1f2f;
+  }
+  
+  .chart_dashboard{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .chart_dashboard p{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--textColor);
+  }
+  
+
+  
+  #tab_customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #tab_customers td,
+  #tab_customers th {
+    padding: 8px;
+  }
+  
+  #tab_customers tr {
+    background-color: #f2f2f2;
+  }
+  
+  #tab_customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--yellow);
+    color: var(--textColorBlack);
+  }

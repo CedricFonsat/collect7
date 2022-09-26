@@ -2,6 +2,7 @@
 
 {% block stylesheet %}
 	<link rel="stylesheet" href="./css/settings.css">
+	<script src="https://kit.fontawesome.com/68fec65e7d.js" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block title %}
@@ -11,32 +12,49 @@
 {% block header %}{% endblock %}
 
 {% block main %}
+<div>
+<a href="/userOverview">
+<i class="fa-solid fa-arrow-left" id="back"></i>
+</a>
+</div>
 	<section>
 		<article>
 			<nav>
 				<div class="">
-					<img src="./img/setting_home.png" alt="home">
-					<a href="">Accueil</a>
+
+					<a href="/shopCollections">
+						<i class="fa-sharp fa-solid fa-house"></i>
+						<p>Accueil</p>
+					</a>
 				</div>
 				<div>
-					<img src="./img/setting_user.png" alt="user">
-					<a href="">Modifier profil</a>
+
+					<a href="/userModification">
+						<i class="fa-solid fa-user"></i>
+						<p>Modifier profil</p>
+					</a>
+				</div>
+
+				<div>
+
+					<a href="/userManual">
+						<i class="fa-sharp fa-solid fa-question"></i>
+						<p>Aide</p>
+					</a>
 				</div>
 				<div>
-					<img src="./img/setting_wallet.png" alt="wwallet">
-					<a href="">Portefeuille</a>
-				</div>
-				<div>
-					<img src="./img/setting_help.png" alt="help">
-					<a href="">Aide</a>
-				</div>
-				<div>
-					<img src="./img/setting_mail.png" alt="contact">
-					<a href="">Contact</a>
+
+					<a href="/contact">
+						<i class="fa-solid fa-envelope"></i>
+						<p>Contact</p>
+					</a>
 				</div>
 				<div id="logout_container">
-					<img src="./img/logout.png" alt="logout">
-					<a href="">Déconnexion</a>
+
+					<a href="/logout">
+						<i class="fa-sharp fa-solid fa-arrow-right-from-bracket"></i>
+						<p>Déconnexion</p>
+					</a>
 				</div>
 			</nav>
 		</article>

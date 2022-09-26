@@ -12,9 +12,11 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
+
 }
 
 article {
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,19 +30,30 @@ nav {
 }
 
 div {
-    flex-direction: row;
     margin-bottom: 50px;
-}
 
-a {
+}
+#back{
+   
+    font-size: 30px;
+    margin: 30px;
+}
+p {
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
-    color: #FFFFFF;
-    text-decoration: none;
     cursor: pointer;
+    margin-left: 20px
 }
 
+a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   font-size: x-large;
+    text-decoration: none;
+    color:#FFFFFF;
+}
 a:hover {
     color: #FFCE1F;
 }

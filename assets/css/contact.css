@@ -95,3 +95,8 @@ button {
 button:hover {
     background-color: #eebe12;
 }
+#back{
+    color: white;
+     font-size: 30px;
+     margin: 30px;
+ }

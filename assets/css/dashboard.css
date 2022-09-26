@@ -18,6 +18,7 @@
   --background: #2a2a2a;
 }
 
+
 body {
   background-color: var(--background);
   display: flex;
@@ -69,21 +70,6 @@ header div {
   height: 80%;
 }
 
-.dashboard_global_view {
-  height: 94%;
-  width: 74%;
-}
-
-.dashboard_menu{
-  height: 94%;
-  width: 24%;
-  background-color: var(--backgroundSection);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-bottom-left-radius: 20px;
-}
-
 .dashboard_users_home {
   width: 100%;
   height: 50%;
@@ -129,11 +115,6 @@ header div {
   cursor: pointer;
 }
 
-.dashboard_navigation div:nth-child(1) {
-  border-left: 4px solid var(--yellow);
-  background-color: #ffce1f2f;
-}
-
 .dashboard_navigation div a {
   margin: 0px 10px;
   color: var(--yellow);
@@ -170,499 +151,43 @@ header div {
     margin-left: 10px;
 }
 
-#tab_customers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+.dashboard_global_view {
+  height: 94%;
+  width: 74%;
 }
 
-#tab_customers td,
-#tab_customers th {
-  padding: 8px;
-}
-
-#tab_customers tr {
-  background-color: #f2f2f2;
-}
-
-#tab_customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: var(--yellow);
-  color: var(--textColorBlack);
-}
-
-/********************************* dashboard User ********************/
-
-.dashboard_view_users{
-    height: 94%;
-    width: 74%;
-    background-color: var(--backgroundSection);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.dashboard_view_users_header{
-    height: 15%;
-    width: 98%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.dashboard_view_users_header img{
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.dashboard_view_users_search{
-    width: 250px;
-    height: 50px;
-    background-color: var(--inputColor);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--textColor);
-}
-
-.dashboard_view_users_search input{
-    height: 90%;
-    width: 80%;
-    background: transparent;
-    outline: none;
-    border: none;
-    color: var(--textColor);
-}
-
-.dashboard_view_users_search input::placeholder{
-    color: var(--textColor);
-    font-size: 16px;
-}
-
-.dashboard_view_users_title{
-    height: 15%;
-    width: 98%;
-    background-color: var(--inputColor);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: var(--textColor);
-}
-
-.dashboard_view_users_title div{
-  width: 20%;
-  height: 100%;
+.dashboard_menu{
+  height: 94%;
+  width: 24%;
+  background-color: var(--backgroundSection);
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.dashboard_view_users_data{
-    height: 70%;
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-    overflow: scroll;
-    color: var(--textColor);
-}
-
-.dashboard_view_users_header{
-  height: 50px;
-  margin: 20px 0px;
-}
-
-.data_users{
-    width: 98%;
-    height: 80px;
-    background-color: var(--inputColor);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
-    padding: 20px 0px;
-}
-
-.data_users img{
-    width: 27px;
-    height: 32px;
-    cursor: pointer;
-}
-
-.data_users div{
-  width: 30%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-/********************************** dashboard Collections ********************/
-
-.dashboard_view_collections{
-    height: 94%;
-    width: 74%;
-    background-color: var(--backgroundSection);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.data_collections{
-    width: 98%;
-    height: 100px;
-    background-color: var(--inputColor);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
-    border-bottom-right-radius: 20px;
-}
-
-.data_collections div{
-  width: 20%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.margin_left{
-    margin-left: 95px;
-}
-
-.dashboard_image_collection{
-  width: 100%;
-  height: 100%;
-}
-
-.dashboard_image_collection img{
-  width: 100%;
-}
-
-/********************************* dashboard Others ********************/
-
-.dashboard_view_others{
-    height: 94%;
-    width: 74%;
-    background-color: var(--backgroundSection);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/******************************** dashboard Add Collection ********************/
-
-.collection_add_form_header{
-    width: 76%;
-    height: 10%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-bottom: 4px solid #d9d9d98c;
-    position: relative;
-    color: var(--textColor);
-    margin-top: 30px;
-}
-
-.collection_add_form_header p{
-    cursor: pointer;
-}
-
-.collection_add_form_header::after{
-    content: "";
-    width: 50%;
-    height: 4px;
-    background-color: var(--yellow);
-    position: absolute;
-    bottom: -4px;
-    right: 0;
-}
-
-.dashboard_view_collection_add{
-    height: 94%;
-    width: 74%;
-    background-color: var(--backgroundSection);
-    display: flex;
-    align-items: center;
-    border-bottom-right-radius: 20px;
-}
-
-.collection_add_image{
-    width: 50%;
-    height: 100%;
-}
-
-.collection_add_form{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.collection_add_image{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.collection_add_image p{
-    margin-bottom: 10px;
-    color: var(--textColor);
-}
-
-.collection_add_image div{
-    width: 400px;
-    height: 400px;
-    background-color: #d9d9d94e;
-    position: relative;
-}
-
-.collection_add_image div img{
-    position: absolute;
-    top: 50%;
-    right: 25%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-}
-
-.collection_add_image div input{
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-    z-index: 1;
-    position: absolute;
-}
-
-.collection_add_form form{
-    width: 100%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.collection_add_form form div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 400px;
-}
-
-.collection_add_form form div:nth-child(1) input, .card_add_form form div:nth-child(1) input{
-    width: 96%;
-    height: 40px;
-    border: none;
-   margin: 10px 0;
-   background-color: #d9d9d98c;
-   color: white;
-   outline: none;
-   border-radius: 6px;
-   padding: 0 5px;
-}
-
-.collection_add_form form div{
-    color: var(--textColor);
-}
-
-.collection_add_form form div:nth-child(2), .card_add_form form div:nth-child(2){
-    display: flex;
-    height: 80px;
-    flex-direction: row;
-    color: var(--textColor);
-}
-
-.collection_add_form form div:nth-child(2) div, .card_add_form form div:nth-child(2) div{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.collection_add_form form div:nth-child(2) div input, .card_add_form form div:nth-child(2) div input{
-    width: 90%;
-    height: 40px;
-    border: none;
-    margin: 10px 0;
-    background-color: #d9d9d98c;
-    color: white;
-    padding: 4px;
-    outline: none;
-    border-radius: 6px;
-    padding: 0 5px;
-}
-
-.collection_add_form form div:nth-child(3) textarea{
-    width: 95%;
-    height: 100px;
-    border: none;
-    margin: 10px 0;
-    border-radius: 6px;
-    background-color: #d9d9d98c;
-    color: white;
-    padding: 4px;
-    outline: none;
-    resize: none;
-    padding: 5px 5px 5px 10px;
-}
-
-.collection_add_form form div:nth-child(4), .card_add_form form div:nth-child(3){
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-}
-
-.collection_add_form form div:nth-child(4) div, .card_add_form form div:nth-child(3) div{
-    width: 50%;
-    height: 40px;
-    display: flex;
-    color: var(--textColor);
-}
-
-.collection_add_form form div:nth-child(4) div:nth-child(1){
-    justify-content: flex-start;
-}
-
-.collection_add_form form div:nth-child(4) div:nth-child(2), .card_add_form form div:nth-child(3) div:nth-child(2){
-    justify-content: center;
-    align-items: center;
-}
-
-.collection_add_form form div:nth-child(4) div button{
-    width: 94%;
-    height: 40px;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    background-color: var(--yellow);
-}
-
-.collection_add_form form div:nth-child(4) div a{
-    color: var(--textColor);
-    text-decoration: none;
-}
-
-.margin_bottom_collection{
-    margin-bottom: 10px;
-}
-
-/******************************** dashboard Add Cartes ********************/
-
-.dashboard_view_card_add{
-    height: 94%;
-    width: 74%;
-    background-color: var(--backgroundSection);
-    display: flex;
-    align-items: center;
-    border-bottom-right-radius: 20px;
-}
-
-.collection_add_card{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-    color: var(--textColor);
-}
-
-.collection_add_card_list{
-    width: 80%;
-    height: 80%;
-    background-color: #d9d9d94e;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content: flex-start;
-    color: var(--textColor);
-}
-
-.collection_add_card_list div{
-    width: 45%;
-    height: 40px;
-    background-color: var(--yellow);
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card_add_input_file input{
-    opacity: 0;
-    cursor: pointer;
-}
-
-.card_add_input_file{
-    width: 180px !important;
-    height: 40px !important;
-    margin: 10px 0;
-    background-color: #d9d9d98c;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.card_add_form{
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
   flex-direction: column;
   justify-content: space-between;
+  border-bottom-left-radius: 20px;
 }
 
-.card_add_form form div{
-  color: var(--textColor);
-}
 
-.card_add_form form{
-  width: 100%;
-  height: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 
-.card_add_form form div{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 400px;
-}
 
-.card_add_form form div:nth-child(3) div button{
-  width: 90%;
-  height: 40px;
-  display: flex;
-  justify-content:center;
-  align-items:center;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  background-color: var(--yellow);
-}
 
-.card_add_form form div:nth-child(3) div:nth-child(2) a{
-  color: var(--textColor);
-  text-decoration: none;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /******************************** dashboard Overview ********************/
 

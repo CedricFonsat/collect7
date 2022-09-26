@@ -1,5 +1,10 @@
 {% extends "../dashboardHome.twig" %}
 
+{% block stylesheet %}
+	<link rel="stylesheet" href="./css/dashboard.css">
+	<link rel="stylesheet" href="./css/dashboardCollections.css">
+{% endblock %}
+
 {% block main %}
 	<section class="dashboard_home">
 		<aside class="dashboard_menu">
@@ -18,7 +23,7 @@
 				</div>
 				<div>
 					<img src="./img/bx_three-dots.png" alt="" srcset="">
-					<a href="/dashboardOverview">Autre</a>
+					<a href="/dashboardOthers">Overview</a>
 				</div>
 			</nav>
 			<span class="logout_dashboard">
@@ -32,7 +37,7 @@
 					<input type="text" placeholder="Rechercher">
 					<img src="./img/searchWhite.png" alt="search">
 				</div>
-				<img src="./img/addWhite.png" alt="add">
+				<a href="/dashboardCollectionAdd"><img src="./img/addWhite.png" alt="add"></a>
 			</div>
 
 			<div class="dashboard_view_users_title">
@@ -70,7 +75,7 @@
 							<a href=""><img src="./img/edit.png" alt=""></a>
 						</div>
 						<div>
-							<a href=""><img src="./img/delete.png" alt=""></a>
+							<a href="/dashboardCollections/{{collections.id}}"><img src="./img/delete.png" alt=""></a>
 						</div>
 					</div>
 				{% endfor %}

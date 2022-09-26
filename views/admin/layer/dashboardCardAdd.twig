@@ -1,57 +1,99 @@
-{# SOUCOUCHE #}
+{% extends "../dashboardHome.twig" %}
 
-<article class="dashboard_view_card_add">
-	<div class="collection_add_card">
-		<p>Liste des cartes</p>
-		<div class="collection_add_card_list">
-			<div>
-				<p>Nom de la carte</p>
-			</div>
-			<div>
-				<p>Nom de la carte</p>
-			</div>
-			<div>
-				<p>Nom de la carte</p>
-			</div>
-			<div>
-				<p>Nom de la carte</p>
-			</div>
-			<div>
-				<p>Nom de la carte</p>
-			</div>
-		</div>
-	</div>
-	<div class="card_add_form">
-		<div class="collection_add_form_header">
-			<p>Collection</p>
-			<p>Carte</p>
-		</div>
+{% block stylesheet %}
+    <link rel="stylesheet" href="./css/dashboard.css"> 
+	<link rel="stylesheet" href="./css/dashboardCardAdd.css">
+{% endblock %}
 
-		<form action="">
-			<div class="margin_bottom_collection">
-				<label for="">Nom de la carte</label>
-				<input type="text">
+
+{% block main %}
+	<section class="dashboard_home">
+		<aside class="dashboard_menu">
+			<nav class="dashboard_navigation">
+				<div>
+					<img src="./img/bx_home.png" alt="" srcset="">
+					<a href="/dashboardHome">Accueil</a>
+				</div>
+				<div>
+					<img src="./img/bx_user.png" alt="" srcset="">
+					<a href="/dashboardUsers">Utilisateur</a>
+				</div>
+				<div>
+					<img src="./img/bx_data.png" alt="" srcset="">
+					<a href="/dashboardCollections">Collection</a>
+				</div>
+				<div>
+					<img src="./img/bx_three-dots.png" alt="" srcset="">
+					<a href="/dashboardOverview">Overview</a>
+				</div>
+			</nav>
+			<span class="logout_dashboard">
+				<img src="./img/logout.png" alt="" srcset="">
+				<a href="">Deconnexion</a>
+			</span>
+		</aside>
+		<article class="dashboard_view_card_add">
+			<div class="collection_add_card">
+				<p>Liste des cartes</p>
+				<div class="collection_add_card_list">
+					<div>
+						<p>Nom de la carte</p>
+					</div>
+					<div>
+						<p>Nom de la carte</p>
+					</div>
+					<div>
+						<p>Nom de la carte</p>
+					</div>
+					<div>
+						<p>Nom de la carte</p>
+					</div>
+					<div>
+						<p>Nom de la carte</p>
+					</div>
+				</div>
 			</div>
-			<div class="margin_bottom_collection">
-				<div>
-					<label for="">Image
-					</label>
-					<div class="card_add_input_file"><input type="file"></div>
+			<div class="card_add_form">
+				<div class="collection_add_form_header">
+					<p><a href="/dashboardCollectionAdd">Collection</a></p>
+					<p><a href="/dashboardCarteAdd">Carte</a></p>
 				</div>
-				<div>
-					<label for="">Prix
-					</label>
-					<input type="text">
-				</div>
+
+				<form action="/dashboardCardAdd" method="post" enctype="multipart/form-data">
+					<div class="margin_bottom_collection">
+						<label for="">Nom de la carte</label>
+						<input type="text" name="nameCard" placeholder="name">
+					</div>
+					<div class="margin_bottom_collection">
+						<div>
+							<label for="">Image
+							</label>
+							<div class="card_add_input_file">
+								<input type="file" name="imageCard">
+							</div>
+						</div>
+						<div>
+							<select name="categoryCard">
+								<option value="muzan">Muzan</option>
+								<option value="kim">Kim ou sushi</option>
+							</select>
+						</div>
+						<div>
+							<label for="">Prix
+							</label>
+							<input type="text" name="priceCard">
+						</div>
+					</div>
+					<div class="margin_bottom_collection card_add_button">
+						<div>
+							<button type="submit">Ajouter</button>
+						</div>
+						<div>
+							<a href="">Annuler</a>
+						</div>
+					</div>
+				</form>
 			</div>
-			<div class="margin_bottom_collection card_add_button">
-				<div>
-					<button>Ajouter</button>
-				</div>
-				<div>
-					<a href="">Annuler</a>
-				</div>
-			</div>
-		</form>
-	</div>
-</article>
+		</article>
+	</section>
+{% endblock %}
