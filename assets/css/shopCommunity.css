@@ -59,7 +59,7 @@ hr{
     color: #000000;
     
 }
-section{
+#cardsSection{
     display: flex;
     flex-direction: row;
 flex-wrap: wrap;

@@ -49,7 +49,7 @@
     line-height: 44px;
 }
 
-.walletH2 {
+.walletP {
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
@@ -90,4 +90,17 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+}
+#close_img{
+    width: 17px;
+    height: 17px;
+}
+#plus{
+    width: 32px;
+    height: 32px;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
