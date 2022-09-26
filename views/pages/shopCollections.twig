@@ -13,7 +13,7 @@
 {% block header %}{% endblock %}
 
 {% block main %}
-	<img src="./img/carouselOne.png" alt="">
+	<img id="banner" src="./img/carouselOne.png" alt="">
 	<h1>Boutique</h1>
 	<hr>
 	<div id="flex-end">
@@ -27,7 +27,7 @@
 	</div>
 	<section>
 		{% for collection in collection %}
-			<a href="/shopCards">
+			<a href="/shopCards" id="aWidth">
 				<article class="collectAll">
 					<div class="divImg">
 						<img src="../uploads/collections/{{collection.imageCollection}}" alt="">

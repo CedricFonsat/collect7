@@ -45,7 +45,10 @@ userRouter.get("/changePassword", async (req, res) => {
   
   userRouter.get("/shopCommunity", async (req, res) => {
     try {
-  res.render("pages/shopCommunity.twig")
+      //let cardCom = await cardComModel.find(req.body);
+  res.render("pages/shopCommunity.twig"/*, {
+    cardCom: cardCom,
+  }*/)
     } catch (error) {
       res.send(error);
     }

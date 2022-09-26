@@ -26,7 +26,11 @@ hr{
     border: 1px solid rgba(255, 255, 255, 0.15);
     margin-bottom: 50px;
 }
-
+#flex-end{
+    display: flex;
+    justify-content:end;
+    align-items: center;
+}
 
 #search{
     width: 130px;
@@ -36,8 +40,8 @@ hr{
     border-radius: 5px;
     display: flex;
     align-items: center;
-    
-    margin-bottom:50px ;
+ 
+    margin-bottom:20px ;
     margin-top: 20px;
     margin-right: 20px;
 }
