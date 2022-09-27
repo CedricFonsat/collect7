@@ -35,7 +35,7 @@
 			<div class="collection_add_image">
 				<p>Image</p>
 				<div>
-					<input type="file" name="imageCollection">
+					
 					<img src="./img/bx_image-add.png" alt="add">
 				</div>
 			</div>
@@ -44,7 +44,8 @@
 					<p><a href="/dashboardCollectionAdd">Collection</a></p>
 					<p><a href="/dashboardCardAdd">Carte</a></p>
 				</div>
-				<form action="/dashboardHome" method="post" enctype="multipart/form-data">
+				<form action="/dashboardCollectionAdd" method="post" enctype="multipart/form-data">
+				<input type="file" name="imageCollection">
 					<div class="margin_bottom_collection">
 						<label for="">Nom de la collection</label>
 						<input type="text" name="nameCollection">

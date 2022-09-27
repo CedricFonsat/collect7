@@ -34,7 +34,7 @@
 		<article class="dashboard_view_collections">
 			<div class="dashboard_view_users_header">
 				<div class="dashboard_view_users_search">
-					<input type="text" placeholder="Rechercher" id="search-box" onkeyup="sendData(this)">
+					<input type="text" placeholder="Rechercher">
 					<img src="./img/searchWhite.png" alt="search">
 				</div>
 				<a href="/dashboardCollectionAdd"><img src="./img/addWhite.png" alt="add"></a>
@@ -45,7 +45,7 @@
 					<p>Nom de la collection</p>
 				</div>
 				<div>
-					<img onclick="meclick()" src="./img/logo_collections.png" alt="">
+					<img src="./img/logo_collections.png" alt="">
 				</div>
 				<div>
 					<p>Modifier</p>
@@ -55,27 +55,27 @@
 				</div>
 			</div>
 			<!-- change page view -->
-			<div class="dashboard_view_users_data" id="searchResults">
+			<div class="dashboard_view_users_data">
 
-				{% for collections in collections %}
-					<div class="data_collections" id="data_collection" data-list={{collections.id}}>
+				{% for cards in cards %}
+					<div class="data_collections">
 						<div>
-							<p>{{collections.nameCollection}}</p>
+							<p>{{cards.nameCard}}</p>
 						</div>
 						<div>
 							<div class="dashboard_image_collection">
-								{% if collections.img == "carouselOne.png" %}
+								{% if cards.img == "carouselOne.png" %}
 									<img src="./img/carouselOne.png" alt="image collection">
 								{% else %}
-									<img src="./uploads/collections/{{collections.imageCollection}}" alt="image collection">
+									<img src="./uploads/cards/{{cards.imageCard}}" alt="image collection">
 								{% endif %}
 							</div>
 						</div>
 						<div>
-							<a href="/dashboardCollectionsUpdate/{{collections.id}}"><img src="./img/edit.png" alt=""></a>
+							<a href="/dashboardCardUpdate/{{cards.id}}"><img src="./img/edit.png" alt=""></a>
 						</div>
 						<div>
-							<a href="/dashboardCollections/{{collections.id}}"><img src="./img/delete.png" alt=""></a>
+							<a href="/dashboardCard/{{cards.id}}"><img src="./img/delete.png" alt=""></a>
 						</div>
 					</div>
 				{% endfor %}
@@ -83,8 +83,4 @@
 			</div>
 		</article>
 	</section>
-{% endblock %}
-
-{% block script %}
-<script src="./js/main.js"></script>
 {% endblock %}

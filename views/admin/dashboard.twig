@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		{% block stylesheet %}
+			<link rel="stylesheet" href="./css/dashboard/dashboard.css">
+			<link rel="stylesheet" href="./css/dashboard/menu.css">
+            <link rel="icon" type="image/x-icon" href="./img/svg/🦆 icon _pie chart_.svg">
+		{% endblock %}
+		{% block title %}
+			<title>Dashboard</title>
+		{% endblock %}
+	</head>
+	<body>
+		{% block header %}{% endblock %}
+
+		{% block nav %}
+			<nav class="dashboard_menu">
+				<div class="top_dashboard_menu">
+
+					<div class="dashboard_logo">
+						<img src="./img/svg/logo.svg" alt="logo">
+						<h1>Dashboard</h1>
+					</div>
+
+					<div class="navigation">
+						<div>
+							<img src="./img/svg/bx_home.svg" alt="acceuil">
+							<a href="">Accueil</a>
+						</div>
+						<div>
+							<img src="./img/svg/Group.svg" alt="utilisateur">
+							<a href="">Utilisateur</a>
+						</div>
+						<div>
+							<img src="./img/svg/albums-svgrepo-com 2.svg" alt="collection">
+							<a href="">Collection</a>
+						</div>
+						<div>
+							<img src="./img/svg/card-svgrepo-com 1.svg" alt="carte">
+							<a href="">Carte</a>
+						</div>
+						<div>
+							<img src="./img/svg/bi_three-dots.svg" alt="actualite">
+							<a href="">Actualité</a>
+						</div>
+					</div>
+				</div>
+				<div class="bottom_dashboard_menu">
+					<img src="./img/svg/majesticons_logout-line.svg" alt="deconnection">
+					<a href="">Deconnection</a>
+				</div>
+			</nav>
+		{% endblock %}
+
+		{% block main %}
+			<main>
+				<section class="dashboard_head_home">
+
+					<div class="dashboard_search">
+						<img src="./img/svg/🦆 icon _magnifying glass_.svg" alt="" srcset="">
+						<input type="text" placeholder="Rechercher...">
+					</div>
+
+					<div class="dashboard_profile">
+						<img src="" alt="" srcset="">
+					</div>
+				</section>
+
+
+				<section class="global_stats">
+					<div class="global_stats_title">
+						<div>
+							<img src="./img/svg/🦆 icon _pie chart_.svg" alt="statistique global">
+						</div>
+						<h2>Statistique global</h2>
+					</div>
+
+					<div class="stats_container">
+						<div>
+							<img src="./img/svg/Group.svg" alt="utilisateurs">
+							<p>Utilisateurs</p>
+							<p id="data_global_users">6,382</p>
+						</div>
+						<div>
+							<img src="./img/svg/albums-svgrepo-com 2.svg" alt="collections">
+							<p>Collections</p>
+							<p id="data_global_collections">3</p>
+						</div>
+						<div>
+							<img src="./img/svg/card-svgrepo-com 1.svg" alt="cartes">
+							<p>Cartes</p>
+							<p id="data_global_cards">174</p>
+						</div>
+					</div>
+				</section>
+
+
+				<section class="recente_activity">
+
+					<div class="recente_activity_title">
+						<div>
+							<img src="./img/svg/clock-svgrepo-com 1 (1).svg" alt="statistique global">
+						</div>
+						<h2>Activité récente</h2>
+					</div>
+
+					<div class="dashboard_data_users_home">
+						<div class="head_data_users_home">
+							<div>
+								<p>Nom d’utilisateur</p>
+							</div>
+							<div>
+								<p>Adresse e-mail</p>
+							</div>
+						</div>
+						<div class="cover_data_users_home">
+							<div class="data_users_home">
+								<div>
+									<p>Utilisateur</p>
+								</div>
+								<div>
+									<p>adresse@mail.com</p>
+								</div>
+							</div>
+							<div class="data_users_home">
+								<div>
+									<p>Utilisateur</p>
+								</div>
+								<div>
+									<p>adresse@mail.com</p>
+								</div>
+							</div>
+							<div class="data_users_home">
+								<div>
+									<p>Utilisateur</p>
+								</div>
+								<div>
+									<p>adresse@mail.com</p>
+								</div>
+							</div>
+							<div class="data_users_home">
+								<div>
+									<p>Utilisateur</p>
+								</div>
+								<div>
+									<p>adresse@mail.com</p>
+								</div>
+							</div>
+							<div class="data_users_home">
+								<div>
+									<p>Utilisateur</p>
+								</div>
+								<div>
+									<p>adresse@mail.com</p>
+								</div>
+							</div>
+							<div class="data_users_home">
+								<div>
+									<p>Utilisateur</p>
+								</div>
+								<div>
+									<p>adresse@mail.com</p>
+								</div>
+							</div>
+							<div class="data_users_home">
+								<div>
+									<p>Utilisateur</p>
+								</div>
+								<div>
+									<p>adresse@mail.com</p>
+								</div>
+							</div>
+							<div class="data_users_home">
+								<div>
+									<p>Utilisateur</p>
+								</div>
+								<div>
+									<p>adresse@mail.com</p>
+								</div>
+							</div>
+							<div class="data_users_home">
+								<div>
+									<p>Utilisateur</p>
+								</div>
+								<div>
+									<p>adresse@mail.com</p>
+								</div>
+							</div>
+							<div class="data_users_home">
+								<div>
+									<p>Utilisateur</p>
+								</div>
+								<div>
+									<p>adresse@mail.com</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		{% endblock %}
+
+        {% block footer %}{% endblock %}
+
+        {% block script %}{% endblock %}
+
+	</body>
+</html>

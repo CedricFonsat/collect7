@@ -6,6 +6,7 @@ import visitorRouter from './routes/visitorRouter.js'
 import cors from 'cors'
 import session from 'express-session';
 import 'dotenv/config'
+import collectionModel from './models/collectionModel.js';
 
 const db = process.env.BDD_URL
 const app = express()
@@ -25,6 +26,13 @@ router.use(visitorRouter)
 router.get('/*', function(req, res) {
     res.redirect('/');
    });
+
+   router.post("/getCollections", async (req, res) => {
+      let payload = req.body.payload.trim();
+      let search = await collectionModel.find({nameCollection: {$regex: new RegExp('^'+payload+'.*','i')}}).exec();
+      search = search.slice(0, 10);
+      res.send({payload: search})
+  });
 
 app.listen(process.env.PORT, function(err){
     if (err) {

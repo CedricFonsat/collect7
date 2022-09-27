@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --background: #2A2A2A;
+    --yellow: #FFCE1F;
+    --white: white;
+    --w-opacity: #ffffff9c;
+    --grey: #3E3E3E;
+}
+
+body{
+    background-color: var(--background);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+main{
+    width: 80%;
+    height: 100%;
+}
+.dashboard_head_home{
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.global_stats{
+    width: 100%;
+    height: 39%;
+}
+.recente_activity{
+    width: 100%;
+    height: 49%;
+}
+.dashboard_search{
+    width: 46%;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    margin-left: 20px;
+}
+.dashboard_search input{
+    height: 100%;
+    width: 86%;
+    border: none;
+    background: none;
+    border-radius: 0px 6px 6px 0px;
+    outline: none;
+    padding: 0 10px;
+    color: var(--white);
+}
+.dashboard_search input::placeholder{
+    color: var(--white);
+}
+.dashboard_search img{
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.dashboard_profile{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid red;
+    margin-right: 20px;
+}
+
+/****************************************************  Fin dashboard_head_home */
+
+.global_stats_title,.recente_activity_title{
+    width: 280px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.global_stats_title h2,.recente_activity_title h2{
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.global_stats_title div,.recente_activity_title div{
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    background-color: var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.global_stats_title div img,.recente_activity_title div img{
+    width: 24px;
+    height: 24px;
+}
+.stats_container{
+    display: flex;
+    width: 100%;
+    height: 70%;
+    justify-content: center;
+}
+.stats_container div{
+    width: 30%;
+    height: 100%;
+    background-color: var(--grey);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+}
+.stats_container div:nth-child(2){
+    margin: 0 15px;
+}
+.stats_container div img{
+    width: 48px;
+    margin-bottom: 10px;
+}
+.stats_container div p:nth-child(2){
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.stats_container div p:nth-child(3){
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+/****************************************************  Fin global_stats */
+
+.cover_data_users_home{
+    width: 100%;
+    height: 250px;
+    overflow-y: scroll;
+    color: var(--white);
+}
+
+.head_data_users_home,.data_users_home{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: var(--white);
+}
+.head_data_users_home div:nth-child(1),.data_users_home div:nth-child(1){
+    width: 28%;
+}
+.head_data_users_home div:nth-child(2),.data_users_home div:nth-child(2){
+    width: 58%;
+}
+
+/****************************************************  Fin recente_activity */
+
