@@ -11,7 +11,18 @@ const adminRouter = Router();
 
 adminRouter.get("/dashboard", async (req, res) => {
   try {
-    res.render("admin/dashboard.twig");
+    let collection = await collectionModel.find(req.body);
+    let users = await userModel.find(req.body);
+    let usersCount = await userModel.find(req.body).count();
+    let collectionCount = await collectionModel.find(req.body).count();
+    let cardCount = await cardModel.find(req.body).count();
+    res.render("admin/dashboard.twig", {
+      collection: collection,
+      users: users,
+      usersCount: usersCount,
+      collectionCount: collectionCount,
+      cardCount: cardCount
+    });
   } catch (error) {
     res.send(error);
   }

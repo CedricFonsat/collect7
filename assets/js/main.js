@@ -37,3 +37,43 @@ function sendData(e) {
 function meclick() {
     console.log("fhgjhvbhj");
 }
+
+const api = 'http://localhost:3000/';
+
+function searchProduct() {
+    let search = document.querySelector('#searchbar').value
+    let divSearchProduct = document.querySelector("#displaySearchProducts")
+
+    let parent= document.querySelector("#parent")
+    let  listId = parent.getAttribute("data-list");
+    fetch(api + 'product/findByName/' + search)
+        .then(response => response.json())
+        .then(response => {
+            
+            divSearchProduct.innerHTML = ''
+            for (let i = 0; i < response.length; i++) {
+                let data = response[i]
+                console.log(data);
+                let product = document.createElement("div")
+                product.addEventListener('click',()=>{
+                    addProduct(data,listId )
+                })
+                product.id = "product"
+                divSearchProduct.appendChild(product)
+                Object.entries(data).forEach(([key, value]) => {
+                    if (key != "_id") {
+                        product.innerHTML = value
+                        
+                    }
+                    if (search = '') {
+                        divSearchProduct.innerHTML = ''
+                    }
+
+                })
+            }
+        })
+        .catch(err => console.error(err));
+
+
+
+}

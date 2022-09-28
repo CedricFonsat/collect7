@@ -7,7 +7,7 @@
 		{% block stylesheet %}
 			<link rel="stylesheet" href="./css/dashboard/dashboard.css">
 			<link rel="stylesheet" href="./css/dashboard/menu.css">
-            <link rel="icon" type="image/x-icon" href="./img/svg/🦆 icon _pie chart_.svg">
+			<link rel="icon" type="image/x-icon" href="./img/svg/🦆 icon _pie chart_.svg">
 		{% endblock %}
 		{% block title %}
 			<title>Dashboard</title>
@@ -82,17 +82,17 @@
 						<div>
 							<img src="./img/svg/Group.svg" alt="utilisateurs">
 							<p>Utilisateurs</p>
-							<p id="data_global_users">6,382</p>
+							<p id="data_global_users">{{usersCount}}</p>
 						</div>
 						<div>
 							<img src="./img/svg/albums-svgrepo-com 2.svg" alt="collections">
 							<p>Collections</p>
-							<p id="data_global_collections">3</p>
+							<p id="data_global_collections">{{collectionCount}}</p>
 						</div>
 						<div>
 							<img src="./img/svg/card-svgrepo-com 1.svg" alt="cartes">
 							<p>Cartes</p>
-							<p id="data_global_cards">174</p>
+							<p id="data_global_cards">{{cardCount}}</p>
 						</div>
 					</div>
 				</section>
@@ -117,95 +117,25 @@
 							</div>
 						</div>
 						<div class="cover_data_users_home">
-							<div class="data_users_home">
-								<div>
-									<p>Utilisateur</p>
+							{% for users in users %}
+								<div class="data_users_home">
+									<div>
+										<p>{{users.userName}}</p>
+									</div>
+									<div>
+										<p>{{users.mail}}</p>
+									</div>
 								</div>
-								<div>
-									<p>adresse@mail.com</p>
-								</div>
-							</div>
-							<div class="data_users_home">
-								<div>
-									<p>Utilisateur</p>
-								</div>
-								<div>
-									<p>adresse@mail.com</p>
-								</div>
-							</div>
-							<div class="data_users_home">
-								<div>
-									<p>Utilisateur</p>
-								</div>
-								<div>
-									<p>adresse@mail.com</p>
-								</div>
-							</div>
-							<div class="data_users_home">
-								<div>
-									<p>Utilisateur</p>
-								</div>
-								<div>
-									<p>adresse@mail.com</p>
-								</div>
-							</div>
-							<div class="data_users_home">
-								<div>
-									<p>Utilisateur</p>
-								</div>
-								<div>
-									<p>adresse@mail.com</p>
-								</div>
-							</div>
-							<div class="data_users_home">
-								<div>
-									<p>Utilisateur</p>
-								</div>
-								<div>
-									<p>adresse@mail.com</p>
-								</div>
-							</div>
-							<div class="data_users_home">
-								<div>
-									<p>Utilisateur</p>
-								</div>
-								<div>
-									<p>adresse@mail.com</p>
-								</div>
-							</div>
-							<div class="data_users_home">
-								<div>
-									<p>Utilisateur</p>
-								</div>
-								<div>
-									<p>adresse@mail.com</p>
-								</div>
-							</div>
-							<div class="data_users_home">
-								<div>
-									<p>Utilisateur</p>
-								</div>
-								<div>
-									<p>adresse@mail.com</p>
-								</div>
-							</div>
-							<div class="data_users_home">
-								<div>
-									<p>Utilisateur</p>
-								</div>
-								<div>
-									<p>adresse@mail.com</p>
-								</div>
-							</div>
+							{% endfor %}
 						</div>
 					</div>
 				</section>
 			</main>
 		{% endblock %}
 
-        {% block footer %}{% endblock %}
+		{% block footer %}{% endblock %}
 
-        {% block script %}{% endblock %}
+		{% block script %}{% endblock %}
 
 	</body>
 </html>

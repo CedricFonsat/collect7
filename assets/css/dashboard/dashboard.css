@@ -142,19 +142,28 @@ main{
 
 
 /****************************************************  Fin global_stats */
+.recente_activity_title div{
+    margin-top: 25px;
+}
+.recente_activity_title h2{
+    margin-top: 25px;
+}
 
 .cover_data_users_home{
     width: 100%;
-    height: 250px;
+    height: 220px;
     overflow-y: scroll;
     color: var(--white);
+}
+.head_data_users_home{
+    margin-bottom: 20px;
 }
 
 .head_data_users_home,.data_users_home{
     height: 40px;
     display: flex;
     align-items: center;
-    padding-left: 30px;
+    padding-left: 40px;
     color: var(--white);
 }
 .head_data_users_home div:nth-child(1),.data_users_home div:nth-child(1){

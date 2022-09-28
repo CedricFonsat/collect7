@@ -45,7 +45,7 @@ visitorRouter.get("/registration", async (req, res) => {
 visitorRouter.post("/registration", async (req, res) => {
   try {
     await userController.setRegistration(req,res)
-    res.redirect("/connection")
+    res.redirect("/")
     console.log('patrick');
   } catch (error) {
     res.send(error);
@@ -67,7 +67,11 @@ visitorRouter.post("/connection", async (req, res) => {
     let user = await userController.setLogin(req,res)
     if (user) {
       req.session.user = user._id
-      res.redirect("/userOverview") 
+      if (user.userName == "admin") {
+        res.redirect("/dashboard") 
+      }else{
+        res.redirect("/userOverview") 
+      }
     } else {
       req.session.error = "vous n'etes pas connecté"
       res.redirect("/connection")
