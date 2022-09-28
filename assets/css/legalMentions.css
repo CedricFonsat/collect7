@@ -8,11 +8,12 @@ body{
     display: flex;
     justify-content: center;
     font-family: ubuntu;
-    line-height: 20px;
+   
 
 }
 div{
     width: 500px;
+    padding: 20px;
     
 }
 h1{

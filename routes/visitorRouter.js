@@ -59,6 +59,7 @@ visitorRouter.get("/connection", async (req, res) => {
     res.render("layout/connection.twig");
   } catch (error) {
     res.send(error);
+    res.redirect("/connection")
   }
 });
 
@@ -115,6 +116,20 @@ res.render("pages/userManual.twig")
 visitorRouter.get("/contact", async (req, res) => {
   try {
 res.render("pages/contact.twig")
+  } catch (error) {
+    res.send(error);
+  }
+});
+visitorRouter.get("/gcu", async (req, res) => {
+  try {
+res.render("pages/gcu.twig")
+  } catch (error) {
+    res.send(error);
+  }
+});
+visitorRouter.get("/privacyPolicy", async (req, res) => {
+  try {
+res.render("pages/privacyPolicy.twig")
   } catch (error) {
     res.send(error);
   }
