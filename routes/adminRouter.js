@@ -28,6 +28,17 @@ adminRouter.get("/dashboard", async (req, res) => {
   }
 });
 
+//---------------------------------------------- Users
+
+adminRouter.get("/dashboardUser", async (req, res) => {
+  try {
+    res.render("admin/layer/dashboardUser.twig")
+  } catch (error) {
+    res.send(error);
+  }
+}
+);
+
 //---------------------------------------------- Dashboard Home
 
 adminRouter.get("/dashboardHome", async (req, res) => {

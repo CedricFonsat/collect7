@@ -70,10 +70,6 @@
     color: var(--w-opacity);
 }
 
-.navigation div:nth-child(1) a{
-    color: var(--yellow);
-}
-
 .bottom_dashboard_menu{
     width: 90%;
     height: 32px;
@@ -81,6 +77,12 @@
     align-items: center;
     margin-left: 20px;
     margin-bottom: 40px;
+}
+
+.navigation div svg{
+    fill: var(--white);
+    fill-opacity: .3;
+    margin-left: 20px;
 }
 
 
