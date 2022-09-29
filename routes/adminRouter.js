@@ -191,7 +191,7 @@ adminRouter.get("/dashboardOthers", async (req, res) => {
 
 adminRouter.get("/dashboardCards", async (req, res) => {
   try {
-    let cards = await cardModel.find(req.body);
+    let cards = await cardModel.find(req.body)
     res.render("admin/layer/dashboardCards.twig",{
       cards: cards
     })
@@ -211,7 +211,10 @@ adminRouter.get("/dashboardCard/:id", async (req, res) => {
 
 adminRouter.get("/dashboardCardAdd", async (req, res) => {
   try {
-    res.render("admin/layer/dashboardCardAdd.twig");
+    let collections = await collectionModel.find()
+    res.render("admin/layer/dashboardCardAdd.twig",{
+      collections: collections
+    });
   } catch (error) {
     res.send(error);
   }

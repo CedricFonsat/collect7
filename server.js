@@ -7,6 +7,7 @@ import cors from 'cors'
 import session from 'express-session';
 import 'dotenv/config'
 import collectionModel from './models/collectionModel.js';
+import userModel from './models/userModel.js';
 
 const db = process.env.BDD_URL
 const app = express()
@@ -29,7 +30,7 @@ router.get('/*', function(req, res) {
 
    router.post("/getCollections", async (req, res) => {
       let payload = req.body.payload.trim();
-      let search = await collectionModel.find({nameCollection: {$regex: new RegExp('^'+payload+'.*','i')}}).exec();
+      let search = await userModel.find({userName: {$regex: new RegExp('^'+payload+'.*','i')}}).exec();
       search = search.slice(0, 10);
       res.send({payload: search})
   });

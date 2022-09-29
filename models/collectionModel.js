@@ -21,6 +21,7 @@ const collectionSchema = new mongoose.Schema({
         type:String,
         default: "carouselOne.png"
     },
+    cards: [{ type: mongoose.Schema.Types.ObjectId, ref: "Card" }]
 })
 
 const collectionModel = mongoose.model('collections', collectionSchema)

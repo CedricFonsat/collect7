@@ -74,8 +74,9 @@
 						</div>
 						<div>
 							<select name="categoryCard">
-								<option value="muzan">Muzan</option>
-								<option value="kim">Kim ou sushi</option>
+							{% for collection in collections %}
+								<option value={{collection._id}}>{{collection.nameCollection}}</option>
+							{% endfor %}
 							</select>
 						</div>
 						<div>

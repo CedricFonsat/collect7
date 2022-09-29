@@ -26,6 +26,11 @@ main{
     color: var(--yellow);
 }
 
+.navigation div:nth-child(1) svg{
+    fill: var(--yellow);
+    fill-opacity: 1;
+}
+
 .dashboard_head_home{
     width: 100%;
     height: 12%;
@@ -130,7 +135,7 @@ main{
 .stats_container div:nth-child(2){
     margin: 0 15px;
 }
-.stats_container div img{
+.stats_container div svg{
     width: 48px;
     margin-bottom: 10px;
 }

@@ -9,71 +9,41 @@ function sendData(e) {
         let payload = data.payload;
         searchResults.innerHTML = "";
         if (payload.length < 1) {
-            searchResults.innerHTML = '<p>Sorry. Nothing Found.</p>';
+            let div = document.createElement('div')
+            let div1 = document.createElement('div')
+            let p1 = document.createElement('p')
+
+            searchResults.appendChild(div)
+            div.appendChild(div1)
+            div1.appendChild(p1)
+
+            p1.style.marginLeft = "40px"
+            p1.textContent = "Sorry. Nothing Found."
             return;
         }
         payload.forEach((item, index)=> {
-             if(index > 0) searchResults.innerHTML += '<hr>';
 
              let div = document.createElement('div')
-             div.className = "data_collections"
+             let div1 = document.createElement('div')
+             let div2 = document.createElement('div')
+             let p1 = document.createElement('p')
+             let p2 = document.createElement('p')
+
+             div.className = "data_users_home"
+
              searchResults.appendChild(div)
-             let title = document.createElement('p')
-             title.textContent = item.nameCollection
-             div.appendChild(title)
-             title.style.color = "red"
-             title.style.cursor = "pointeur"
-             let a = document.createElement('a')
-             a.innerText = "tyyyyyy"
-             a.color = "red"
-             div.appendChild(a)
-             a.href = `/dashboardCollections/{{collections.id}}`
+             div.appendChild(div1)
+             div.appendChild(div2)
+             div1.appendChild(p1)
+             div2.appendChild(p2)
+
+             p1.textContent = item.userName
+             p2.textContent = item.mail
+
+             div1.style.border = "none"
+             div2.style.border = "none"
 
         });
         return;
     })
-}
-
-function meclick() {
-    console.log("fhgjhvbhj");
-}
-
-const api = 'http://localhost:3000/';
-
-function searchProduct() {
-    let search = document.querySelector('#searchbar').value
-    let divSearchProduct = document.querySelector("#displaySearchProducts")
-
-    let parent= document.querySelector("#parent")
-    let  listId = parent.getAttribute("data-list");
-    fetch(api + 'product/findByName/' + search)
-        .then(response => response.json())
-        .then(response => {
-            
-            divSearchProduct.innerHTML = ''
-            for (let i = 0; i < response.length; i++) {
-                let data = response[i]
-                console.log(data);
-                let product = document.createElement("div")
-                product.addEventListener('click',()=>{
-                    addProduct(data,listId )
-                })
-                product.id = "product"
-                divSearchProduct.appendChild(product)
-                Object.entries(data).forEach(([key, value]) => {
-                    if (key != "_id") {
-                        product.innerHTML = value
-                        
-                    }
-                    if (search = '') {
-                        divSearchProduct.innerHTML = ''
-                    }
-
-                })
-            }
-        })
-        .catch(err => console.error(err));
-
-
-
 }
