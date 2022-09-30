@@ -76,12 +76,13 @@ userRouter.get("/changePassword", async (req, res) => {
   
   userRouter.get("/userOverview", async (req, res) => {
     try {
+      
       let userConnect = await userModel.findOne({ _id: req.session.user });
       if (userConnect) {
         userConnect = userConnect.userName;
       }
         res.render("pages/userOverview.twig", {
-          userConnect: userConnect,
+          userConnect: userConnect
         });
     } catch (error) {
       res.send(error);
