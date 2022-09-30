@@ -114,8 +114,6 @@ function dataUsers(e) {
 let acc = document.querySelector(".accordion");
 let cVsJ = false
 
-
-
   acc.addEventListener("click", function() {
     cpuVsJoueur() 
     this.classList.toggle("active");
@@ -125,9 +123,7 @@ let cVsJ = false
     } else {
       panel.style.maxHeight = panel.scrollHeight + "px";
     } 
-
   });
-
 
 
 
@@ -143,3 +139,15 @@ function cpuVsJoueur() {
       cVsJ = false
   }
   }
+
+  let acc2 = document.querySelector(".accordion2");
+  
+    acc2.addEventListener("click", function() {
+      this.classList.toggle("active");
+      let panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      } 
+    });

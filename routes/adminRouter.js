@@ -52,6 +52,49 @@ adminRouter.post("/dashboardUser", async (req, res) => {
 }
 );
 
+//---------------------------------------------- Collection
+
+adminRouter.get("/dashboardCollection", async (req, res) => {
+  try {
+    let collections = await collectionModel.find(req.body);
+    res.render("admin/layer/dashboardCollection.twig",{
+      collections: collections
+    })
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //---------------------------------------------- Dashboard Home
 
 adminRouter.get("/dashboardHome", async (req, res) => {

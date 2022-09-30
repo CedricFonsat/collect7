@@ -1,0 +1,113 @@
+{% extends "../dashboard.twig" %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="./css/dashboard/dashboardCollections.css">
+	<link rel="stylesheet" href="./css/dashboard/menu.css">
+	<link rel="icon" type="image/x-icon" href="./img/svg/🦆 icon _pie chart_.svg">
+{% endblock %}
+
+{% block title %}
+	<title>Dashboard Users</title>
+{% endblock %}
+
+{% block main %}
+	<main>
+		<section class="dashboard_head">
+			<div class="dashboard_search">
+				<img src="./img/svg/🦆 icon _magnifying glass_.svg" alt="" srcset="">
+				<input type="text" placeholder="Rechercher..." onkeyup="dataUsers(this)">
+			</div>
+			<div class="dashboard_profile">
+				<img src="" alt="" srcset="">
+			</div>
+		</section>
+
+
+		<section>
+
+			<article class="dashboard_users_add">
+				<button class="accordion">
+					<div class="add_user_title">
+						<div>
+							<img src="./img/svg/collection_add.svg" alt="statistique global">
+						</div>
+						<h2 class="title_add_user">Ajouter une collection</h2>
+					</div>
+				</button>
+				<div class="panel">
+					<form action="/dashboardUser" method="post">
+						<div class="form_left_collection">
+							<input type="text" placeholder="Nom d'Ulisateur" name="userName">
+							<input type="email" placeholder="Email" name="mail">
+							<input type="password" placeholder="Mot de passe" name="password">
+							<div>
+								<button type="submit">Ajouter</button>
+								<p class="close">Annuler</p>
+							</div>
+						</div>
+
+
+						<div class="form_right_collection">
+							<div class="wrapper">
+								<header>File Uploader JavaScript</header>
+									<input class="file-input" type="file" name="file" hidden>
+									<i class="fas fa-cloud-upload-alt"></i>
+									<p>Browse File to Upload</p>
+								<section class="progress-area"></section>
+								<section class="uploaded-area"></section>
+							</div>
+						</div>
+					</form>
+				</div>
+			</article>
+		</section>
+		<section class="dashboard_list_users">
+
+			<div class="users_list_title">
+				<div>
+					<img src="./img/svg/collection.svg" alt="statistique global">
+				</div>
+				<h2>Liste des collections</h2>
+			</div>
+
+			<div>
+				<div class="head_data_users_home">
+					<div>
+						<p>Nom d’utilisateur</p>
+					</div>
+					<div>
+						<p>Image Collection</p>
+					</div>
+					<div>
+						<p>Modifier</p>
+					</div>
+					<div>
+						<p>Supprimer</p>
+					</div>
+				</div>
+				<div class="cover_data_users_home" id="searchResults">
+					{% for collections in collections %}
+						<div class="data_users_home">
+							<div>
+								<p>{{collections.nameCollection}}</p>
+							</div>
+							<div class="dashboard_image_collection">
+								<img src="./uploads/collections/{{collections.imageCollection}}" alt="" srcset="">
+							</div>
+							<div>
+								<a href=""><img src="./img/svg/modifier.svg"></a>
+							</div>
+							<div>
+								<a href=""><img src="./img/svg/delete.svg"></a>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+	</main>
+{% endblock %}
+
+{% block script %}
+	<script src="./js/main.js"></script>
+{% endblock %}
