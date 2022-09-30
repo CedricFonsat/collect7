@@ -1,16 +1,92 @@
 {% extends "../dashboard.twig" %}
 
-        {% block stylesheet %}
-			<link rel="stylesheet" href="./css/dashboard/dashboardUsers.css">
-			<link rel="stylesheet" href="./css/dashboard/menu.css">
-			<link rel="icon" type="image/x-icon" href="./img/svg/🦆 icon _pie chart_.svg">
-		{% endblock %}
-		{% block title %}
-			<title>Dashboard Users</title>
-		{% endblock %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="./css/dashboard/dashboardUsers.css">
+	<link rel="stylesheet" href="./css/dashboard/menu.css">
+	<link rel="icon" type="image/x-icon" href="./img/svg/🦆 icon _pie chart_.svg">
+{% endblock %}
+{% block title %}
+	<title>Dashboard Users</title>
+{% endblock %}
 
-        	{% block main %}
-			<main>
+{% block main %}
+	<main>
+		<section class="dashboard_head">
+			<div class="dashboard_search">
+				<img src="./img/svg/🦆 icon _magnifying glass_.svg" alt="" srcset="">
+				<input type="text" placeholder="Rechercher..." onkeyup="dataUsers(this)">
+			</div>
+			<div class="dashboard_profile">
+				<img src="" alt="" srcset="">
+			</div>
+		</section>
 
-			</main>
-		{% endblock %}
+
+		<section>
+
+			<article class="dashboard_users_add">
+				<button class="accordion">
+					<div class="add_user_title">
+						<div>
+							<img src="./img/svg/user_add.svg" alt="statistique global">
+						</div>
+						<h2 class="title_add_user">Ajouter un utilisateur</h2>
+					</div>
+				</button>
+				<div class="panel">
+					<form action="/dashboardUser" method="post">
+						<input type="text" placeholder="Nom d'Ulisateur" name="userName">
+						<input type="email" placeholder="Email" name="mail">
+						<input type="password" placeholder="Mot de passe" name="password">
+						<div>
+							<button type="submit">Ajouter</button>
+							<p class="close">Annuler</p>
+						</div>
+					</form>
+				</div>
+			</article>
+		</section>
+		<section class="dashboard_list_users">
+
+			<div class="users_list_title">
+				<div>
+					<img src="./img/svg/users.svg" alt="statistique global">
+				</div>
+				<h2>Liste des utilisateurs</h2>
+			</div>
+
+			<div>
+				<div class="head_data_users_home">
+					<div>
+						<p>Nom d’utilisateur</p>
+					</div>
+					<div>
+						<p>Adresse e-mail</p>
+					</div>
+					<div>
+						<p>Supprimer</p>
+					</div>
+				</div>
+				<div class="cover_data_users_home" id="searchResults">
+                {% for users in users %}
+					<div class="data_users_home">
+						<div>
+							<p>{{users.userName}}</p>
+						</div>
+						<div>
+							<p>{{users.mail}}</p>
+						</div>
+						<div>
+							<a href=""><img src="./img/svg/delete.svg"></a>
+						</div>
+					</div>
+                    {% endfor %}
+				</div>
+			</div>
+		</section>
+	</main>
+{% endblock %}
+
+{% block script %}
+	<script src="./js/main.js"></script>
+{% endblock %}

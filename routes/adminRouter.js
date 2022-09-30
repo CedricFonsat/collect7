@@ -1,5 +1,6 @@
 import { Router } from "express";
 import collectionController from "../controllers/collectionController.js";
+import userController from "../controllers/userController.js"
 import collectionModel from "../models/collectionModel.js";
 import userModel from "../models/userModel.js"
 import overviewController from "../controllers/overviewController.js";
@@ -32,7 +33,19 @@ adminRouter.get("/dashboard", async (req, res) => {
 
 adminRouter.get("/dashboardUser", async (req, res) => {
   try {
-    res.render("admin/layer/dashboardUser.twig")
+    let users = await userModel.find(req.body);
+    res.render("admin/layer/dashboardUser.twig",{
+      users: users,
+    });
+  } catch (error) {
+    res.send(error);
+  }
+}
+);
+adminRouter.post("/dashboardUser", async (req, res) => {
+  try {
+    await userController.setRegistration(req,res)
+    res.redirect("/dashboardUser");
   } catch (error) {
     res.send(error);
   }
@@ -105,7 +118,7 @@ adminRouter.get("/dashboardUserAdd", async (req, res) => {
 adminRouter.get("/dashboardUsers/:id", async (req, res) => {
   try {
     await userModel.deleteOne({ _id: req.params.id });
-    res.redirect("/dashboardUsers");
+    res.redirect("/dashboardUser");
   } catch (error) {
     res.send(error);
   }

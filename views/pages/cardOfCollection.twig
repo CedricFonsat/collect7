@@ -1,0 +1,51 @@
+{% extends "../base.twig" %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="./css/shopCards.css">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/ico.png">
+{% endblock %}
+
+{% block title %}
+	<title>Document</title>
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block main %}
+	<div class='head'>
+		<img src="./uploads/collections/{{collection.imageCollection}}" alt="hhhhh">
+		<h1>{{collection.nameCollection}}</h1>
+		<hr>
+	</div>
+	<div id="flex-end">
+		<div id='search'>
+			<input id="searchbar" type="text" name="search" placeholder="Rechercher">
+			<img src="./img/search.png" alt="">
+		</div>
+	</div>
+	<section class="section">
+{% for cards in cards %}
+    			<article>
+            <h3>{{cards._id}}</h3>
+				{# <img class='card' src="../img/sanji_card.png"  alt=""> #}
+                <img class='card' src="../uploads/cards/{{cards.imageCard}}"  alt=""> 
+				<div id='row'>
+					<p>88 $</p>
+					<button class='buy'>Acheter</button>
+				</div>
+			</article>
+{% endfor %}
+	</section>
+	{% block navMobile %}
+		{% include "../layout/navMobile/navMobile.twig" %}
+	{% endblock %}
+	{% block wallet_modal %}
+		{% include "../layout/wallet.twig" %}
+	{% endblock %}
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block script %}
+	<script src="./js/wallet.js"></script>
+{% endblock %}

@@ -5,6 +5,24 @@ import cardModel from "../models/cardModel.js";
 
 const userRouter = Router();
 
+// Route Card by Collection -------------------
+
+userRouter.get("/getCards/:id", async (req, res) => {
+  try {
+    let collection = await collectionModel.findOne({ _id: req.params.id });
+    let cards = collection.cards
+    console.log(collection);
+    console.log("ggggg");
+res.render("pages/cardOfCollection.twig",{
+  collection: collection,
+  cards: cards
+})
+console.log("ggggr");
+  } catch (error) {
+    res.send(error);
+  }
+});
+
 // Route changepassword \\
 
 userRouter.get("/changePassword", async (req, res) => {
