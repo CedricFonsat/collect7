@@ -6,11 +6,9 @@ export class cardController {
 
         req.body.imageCard = req.file.filename;
         console.log(req.body.categoryCard)
-        await collectionModel.updateOne({_id: req.body.categoryCard},{ $push: { cards: req.body.categoryCard } })
-        
-        let cards = new cardModel(req.body)
-        
-        await cards.save()
+        let card = new cardModel(req.body)
+        await card.save()
+        await collectionModel.updateOne({_id: req.body.categoryCard},{ $push: { cards: card._id } })
     }
 }
 
