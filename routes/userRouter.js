@@ -9,7 +9,8 @@ const userRouter = Router();
 
 userRouter.get("/getCards/:id", async (req, res) => {
   try {
-    let collection = await collectionModel.findOne({ _id: req.params.id });
+    let collection = await collectionModel.findOne({ _id: req.params.id }).populate('cards');
+    console.log(collection);
     let cards = collection.cards
     console.log(collection);
     console.log("ggggg");
