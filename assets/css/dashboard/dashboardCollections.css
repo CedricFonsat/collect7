@@ -26,6 +26,7 @@ main{
 /**************************************************** Accordion */
 
 .accordion {
+    background-color: #2A2A2A;
     color: white;
     cursor: pointer;
     width: 100%;
@@ -34,60 +35,124 @@ main{
     outline: none;
     font-size: 15px;
     transition: 0.4s;
-    background: none;
-  }
-  
-  .acthive:after {
-    content: "\2212";
   }
   
   .panel {
-    padding: 0 40px;
+    padding: 0 18px;
+    background-color: #2A2A2A;
     max-height: 0;
     overflow: hidden;
+    width: 700px;
     transition: max-height 0.2s ease-out;
   }
+  form{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 40px;
+  margin-bottom: 30px;
+  }
+  .form_left{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
   
-  form {
+  .form_left input{
+      width: 94%;
+      height: 50px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+      padding: 0px 10px;
+      outline: none;
+      background-color: var(--grey);
+      color: white;
+  }
+  
+  .form_left textarea{
+  padding: 30px 0px;
+      width: 94%;
+      height: 100px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+      padding: 10px;
+      outline: none;
+      resize: none;
+      background-color: var(--grey);
+      color: white;
+  }
+  
+  .form_right{
+  margin-top: 50px;
     width: 300px;
     height: 300px;
-  }
-  form input{
-    width: 100%;
-    height: 50px;
-    border: none;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--grey);
+    justify-content: center;
+    align-items: center;
     border-radius: 6px;
-    margin-top: 10px;
-    padding: 0px 10px;
-    outline: none;
-    background-color: var(--w-op);
-    color: var(--white);
+    color: var(--w-opacity);
   }
-  form div{
+  
+  .input_file{
+  width: 80%;
+  height: 60%;
+  border: 1px dashed var(--w-opacity);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: var(--w-opacity);
+  }
+  
+  .input_file input{
+  cursor: pointer;
+    position: absolute;
     width: 100%;
-    height: 50px;
+    height: 100%;
+    opacity: 0;
+  }
+  
+  .button{
+    width: 300px;
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-   }
-  form div button{
-    border:none;
-    height: 100%;
-    width: 50%;
-    border-radius: 6px;
-    background-color: var(--yellow);
-    cursor: pointer;
+    }
+    
+  .button button{
+  width: 45%;
+  height: 50px;
+  background-color: green;
+      border-radius: 6px;
+      background-color: var(--yellow);
+      cursor: pointer;
+      border:none;
   }
-  form div p{
-    height: 100%;
-    width: 45%;
-    color: white;
-    text-decoration: none;
+  .button a{
+      width: 45%;
+      height: 50px;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .form_right{
+    width: 300px;
+    height: 200px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
   }
 
+  .dashboard_deconnexion{
+      color: white !important;
+  }
 /**************************************************** Search */
 
 .dashboard_head{
@@ -130,7 +195,6 @@ main{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 1px solid red;
     margin-right: 20px;
 }
 
@@ -193,7 +257,6 @@ main{
     align-items: center;
     padding-left: 40px;
     color: var(--white);
-    border: 1px solid red;
 }
 .data_users_home{
     height: 80px;

@@ -65,6 +65,18 @@ adminRouter.get("/dashboardCollection", async (req, res) => {
   }
 });
 
+adminRouter.post("/dashboardCollectionAdd", uploadCollections.single('imageCollection')
+,async (req, res) => {
+    try {
+      await collectionController.setAddCollection(req, res);
+      res.redirect("/dashboardCollection");
+      console.log("add collection");
+    } catch (error) {
+      res.send(error);
+    }
+  }
+);
+
 
 
 

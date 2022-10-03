@@ -35,28 +35,25 @@
 					</div>
 				</button>
 				<div class="panel">
-					<form action="/dashboardUser" method="post">
-						<div class="form_left_collection">
-							<input type="text" placeholder="Nom d'Ulisateur" name="userName">
-							<input type="email" placeholder="Email" name="mail">
-							<input type="password" placeholder="Mot de passe" name="password">
-							<div>
+					<form action="/dashboardCollectionAdd" method="post">
+						<div class="form_left">
+							<input type="text" placeholder="Nom de collection" name="nameCollection">
+							<input type="text" placeholder="Catégorie" name="categoryCollection">
+							<textarea cols="30" rows="5" name="descriptionCollection" placeholder="Description"></textarea>
+							<div class="button">
 								<button type="submit">Ajouter</button>
-								<p class="close">Annuler</p>
+								<a href="">Annuler</a>
 							</div>
 						</div>
 
-
-						<div class="form_right_collection">
-							<div class="wrapper">
-								<header>File Uploader JavaScript</header>
-									<input class="file-input" type="file" name="file" hidden>
-									<i class="fas fa-cloud-upload-alt"></i>
-									<p>Browse File to Upload</p>
-								<section class="progress-area"></section>
-								<section class="uploaded-area"></section>
+						<div class="form_right">
+							<p>Image</p>
+							<div class="input_file">
+								<input type="file" name="imageCollection">
+								<p>Browse File to Upload</p>
 							</div>
 						</div>
+
 					</form>
 				</div>
 			</article>

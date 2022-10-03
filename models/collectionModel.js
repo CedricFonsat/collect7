@@ -9,10 +9,6 @@ const collectionSchema = new mongoose.Schema({
         type:String,
         required: [true, "Pas de categorie"]
     },
-    cardNumberCollection: {
-        type:Number,
-        required: [true, "Pas de nombre de carte"]
-    },
     descriptionCollection: {
         type:String,
         required: [true, "Pas de description"]
