@@ -11,7 +11,15 @@ body {
     font-family: 'ubuntu';
 }
 
+/*dgxrhcghj*/
 
+.form_error{
+    color: red;
+    background-color: rgba(218, 33, 33, 0.313);
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
 
 /* TOP CONTAINER */
 

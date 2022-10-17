@@ -22,6 +22,9 @@ main{
     width: 80%;
     height: 100%;
 }
+a{
+    cursor: pointer;
+}
 
 .navigation div:nth-child(1) a{
     color: var(--yellow);

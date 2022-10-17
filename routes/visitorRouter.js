@@ -54,35 +54,22 @@ visitorRouter.post("/registration", async (req, res) => {
 
 // Connection
 
-visitorRouter.get("/connection", async (req, res) => {
-  try {
-    res.render("layout/connection.twig");
-  } catch (error) {
-    res.send(error);
-    res.redirect("/connection")
-  }
-});
-
 visitorRouter.post("/connection", async (req, res) => {
   try {
     let user = await userController.setLogin(req,res)
     if (user) {
       req.session.user = user._id
-      if (user.userName == "admin") {
-        res.redirect("/dashboard") 
-      }else{
-        res.redirect("/userOverview") 
-      }
+      res.json(user)
     } else {
-      req.session.error = "vous n'etes pas connecté"
-      res.redirect("/connection")
+      res.status(500)
+      res.json(`<p class="form_error"> Vous n'etes pas connecté </p>`)
     }
   }
   catch(error) {
+    console.log(error);
     res.send(error);
   }
 });
-
 
 // Logout
 
