@@ -1,0 +1,121 @@
+{% extends "../dashboard.twig" %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="./css/dashboard/dashboardOverview.css">
+	<link rel="stylesheet" href="./css/dashboard/menu.css">
+	<link rel="icon" type="image/x-icon" href="./img/svg/🦆 icon _pie chart_.svg">
+{% endblock %}
+
+{% block title %}
+	<title>Tableau de bord - Actualité</title>
+{% endblock %}
+
+{% block main %}
+	<main>
+		<section class="dashboard_head">
+			<div class="dashboard_search">
+				<img src="./img/svg/🦆 icon _magnifying glass_.svg" alt="" srcset="">
+				<input type="text" placeholder="Rechercher..." onkeyup="dataUsers(this)">
+			</div>
+			<div class="dashboard_profile">
+				<img src="" alt="" srcset="">
+			</div>
+		</section>
+
+
+		<section>
+
+			<article class="dashboard_users_add">
+				<button class="accordion">
+					<div class="add_user_title">
+						<div>
+							<img src="./img/svg/collection_add.svg" alt="statistique global">
+						</div>
+						<h2 class="title_add_user">Ajouter une actualité</h2>
+					</div>
+				</button>
+				<div class="panel">
+					<form action="/dashboardOverview" method="post" enctype="multipart/form-data">
+						<div class="form_left">
+							<input type="text" placeholder="Nom de l'actualité" name="titleOverview">
+							<textarea cols="30" rows="5" name="descriptionOverview" placeholder="Description"></textarea>
+							<div class="button">
+								<button type="submit">Ajouter</button>
+								<a href="/dashboardOverview">Annuler</a>
+							</div>
+						</div>
+
+						<div class="form_right">
+							<p>Arrière plan</p>
+							<div class="input_file">
+								<input type="file" name="backgroundImageOverview">
+								<p>Importer une image</p>
+							</div>
+						</div>
+						<div class="form_right">
+							<p>Premier plan</p>
+							<div class="input_file">
+								<input type="file" name="imageOverview">
+								<p>Importer une image</p>
+							</div>
+						</div>
+					</form>
+				</div>
+			</article>
+		</section>
+		<section class="dashboard_list_users">
+
+			<div class="users_list_title">
+				<div>
+					<img src="./img/svg/collection.svg" alt="statistique global">
+				</div>
+				<h2>Liste des actualités</h2>
+			</div>
+
+			<div>
+				<div class="head_data_users_home">
+					<div>
+						<p>Nom de l'actualité</p>
+					</div>
+					<div>
+						<p>Image premier plan</p>
+					</div>
+					<div>
+						<p>Image arriere plan</p>
+					</div>
+					<div>
+						<p>Modifier</p>
+					</div>
+					<div>
+						<p>Supprimer</p>
+					</div>
+				</div>
+				<div class="cover_data_users_home" id="searchResults">
+					{% for overview in overviews %}
+						<div class="data_users_home">
+							<div>
+								<p>{{overview.titleOverview}}</p>
+							</div>
+							<div class="dashboard_image_collection">
+								<img src="./uploads/overviews/{{overview.imageOverview}}" alt="" srcset="">
+							</div>
+							<div class="dashboard_image_collection">
+								<img src="./uploads/overviews/{{overview.backgroundImageOverview}}" alt="" srcset="">
+							</div>
+							<div>
+								<a href="/dashboardOverviewUpdate/{{overview.id}}"><img src="./img/svg/modifier.svg"></a>
+							</div>
+							<div>
+								<a href="/dashboardOverview/{{overview.id}}"><img src="./img/svg/delete.svg"></a>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+	</main>
+{% endblock %}
+
+{% block script %}
+	<script src="./js/main.js"></script>
+{% endblock %}

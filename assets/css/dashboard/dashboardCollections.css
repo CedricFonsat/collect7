@@ -23,6 +23,8 @@ main{
     width: 80%;
     height: 100%;
 }
+
+
 /**************************************************** Accordion */
 
 .accordion {
@@ -42,7 +44,7 @@ main{
     background-color: #2A2A2A;
     max-height: 0;
     overflow: hidden;
-    width: 700px;
+    width: 800px;
     transition: max-height 0.2s ease-out;
   }
   form{
@@ -50,6 +52,7 @@ main{
   justify-content: space-between;
   margin-left: 40px;
   margin-bottom: 30px;
+  width: 700px;
   }
   .form_left{
     width: 300px;
@@ -196,6 +199,7 @@ main{
     height: 50px;
     border-radius: 50%;
     margin-right: 20px;
+    border: 1px solid red;
 }
 
 /**************************************************** Fin Search */

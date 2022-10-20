@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/dashboard/navbar.css">
+
+{% block navbar %}
+	<nav class="navbar_desktop">
+		<div>
+			<h1 class="navbar_desktop_title">Collect7</h1>
+		</div>
+		<div class="navbar_desktop_link">
+			<a href="/shopCollections">Accueil</a>
+			<a href="/shopCommunity">Boutique communautaire</a>
+		</div>
+		<div class="navbar_desktop_pw">
+			<div class="dropdown_user">
+				<div class="dropdown_user_btn">
+						<img src="https://p4.wallpaperbetter.com/wallpaper/345/862/462/polygon-4k-5k-landscape-wallpaper-preview.jpg" alt="photo de profil">
+				</div>
+				<div class="dropdown_content_user">
+					<a href="#"> Salut {{userConnect.userName}} !</a>
+					<a href="/userOverview">Ma galerie</a>
+					<a href="/profil/{{userConnect.id}}">Mon compte</a>
+					<a href="/logout">Se deconnecter</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+{% endblock %}

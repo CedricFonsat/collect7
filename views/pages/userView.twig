@@ -1,0 +1,51 @@
+{% extends "../base.twig" %}
+
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="../css/userview.css">
+{% endblock %}
+
+{% block header %}
+	{% block navbar %}
+		{% include "../layout/nav/navBar.twig" %}
+	{% endblock %}
+{% endblock %}
+
+{% block main %}
+	<div class="userview_cover">
+        <div class="userview_cover_img">
+        <img src="https://i.pinimg.com/originals/5b/86/98/5b869876b50b929cac29411d2f9c958f.jpg" alt="photo de couverture">
+        </div>
+		<div class="userview_avatar">
+			<img src="https://p4.wallpaperbetter.com/wallpaper/345/862/462/polygon-4k-5k-landscape-wallpaper-preview.jpg" alt="photo de profile">
+		</div>
+	</div>
+
+<section class="userview_tabbar">
+<div class="userview_title_apercu"><a href="">Aperçu</a></div>
+<div class="userview_title_cards"><a href="">Cartes</a></div>
+<div class="userview_title_sell"><a href="">Ventes</a></div>
+</section>
+
+	<section class="userview_apercu">
+     <div class="myFavoriteCard"><h2>Mes cartes favorite</h2></div>
+		<article class="userview_favorite_card">
+			{% for card in cards %}
+
+
+
+				 {% if card == null %} 
+<div>t'es null</div>
+        {% else %}
+             				<div class="userview_card">
+					<img width="180px" src="../uploads/cards/{{card.imageCard}}" alt="">
+				</div>
+        {% endif %}>
+
+
+
+
+			{% endfor %}
+		</article>
+	</section>
+{% endblock %}

@@ -24,14 +24,15 @@
 		</div>
 	</div>
 	<section class="section">
-{% for cards in cards %}
+{% for card in cards %}
     			<article>
-            <h3>{{cards.nameCard}}</h3>
+            <h3>{{card.nameCard}}</h3>
 				{# <img class='card' src="../img/sanji_card.png"  alt=""> #}
-                <img width="200px" src="../uploads/cards/{{cards.imageCard}}"  alt=""> 
+                <img width="200px" src="../uploads/cards/{{card.imageCard}}"  alt=""> 
 				<div id='row'>
-					<p>{{cards.priceCard}} $</p>
-					<button class='buy'>Acheter</button>
+					<p>{{card.priceCard}} $</p>
+					{# <button class='buy' id="buyCard">Acheter</button>  #}
+					<a href="/buyCard/{{card.id}}" class='buy' >Acheter</a>
 				</div>
 			</article>
 {% endfor %}
@@ -48,4 +49,5 @@
 
 {% block script %}
 	<script src="../js/wallet.js"></script>
+	<script src="../js/main.js"></script>
 {% endblock %}

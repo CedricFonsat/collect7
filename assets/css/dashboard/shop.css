@@ -1,0 +1,145 @@
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #2a2a2a;
+}
+
+.userview_cover{
+    height: 300px;
+    width: 100%;
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.userview_cover img{
+    width: 100%;
+}
+
+/**************************************************** a change de nom de class */
+
+.userview_apercu{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/**************************************************** a change de nom de class */
+
+.userview_avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    color: white;
+    position: absolute;
+    bottom: -50px;
+    left: 50px;
+    z-index: 55;
+    overflow: hidden;
+}
+
+.userview_avatar img{
+    width: 100%;
+}
+
+.userview_apercu{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    position: relative;
+}
+
+.userview_favorite_card{
+    width: 80%;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.seven_coin{
+    width: 12px;
+}
+
+.userview_card{
+    margin: 10px;
+    width: 480px;
+    height: 280px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+/*********************$ shop test */
+
+.shop_description_absolute{
+    position: absolute;
+    bottom: 40px;
+    z-index: 99;
+    color: white;
+}
+
+.shop_btn_collection{
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.userview_card img{
+    width: 100%;
+}
+
+/*************************************  tabbar */
+
+.userview_tabbar{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+.userview_tabbar div{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #343333;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.userview_tabbar div:hover{
+    background-color: #414040;
+}
+
+.userview_tabbar div a{
+    text-decoration: none;
+    color: white;
+
+}
+
+/*************************************  tabbar apercu */
+
+.userview_tabbar div:nth-child(1){
+    border-top: 2px solid #EDBE12;
+    transition: all 2s ease-in-out;
+}
+
+.userview_tabbar div:nth-child(1) a{
+    text-decoration: none;
+    color: #EDBE12;
+
+}
+

@@ -35,7 +35,7 @@
 					</div>
 				</button>
 				<div class="panel">
-					<form action="/dashboardCollectionAdd" method="post">
+					<form action="/dashboardCollectionAdd" method="post" enctype="multipart/form-data">
 						<div class="form_left">
 							<input type="text" placeholder="Nom de collection" name="nameCollection">
 							<input type="text" placeholder="Catégorie" name="categoryCollection">
@@ -83,19 +83,19 @@
 					</div>
 				</div>
 				<div class="cover_data_users_home" id="searchResults">
-					{% for collections in collections %}
+					{% for collection in collections %}
 						<div class="data_users_home">
 							<div>
-								<p>{{collections.nameCollection}}</p>
+								<p>{{collection.nameCollection}}</p>
 							</div>
 							<div class="dashboard_image_collection">
-								<img src="./uploads/collections/{{collections.imageCollection}}" alt="" srcset="">
+								<img src="./uploads/collections/{{collection.imageCollection}}" alt="" srcset="">
 							</div>
 							<div>
-								<a href=""><img src="./img/svg/modifier.svg"></a>
+								<a href="/dashboardCollectionUpdate/{{collection.id}}"><img src="./img/svg/modifier.svg"></a>
 							</div>
 							<div>
-								<a href=""><img src="./img/svg/delete.svg"></a>
+								<a href="/dashboardCollection/{{collection.id}}"><img src="./img/svg/delete.svg"></a>
 							</div>
 						</div>
 					{% endfor %}

@@ -88,4 +88,9 @@
     color: var(--white);
 }
 
+/**************************************************** title update */
 
+.dashboard_update_title{
+    margin-left: 30px;
+    color: var(--white);
+}

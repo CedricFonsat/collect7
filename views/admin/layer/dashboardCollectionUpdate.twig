@@ -1,84 +1,53 @@
-{% extends "../dashboardHome.twig" %}
+{% extends "../dashboard.twig" %}
 
 {% block stylesheet %}
-	<link rel="stylesheet" href="./css/dashboard.css">
-	<link rel="stylesheet" href="./css/dashboardCollectionAdd.css">
+	<link rel="stylesheet" href="../css/dashboard/dashboardCollections.css">
+	<link rel="stylesheet" href="../css/dashboard/menu.css">
+	<link rel="icon" type="image/x-icon" href="../img/svg/🦆 icon _pie chart_.svg">
+{% endblock %}
+
+{% block title %}
+	<title>Tableau de bord - Modifier collection</title>
 {% endblock %}
 
 {% block main %}
-	<section class="dashboard_home">
-		<aside class="dashboard_menu">
-			<nav class="dashboard_navigation">
-				<div>
-					<img src="./img/bx_home.png" alt="" srcset="">
-					<a href="/dashboardHome">Accueil</a>
-				</div>
-				<div>
-					<img src="./img/bx_user.png" alt="" srcset="">
-					<a href="/dashboardUsers">Utilisateur</a>
-				</div>
-				<div>
-					<img src="./img/bx_data.png" alt="" srcset="">
-					<a href="/dashboardCollections">Collection</a>
-				</div>
-				<div>
-					<img src="./img/bx_three-dots.png" alt="" srcset="">
-					<a href="/dashboardOthers">Overview</a>
-				</div>
-			</nav>
-			<span class="logout_dashboard">
-				<img src="./img/logout.png" alt="" srcset="">
-				<a href="">Deconnexion</a>
-			</span>
-		</aside>
-		<article class="dashboard_view_collection_add">
-			<div class="collection_add_image">
-				<p>Image</p>
-				<div>
+	<main>
+		<section class="dashboard_head">
+				<h2 class="dashboard_update_title">Collection : {{collection.nameCollection}}</h2>
+			<div class="dashboard_profile">
+				<img src="" alt="" srcset="">
+			</div>
+		</section>
 
-					<img src="./img/bx_image-add.png" alt="add">
-				</div>
-			</div>
-			<div class="collection_add_form">
-				<div class="collection_add_form_header">
-					<p>
-						<a href="/dashboardCollectionAdd">Collection</a>
-					</p>
-					<p>
-						<a href="/dashboardCardAdd">Carte</a>
-					</p>
-				</div>
-				<form action="/dashboardCollectionsUpdate/{{collections.id}}" method="post" enctype="multipart/form-data">
-						<input type="file" name="imageCollection" value="{{collections.imageCollection}}">
-						<div class="margin_bottom_collection">
-							<label for="">Nom de la collection</label>
-							<input type="text" name="nameCollection" value="{{collections.nameCollection}}">
+
+		<section>
+			<article class="dashboard_users_add">
+					<div class="add_user_title">
+						<div>
+							<img src="../img/svg/collection_add.svg" alt="statistique global">
 						</div>
-						<div class="margin_bottom_collection">
-							<div>
-								<label for="">Catégorie</label>
-								<input type="text" name="categoryCollection" value="{{collections.categoryCollection}}">
-							</div>
-							<div>
-								<label for="">Nombre de cartes
-								</label>
-								<input type="number" name="cardNumberCollection" value="{{collections.cardNumberCollection}}">
+						<h2 class="title_add_user">Modifier une collection</h2>
+					</div>
+					<form action="/dashboardCollectionUpdate/{{collection.id}}" method="post" enctype="multipart/form-data">
+						<div class="form_left">
+							<input type="text" placeholder="Nom de collection" name="nameCollection"  value="{{collection.nameCollection}}">
+							<input type="text" placeholder="Catégorie" name="categoryCollection"  value="{{collection.categoryCollection}}">
+							<textarea cols="30" rows="5" name="descriptionCollection" placeholder="Description"  value="{{collection.descriptionCollection}}"></textarea>
+							<div class="button">
+								<button type="submit">Ajouter</button>
+								<a href="/dashboardCollection">Annuler</a>
 							</div>
 						</div>
-						<div class="margin_bottom_collection">
-							<label for="">Description</label>
-							<textarea name="descriptionCollection" id="" cols="30" rows="10" value="{{collections.descriptionCollection}}"></textarea>
-						</div>
-						<div class="margin_bottom_collection">
-							<div>
-								<button type="submit">Créer</button>
-							</div>
-							<div>
-								<a href="">Annuler</a>
+
+						<div class="form_right">
+							<p>Image</p>
+							<div class="input_file">
+								<input type="file" name="imageCollection"  value="{{collection.imageCollection}}">
+								<p>{{collection.imageCollection}}</p>
 							</div>
 						</div>
-				</form>
-			</div>
-		</article>
-	</section>
+					</form>
+			</article>
+		</section>
+	</main>
 {% endblock %}

@@ -1,0 +1,131 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar_desktop_title{
+  color: white;
+}
+
+/************************************** nav desktop */
+
+.navbar_desktop{
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 99999;
+}
+
+.navbar_desktop div:nth-child(1) h1{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar_desktop_link{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar_desktop_link a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar_desktop_wallet{
+    width: 45px;
+    height: 45px;
+    background-color: #FFCE1F;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.navbar_desktop_wallet img{
+    width: 30px;
+    height: 30px;
+}
+
+
+
+.navbar_desktop_pw{
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+}
+
+/********************************************* Dropdown Menu User */
+
+.dropdown_user_btn {
+    width: 40px;
+    height: 40px;
+    background-color: #FFCE1F;
+    border-radius: 50px;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .dropdown_user::before{
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-right: 2px solid rgb(255, 255, 255);
+    transform: rotate(45deg) translateY(-50%);
+    transform-origin: right;
+    left: 50px;
+    top: 20px;
+  }
+  
+  .dropdown_user_btn img{
+    width: 100%;
+    display: flex;
+  }
+  
+  .dropdown_user {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown_content_user {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+  .dropdown_content_user a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+  }
+  
+  .dropdown_content_user a:hover {background-color: #f1f1f1}
+  
+  .navbar_desktop_pw:hover .dropdown_content_user {
+    display: block;
+  }
+  
+  .dropdown_user:hover .dropdown_user_btn {
+    background-color: #FFCE1F;
+  }
+  
+/*********************************** Media Queries */ 
+
+@media screen and (max-width: 768px) {
+    .navbar_desktop_link{
+        width: 35%;
+    }
+}

@@ -7,6 +7,7 @@ import overviewController from "../controllers/overviewController.js";
 import cardController from "../controllers/cardController.js"
 import {uploadMultipleOverview, uploadCard, uploadCollections} from "../dependencies/multer.js"
 import cardModel from "../models/cardModel.js";
+import overviewModel from "../models/overviewModel.js";
 
 const adminRouter = Router();
 
@@ -52,7 +53,7 @@ adminRouter.post("/dashboardUser", async (req, res) => {
 }
 );
 
-//---------------------------------------------- Collection
+//----------------------------------------------------------------- Collection
 
 adminRouter.get("/dashboardCollection", async (req, res) => {
   try {
@@ -60,6 +61,15 @@ adminRouter.get("/dashboardCollection", async (req, res) => {
     res.render("admin/layer/dashboardCollection.twig",{
       collections: collections
     })
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+adminRouter.get("/dashboardCollection/:id", async (req, res) => {
+  try {
+    await collectionModel.deleteOne({ _id: req.params.id });
+    res.redirect("/dashboardCollection");
   } catch (error) {
     res.send(error);
   }
@@ -77,192 +87,39 @@ adminRouter.post("/dashboardCollectionAdd", uploadCollections.single('imageColle
   }
 );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//---------------------------------------------- Dashboard Home
-
-adminRouter.get("/dashboardHome", async (req, res) => {
-  try {
-    let collection = await collectionModel.find(req.body);
-    let users = await userModel.find(req.body);
-    let usersCount = await userModel.find(req.body).count();
-    let collectionCount = await collectionModel.find(req.body).count();
-    res.render("admin/dashboardHome.twig", {
-      collection: collection,
-      users: users,
-      usersCount: usersCount,
-      collectionCount: collectionCount,
-
-    });
-  } catch (error) {
-    res.send(error);
-  }
-});
-
-//---------------------------------------------- Overviews
-
-adminRouter.get("/dashboardOverview", async (req, res) => {
-  try {
-    res.render("admin/layer/dashboardOthers.twig")
-  } catch (error) {
-    res.send(error);
-  }
-}
-);
-
-adminRouter.post("/dashboardOverview", uploadMultipleOverview, async (req, res) => {
-  try {
-    await overviewController.setAddOverview(req);
-    res.redirect("dashboardOverview");
-    console.log("cvsjhcvqksvqqflsdljajadyueuyufzeuyj");
-  } catch (error) {
-    res.send(error);
-  }
-}
-);
-
-//---------------------------------------------- Users
-
-adminRouter.get("/dashboardUsers", async (req, res) => {
-  try {
-    let users = await userModel.find(req.body);
-    res.render("admin/layer/dashboardUsers.twig",{
-      users: users,
-    });
-  } catch (error) {
-    res.send(error);
-  }
-});
-
-adminRouter.get("/dashboardUserAdd", async (req, res) => {
-  try {
-    res.render("admin/layer/dashboardUserAdd.twig");
-  } catch (error) {
-    res.send(error);
-  }
-});
-
-adminRouter.get("/dashboardUsers/:id", async (req, res) => {
-  try {
-    await userModel.deleteOne({ _id: req.params.id });
-    res.redirect("/dashboardUser");
-  } catch (error) {
-    res.send(error);
-  }
-});
-
-//---------------------------------------------- Collections
-
-adminRouter.get("/dashboardCollections", async (req, res) => {
-  try {
-    let collections = await collectionModel.find(req.body);
-    res.render("admin/layer/dashboardCollections.twig",{
-      collections: collections
-    })
-  } catch (error) {
-    res.send(error);
-  }
-});
-
-adminRouter.get("/dashboardCollectionAdd", async (req, res) => {
-  try {
-    res.render("admin/layer/dashboardCollectionAdd.twig")
-  } catch (error) {
-    res.send(error);
-  }
-}
-);
-
-adminRouter.post("/dashboardCollectionAdd", uploadCollections.single('imageCollection')
-,async (req, res) => {
-    try {
-      await collectionController.setAddCollection(req, res);
-      res.redirect("/dashboardCollections");
-      console.log("bob l'eponge");
-    } catch (error) {
-      res.send(error);
-    }
-  }
-);
-
-adminRouter.get("/dashboardCollections/:id", async (req, res) => {
-  try {
-    await collectionModel.deleteOne({ _id: req.params.id });
-    res.redirect("/dashboardCollections");
-  } catch (error) {
-    res.send(error);
-  }
-});
-
-adminRouter.get("/dashboardCollectionsUpdate/:id", async (req, res) => {
+adminRouter.get("/dashboardCollectionUpdate/:id", async (req, res) => {
   try {
     let collections =  await collectionModel.findOne({ _id: req.params.id }, req.body);
     res.render("admin/layer/dashboardCollectionUpdate.twig",{
-      collections: collections
+      collection: collections
     })
   } catch (error) {
     res.send(error);
   }
 });
 
-adminRouter.post("/dashboardCollectionsUpdate/:id",uploadCollections.single('imageCollection'), async (req, res) => {
+adminRouter.post("/dashboardCollectionUpdate/:id",uploadCollections.single('imageCollection'), async (req, res) => {
   try {
     if (req.file) {
       req.body.imageCollection = req.file.filename;
     }
     await collectionModel.updateOne({ _id: req.params.id }, req.body);
-    res.redirect('/dashboardCollections')
+    res.redirect('/dashboardCollection')
   } catch (error) {
     res.send(error);
   }
 });
 
-//---------------------------------------------- Others
+//------------------------------------------------------------------- Card
 
-adminRouter.get("/dashboardOthers", async (req, res) => {
+adminRouter.get("/dashboardCard", async (req, res) => {
   try {
-    res.render("admin/layer/dashboardOthers.twig");
-  } catch (error) {
-    res.send(error);
-  }
-});
-
-//---------------------------------------------- Cards
-
-adminRouter.get("/dashboardCards", async (req, res) => {
-  try {
-    let cards = await cardModel.find(req.body)
-    res.render("admin/layer/dashboardCards.twig",{
+    let collections = await collectionModel.find();
+    let cards = await cardModel.find();
+    res.render("admin/layer/dashboardCard.twig",{
+      collections: collections,
       cards: cards
-    })
+    });
   } catch (error) {
     res.send(error);
   }
@@ -271,27 +128,16 @@ adminRouter.get("/dashboardCards", async (req, res) => {
 adminRouter.get("/dashboardCard/:id", async (req, res) => {
   try {
     await cardModel.deleteOne({ _id: req.params.id });
-    res.redirect("/dashboardCards");
+    res.redirect("/dashboardCard");
   } catch (error) {
     res.send(error);
   }
 });
 
-adminRouter.get("/dashboardCardAdd", async (req, res) => {
-  try {
-    let collections = await collectionModel.find()
-    res.render("admin/layer/dashboardCardAdd.twig",{
-      collections: collections
-    });
-  } catch (error) {
-    res.send(error);
-  }
-});
-
-adminRouter.post("/dashboardCardAdd",uploadCard.single('imageCard'), async (req, res) => {
+adminRouter.post("/dashboardCard",uploadCard.single('imageCard'), async (req, res) => {
   try {
     await cardController.setAddCard(req, res);
-    res.redirect("/dashboardHome");
+    res.redirect("/dashboardCard");
     console.log("card successful");
   } catch (error) {
     res.send(error);
@@ -300,9 +146,11 @@ adminRouter.post("/dashboardCardAdd",uploadCard.single('imageCard'), async (req,
 
 adminRouter.get("/dashboardCardUpdate/:id", async (req, res) => {
   try {
+    let collections =  await collectionModel.find(req.body);
     let cards =  await cardModel.findOne({ _id: req.params.id }, req.body);
     res.render("admin/layer/dashboardCardUpdate.twig",{
-      cards: cards
+      card: cards,
+      collections: collections
     })
   } catch (error) {
     res.send(error);
@@ -315,10 +163,204 @@ adminRouter.post("/dashboardCardUpdate/:id",uploadCard.single('imageCard'), asyn
       req.body.imageCard = req.file.filename;
     }
     await cardModel.updateOne({ _id: req.params.id }, req.body);
-    res.redirect('/dashboardHome')
+    res.redirect('/dashboardCard')
   } catch (error) {
     res.send(error);
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------------- Overviews
+
+adminRouter.get("/dashboardOverview", async (req, res) => {
+  try {
+    let overviews =  await overviewModel.find(req.body);
+    res.render("admin/layer/dashboardOver.twig",{
+      overviews: overviews
+    })
+  } catch (error) {
+    res.send(error);
+  }
+}
+);
+
+adminRouter.post("/dashboardOverview", uploadMultipleOverview, async (req, res) => {
+  try {
+    await overviewController.setAddOverview(req);
+    res.redirect("dashboardOverview");
+    console.log("ajout de l'actualité");
+  } catch (error) {
+    res.send(error);
+  }
+}
+);
+
+adminRouter.get("/dashboardOverview/:id", async (req, res) => {
+  try {
+    await overviewModel.deleteOne({ _id: req.params.id });
+    res.redirect("/dashboardOverview");
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+
+
+adminRouter.get("/dashboardOverviewUpdate/:id", async (req, res) => {
+  try {
+    let overviews =  await overviewModel.findOne({ _id: req.params.id }, req.body);
+    res.render("admin/layer/dashboardOverUpdate.twig",{
+      overviews: overviews
+    })
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+adminRouter.post("/dashboardOverviewUpdate/:id",uploadMultipleOverview, async (req, res) => {
+  try {
+    if (req.file) {
+      req.body.backgroundImageOverview = req.files.backgroundImageOverview[0].filename;
+      req.body.imageOverview = req.files.imageOverview[0].filename;
+    }
+    await overviewModel.updateOne({ _id: req.params.id }, req.body);
+    res.redirect('/dashboardOverview')
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+
+//---------------------------------------------- Users
+
+
+adminRouter.get("/dashboardUsers/:id", async (req, res) => {
+  try {
+    await userModel.deleteOne({ _id: req.params.id });
+    res.redirect("/dashboardUser");
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default adminRouter;

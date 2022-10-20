@@ -4,7 +4,7 @@ import multer from "multer";
 
 const storageOverview = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, "./assets/uploads/overviews/background");
+      cb(null, "./assets/uploads/overviews");
     },
     filename: function (req, file, cb) {
       cb(null, Date.now() + file.originalname);

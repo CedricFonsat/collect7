@@ -1,0 +1,22 @@
+{% extends "../base.twig" %}
+
+{% block main %}
+<h1>modifier</h1>
+	<form action="/profil/{{userConnect.id}}" method="post">
+					<div class="input_form">
+						<img src="./img/user.png" alt="user">
+						<input type="text" placeholder="Nom d’utilisateur" name="userName" value="{{userConnect.userName}}">
+					</div>
+					<div class="input_form">
+						<img src="./img/mail.png" alt="mail">
+						<input type="text" placeholder="Email" name="mail" value="{{userConnect.mail}}">
+					</div>
+					<div class="input_form">
+						<img src="./img/password.png" alt="password">
+						<input type="hidden" placeholder="Mot de passe" name="password" value="{{userConnect.password}}">
+					</div>
+					<button id="validate" type="submit">Valider</button>
+				</form>
+{% endblock %}
+
+{% block footer %}{% endblock %}

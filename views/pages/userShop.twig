@@ -1,0 +1,49 @@
+{% extends "../base.twig" %}
+
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="../css/dashboard/shop.css">
+{% endblock %}
+
+{% block header %}
+	{% block navbar %}
+		{% include "../layout/nav/navBar.twig" %}
+	{% endblock %}
+{% endblock %}
+
+{% block main %}
+	<div class="userview_cover">
+		<img src="https://wallpaperaccess.com/full/9818.jpg" alt="photo de couverture">
+	</div>
+
+	<section class="userview_tabbar">
+		<div class="userview_title_apercu">
+			<a href="">
+				Univers Dragon Ball</a>
+		</div>
+		<div class="userview_title_cards">
+			<a href="">Naruto</a>
+		</div>
+		<div class="userview_title_sell">
+			<a href="">One Piece</a>
+		</div>
+	</section>
+
+	<section class="userview_apercu">
+		<article class="userview_favorite_card">
+			{% for collection in collection %}
+				<a href="/getCards/{{collection.id}}">
+					<div class="userview_card">
+						<img width="180px" src="../uploads/collections/{{collection.imageCollection}}" alt="">
+					</div>
+          	<div class="shop_description_absolute">
+							<p>{{collection.descriptionCollection}}</p>
+
+							<button class="shop_btn_collection">Voir collection</button>
+
+						</div>
+				</a>
+			{% endfor %}
+		</article>
+	</section>
+{% endblock %}

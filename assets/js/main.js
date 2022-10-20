@@ -151,3 +151,17 @@ function cpuVsJoueur() {
         panel.style.maxHeight = panel.scrollHeight + "px";
       } 
     });
+
+
+
+///achat de carte
+
+/*document.querySelector('#buyCard').addEventListener('click',() => {
+  console.log("test---------1");
+    fetch('buyCard', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'}
+  });
+  console.log("test---------2");
+});*/
+

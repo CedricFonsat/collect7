@@ -1,0 +1,137 @@
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #2a2a2a;
+}
+
+.userview_cover{
+    height: 200px;
+    background-color: aqua;
+    width: 100%;
+    margin-top: 60px;
+    position: relative;
+}
+
+.userview_cover_img{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.userview_cover_img img{
+    width: 100%;
+}
+
+/**************************************************** a change de nom de class */
+
+.userview_apercu{
+    width: 100%;
+    height: 550px;
+}
+
+/**************************************************** a change de nom de class */
+
+.userview_avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    color: white;
+    position: absolute;
+    bottom: -50px;
+    left: 50px;
+    z-index: 55;
+    overflow: hidden;
+    display: flex;
+}
+
+.userview_avatar img{
+    width: 100%;
+}
+
+.userview_apercu{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    position: relative;
+}
+
+.userview_favorite_card{
+    width: 60%;
+    height: 280px;
+    display: flex;
+    background-color: #454444;
+    border-radius: 12px;
+    padding: 20px 12px 10px 12px;
+    overflow-x: scroll;
+}
+
+.myFavoriteCard{
+    position: absolute;
+    max-width: 280px;
+    height: 40px;
+    bottom: 93%;
+    left: 20%;
+    border-radius: 8px;
+    background-color: #EDBE12;
+    color: white;
+    display: flex;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.myFavoriteCard h2{
+    font-size: 16px;
+}
+
+.seven_coin{
+    width: 12px;
+}
+
+.userview_card{
+    margin: 10px;
+}
+
+/*************************************  tabbar */
+
+.userview_tabbar{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+.userview_tabbar div{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userview_tabbar div a{
+    text-decoration: none;
+    color: white;
+
+}
+
+/*************************************  tabbar apercu */
+
+.userview_tabbar div:nth-child(1){
+    border-bottom: 2px solid #EDBE12;
+}
+
+.userview_tabbar div:nth-child(1) a{
+    text-decoration: none;
+    color: #EDBE12;
+
+}

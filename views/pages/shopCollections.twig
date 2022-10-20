@@ -10,7 +10,9 @@
 	<title>Document</title>
 {% endblock %}
 
-{% block header %}{% endblock %}
+{% block header %}
+{% include "../layout/nav/navBar.twig" %}
+{% endblock %}
 
 {% block main %}
 	<img id="banner" src="./img/carouselOne.png" alt="">
@@ -45,9 +47,6 @@
 			</a>
 		{% endfor %}
 	</section>
-	{% block navMobile %}
-		{% include "../layout/navMobile/navMobile.twig" %}
-	{% endblock %}
 		{% block wallet_modal %}
 		{% include "../layout/wallet.twig" %}
 	{% endblock %}

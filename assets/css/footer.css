@@ -32,27 +32,27 @@ footer svg:hover {
     transform: scale(1.20);
 }
 
-#facebook:hover{
+.facebook:hover{
     fill: #3c5a99;
 }
 
-#twitter:hover {
+.twitter:hover {
     fill: #1c98e6;
 }
 
-#tiktok:hover {
+.tiktok:hover {
     fill: #23e8e2;
 }
 
-#instagram:hover {
+.instagram:hover {
     fill: #d52b6e;
 }
 
-#youtube:hover {
+.youtube:hover {
     fill: #f20000;
 }
 
-#discord:hover {
+.discord:hover {
     fill: #5460e6;
 }
 
@@ -71,33 +71,35 @@ footer nav a:hover {
 }
 
 footer p {
+    margin: 20px 0px;
     text-align: center;
     font-size: 14px;
     font-weight: 500;
+    color: white;
 }
 
-#nav_first_container {
+.nav_first_container {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
 
-#nav_second_container {
+.nav_second_container {
     display: flex;
     flex-direction: column;
 }
 
-#app_container {
+.app_container {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-#apple {
+.apple {
     margin-right: 20px;
 }
 
-#app_container img {
+.app_container img {
     border-radius: 8px;
    border: solid 3px rgba(255, 255, 255, 0.1);
     padding: 13px 21px;
@@ -105,35 +107,14 @@ footer p {
     cursor: pointer;
 }
 
-#app_container img:hover {
+.app_container img:hover {
     border-radius: 8px;
    border: solid 3px #ffce1f;
 }
 
-#app_container img:hover {
+.app_container img:hover {
     -ms-transform: scale(1.05);
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
 }
 
-.separation {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    height: 60px;
-}
-
-.separation span {
-    margin-top: 30px;
-    width: 90%;
-    height: 0px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-footer p a {
-    color: white;
-}
-
-footer p {
-    margin: 0;
-}

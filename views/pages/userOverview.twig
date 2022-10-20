@@ -2,45 +2,50 @@
 
 {% block stylesheet %}
 	<link rel="stylesheet" href="./css/userOverview.css">
-	
+
 {% endblock %}
 
 {% block title %}
-	<title>Profil Aperçu</title>
+	<title>Mon profil</title>
 {% endblock %}
 
-{% block header %}{% endblock %}
+{% block header %}
+	{% block navbar %}
+		{% include "../layout/nav/navBar.twig" %}
+	{% endblock %}
+	{% block headerProfil %}
+		{% include "../layout/headerProfil.twig" %}
+	{% endblock %}
+{% endblock %}
 
 {% block main %}
 	<section id="user_account_overview">
-		{% block headerProfil %}
-			{% include "../layout/headerProfil.twig" %}
-		{% endblock %}
 		<article id="overView">
 			<div id="favorite_cards">
 				<h2>Cartes Favoris</h2>
 				<div id="card_container">
-					<div class="card_slot"><img src="./img/usopp.png" alt="card"></div>
-					<div class="card_slot"><img src="./img/usopp.png" alt="card"></div>
-					<div class="card_slot"><img src="./img/usopp.png" alt="card"></div>
-					<div class="card_slot"><img src="./img/usopp.png" alt="card"></div>
+					{% for card in cards %}
+						<article class="card_slot">
+							<h3>{{card.nameCard}}</h3>
+							{# <img class='card' src="../img/sanji_card.png"  alt=""> #}
+							<img width="200px" src="../uploads/cards/{{card.imageCard}}" alt="">
+							<div id='row'>
+								<p>{{card.priceCard}}
+									$</p>
+							</div>
+						</article>
+					{% endfor %}
 					<div class="card_empty"><img src="./img/plus.png" alt="card" id='plus'></div>
 				</div>
 			</div>
 		</article>
-		
 	</section>
-	
-	{% block nav %}
-		{% include "../layout/nav/nav.twig" %}
-	{% endblock %}
 	{% block wallet_modal %}
 		{% include "../layout/wallet.twig" %}
 	{% endblock %}
 {% endblock %}
 
-{% block footer %}{% endblock %}
 
 {% block script %}
-<script src="./js/wallet.js"></script>
+	<script src="./js/wallet.js"></script>
 {% endblock %}

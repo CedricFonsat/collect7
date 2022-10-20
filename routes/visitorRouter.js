@@ -44,8 +44,8 @@ visitorRouter.get("/registration", async (req, res) => {
 
 visitorRouter.post("/registration", async (req, res) => {
   try {
-    await userController.setRegistration(req,res)
-    res.redirect("/")
+    await userController.setRegistration(req,res);
+    res.redirect("/useroverview");
     console.log('patrick');
   } catch (error) {
     res.send(error);

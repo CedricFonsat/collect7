@@ -1,99 +1,64 @@
-{% extends "../dashboardHome.twig" %}
+{% extends "../dashboard.twig" %}
 
 {% block stylesheet %}
-    <link rel="stylesheet" href="./css/dashboard.css"> 
-	<link rel="stylesheet" href="./css/dashboardCardAdd.css">
+	<link rel="stylesheet" href="../css/dashboard/dashboardCards.css">
+	<link rel="stylesheet" href="../css/dashboard/menu.css">
+	<link rel="icon" type="image/x-icon" href="../img/svg/🦆 icon _pie chart_.svg">
 {% endblock %}
 
+{% block title %}
+	<title>Tableau de bord - Carte</title>
+{% endblock %}
 
 {% block main %}
-	<section class="dashboard_home">
-		<aside class="dashboard_menu">
-			<nav class="dashboard_navigation">
-				<div>
-					<img src="./img/bx_home.png" alt="" srcset="">
-					<a href="/dashboardHome">Accueil</a>
-				</div>
-				<div>
-					<img src="./img/bx_user.png" alt="" srcset="">
-					<a href="/dashboardUsers">Utilisateur</a>
-				</div>
-				<div>
-					<img src="./img/bx_data.png" alt="" srcset="">
-					<a href="/dashboardCollections">Collection</a>
-				</div>
-				<div>
-					<img src="./img/bx_three-dots.png" alt="" srcset="">
-					<a href="/dashboardOverview">Overview</a>
-				</div>
-			</nav>
-			<span class="logout_dashboard">
-				<img src="./img/logout.png" alt="" srcset="">
-				<a href="">Deconnexion</a>
-			</span>
-		</aside>
-		<article class="dashboard_view_card_add">
-			<div class="collection_add_card">
-				<p>Liste des cartes</p>
-				<div class="collection_add_card_list">
-					<div>
-						<p>Nom de la carte</p>
-					</div>
-					<div>
-						<p>Nom de la carte</p>
-					</div>
-					<div>
-						<p>Nom de la carte</p>
-					</div>
-					<div>
-						<p>Nom de la carte</p>
-					</div>
-					<div>
-						<p>Nom de la carte</p>
-					</div>
-				</div>
+	<main>
+		<section class="dashboard_head">
+		<h2 class="dashboard_update_title">Carte : {{card.nameCard}}</h2>
+			<div class="dashboard_profile">
+				<img src="" alt="" srcset="">
 			</div>
-			<div class="card_add_form">
-				<div class="collection_add_form_header">
-					<p><a href="/dashboardCollectionAdd">Collection</a></p>
-					<p><a href="/dashboardCarteAdd">Carte</a></p>
-				</div>
+		</section>
 
-				<form action="/dashboardCardUpdate/{{cards.id}}" method="post" enctype="multipart/form-data">
-					<div class="margin_bottom_collection">
-						<label for="">Nom de la carte</label>
-						<input type="text" name="nameCard" placeholder="name" value="{{cards.nameCard}}">
-					</div>
-					<div class="margin_bottom_collection">
+
+		<section>
+			<article class="dashboard_users_add">
+					<div class="add_user_title">
 						<div>
-							<label for="">Image
-							</label>
-							<div class="card_add_input_file">
-								<input type="file" name="imageCard" value="{{cards.imageCard}}">
+							<img src="../img/svg/collection_add.svg" alt="statistique global">
+						</div>
+						<h2 class="title_add_user">Modifier une carte</h2>
+					</div>
+					<form action="/dashboardCardUpdate/{{card.id}}" method="post" enctype="multipart/form-data">
+						<div class="form_left">
+							<input type="text" placeholder="Nom de la carte" name="nameCard" value="{{card.nameCard}}">
+							<select name="categoryCard">
+								{% for collections in collections %}
+									<option value={{collections._id}}>{{collections.nameCollection}}</option>
+								{% endfor %}
+							</select>
+                            <input type="text" placeholder="Prix de la carte" name="priceCard" value="{{card.priceCard}}">
+							<div class="button">
+								<button type="submit">Ajouter</button>
+								<a href="/dashboard">Annuler</a>
 							</div>
 						</div>
-						<div>
-							<select name="categoryCard" value="{{cards.categoryCard}}">
-								<option value="muzan">Muzan</option>
-								<option value="kim">Kim ou sushi</option>
-							</select>
+
+						<div class="form_right">
+							<p>Image</p>
+							<div class="input_file">
+								<input type="file" name="imageCard" value="{{card.imageCard}}">
+								<p>Browse File to Upload</p>
+							</div>
 						</div>
-						<div>
-							<label for="">Prix
-							</label>
-							<input type="text" name="priceCard" value="{{cards.priceCard}}">
-						</div>
-					</div>
-					<div class="margin_bottom_collection card_add_button">
-						<div>
-							<button type="submit">Ajouter</button>
-						</div>
-						<div>
-							<a href="">Annuler</a>
-						</div>
-					</div>
-				</form>
-			</div>
-		</article>
-	</section>
+					</form>
+			</article>
+		</section>
+
+		<section class="dashboard_list_users">
+		</section>
+	</main>
+{% endblock %}
+
+{% block script %}
+	<script src="../js/main.js"></script>
 {% endblock %}

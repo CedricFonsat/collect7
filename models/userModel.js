@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         required: [true, "Pas de mot de passe"]
     },
+    cards: {type: [{ type: mongoose.Schema.Types.ObjectId, ref: "card" }]}
   
 })
 

@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --background: #2A2A2A;
+    --yellow: #FFCE1F;
+    --white: white;
+    --w-opacity: #ffffff9c;
+    --grey: #3E3E3E;
+    --w-op: rgba(255, 255, 255, 0.1);
+}
+
+body{
+    background-color: var(--background);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+main{
+    width: 80%;
+    height: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px #1e877e00 inset !important;
+    -webkit-text-fill-color: #A8A7A7 !important;
+}
+
+
+/**************************************************** Accordion */
+
+.accordion {
+    background-color: #2A2A2A;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: #2A2A2A;
+    max-height: 0;
+    overflow: hidden;
+    width: 1000px;
+    transition: max-height 0.2s ease-out;
+  }
+  form{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 40px;
+  margin-bottom: 30px;
+  width: 980px;
+  }
+  .form_left{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form_left input{
+      width: 94%;
+      height: 50px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+      padding: 0px 10px;
+      outline: pink;
+      background-color: var(--grey);
+      color: white;
+  }
+
+  .form_left input:active{
+    outline: pink;
+    background: none;
+  }
+  
+  .form_left textarea{
+  padding: 30px 0px;
+      width: 94%;
+      height: 100px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+      padding: 10px;
+      outline: none;
+      resize: none;
+      background-color: var(--grey);
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .form_right{
+  margin-top: 50px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--grey);
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    color: var(--w-opacity);
+  }
+  
+  .input_file{
+  width: 80%;
+  height: 60%;
+  border: 1px dashed var(--w-opacity);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: var(--w-opacity);
+  }
+  
+  .input_file input{
+  cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  
+  .button{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    }
+    
+  .button button{
+  width: 45%;
+  height: 50px;
+  background-color: green;
+      border-radius: 6px;
+      background-color: var(--yellow);
+      cursor: pointer;
+      border:none;
+  }
+  .button a{
+      width: 45%;
+      height: 50px;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .form_right{
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dashboard_deconnexion{
+      color: white !important;
+  }
+/**************************************************** Search */
+
+.dashboard_head{
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dashboard_search{
+    width: 46%;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    margin-left: 20px;
+}
+.dashboard_search input{
+    height: 100%;
+    width: 86%;
+    border: none;
+    background: none;
+    border-radius: 0px 6px 6px 0px;
+    outline: none;
+    padding: 0 10px;
+    color: var(--white);
+}
+.dashboard_search input::placeholder{
+    color: var(--white);
+}
+.dashboard_search img{
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.dashboard_profile{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 1px solid red;
+}
+
+/**************************************************** Fin Search */
+
+.navigation div:nth-child(5) a{
+    color: var(--yellow);
+}
+.navigation div:nth-child(5) svg{
+    fill: var(--yellow);
+    fill-opacity: 1;
+}
+
+.dashboard_list_users{
+    width: 100%;
+}
+
+.add_user_title,.users_list_title{
+    width: 311px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+.add_user_title h2,.users_list_title h2{
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.add_user_title div,.users_list_title div{
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    background-color: var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add_user_title div img,.users_list_title div img{
+    width: 24px;
+    height: 24px;
+}
+
+.cover_data_users_home{
+    width: 100%;
+    height: 400px;
+    overflow-y: scroll;
+    color: var(--white);
+}
+.head_data_users_home{
+    margin-bottom: 30px;
+}
+
+.head_data_users_home,.data_users_home{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    color: var(--white);
+}
+.data_users_home{
+    height: 80px;
+    overflow: hidden;
+}
+.head_data_users_home div:nth-child(1),.data_users_home div:nth-child(1){
+    width: 15%;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.head_data_users_home div:nth-child(2),.data_users_home div:nth-child(2){
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.data_users_home div:nth-child(2) img{
+    width: 50%;
+}
+.head_data_users_home div:nth-child(3),.data_users_home div:nth-child(3){
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.data_users_home div:nth-child(3) img{
+    width: 50%;
+}
+.head_data_users_home div:nth-child(4),.data_users_home div:nth-child(4){
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+.head_data_users_home div:nth-child(5),.data_users_home div:nth-child(5){
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+
+

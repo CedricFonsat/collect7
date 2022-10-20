@@ -149,7 +149,6 @@ main{
 }
 
 .add_user_title,.users_list_title{
-    width: 311px;
     display: flex;
     align-items: center;
     margin-bottom: 20px;

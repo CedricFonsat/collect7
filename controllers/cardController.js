@@ -10,6 +10,8 @@ export class cardController {
         await card.save()
         await collectionModel.updateOne({_id: req.body.categoryCard},{ $push: { cards: card._id } })
     }
+
+
 }
 
 export default cardController

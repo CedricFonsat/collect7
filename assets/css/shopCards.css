@@ -99,6 +99,16 @@ article p{
     border-radius: 2px;
     width: 75px;
     height: 25px;
+    cursor: pointer;
+}
+.buy:hover{
+    color: #2a2a2a;
+    background-color: #e8b80e;
+    border: none;
+    border-radius: 2px;
+    width: 75px;
+    height: 25px;
+    cursor: pointer;
 }
 
 #wallet_modal {
