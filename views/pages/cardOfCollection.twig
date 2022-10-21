@@ -24,18 +24,19 @@
 		</div>
 	</div>
 	<section class="section">
-{% for card in cards %}
-    			<article>
-            <h3>{{card.nameCard}}</h3>
-				{# <img class='card' src="../img/sanji_card.png"  alt=""> #}
-                <img width="200px" src="../uploads/cards/{{card.imageCard}}"  alt=""> 
-				<div id='row'>
-					<p>{{card.priceCard}} $</p>
-					{# <button class='buy' id="buyCard">Acheter</button>  #}
-					<a href="/buyCard/{{card.id}}" class='buy' >Acheter</a>
-				</div>
-			</article>
-{% endfor %}
+		{% for card in cards %}
+			{% if card.ifAvalaible == 1  %}
+				<article>
+					<h3>{{card.nameCard}}</h3>
+					<img width="200px" src="../uploads/cards/{{card.imageCard}}" alt="">
+					<div id='row'>
+						<p>{{card.priceCard}}
+							$</p>
+						<a href="/buyCard/{{card.id}}" class='buy'>Acheter</a>
+					</div>
+				</article>
+			{% endif %}
+		{% endfor %}
 	</section>
 	{% block navMobile %}
 		{% include "../layout/navMobile/navMobile.twig" %}

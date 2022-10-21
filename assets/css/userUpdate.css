@@ -1,0 +1,20 @@
+
+.userupdate_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin-top: 50px;
+}
+
+form {
+    width: 70%;
+    background-color: aqua;
+}
+form input{
+    width: 60%;
+    height: 40px;
+    border: none;
+    margin: 10px;
+    padding: 0 10px;
+}

@@ -25,6 +25,10 @@
 	</div>
 	<section class="section">
 		{% for card in card %}
+
+		<p>{{card.ifAvalaible}}</p>
+
+		{% if card.ifAvalaible == 1  %}
 			<article>
 				<img class='card' src="../uploads/cards/{{card.imageCard}}"  alt="">
 				<div id='row'>
@@ -32,6 +36,8 @@
 					<button class='buy'>Acheter</button>
 				</div>
 			</article>
+			{% endif %}
+
 		{% endfor %}
 	</section>
 	{% block navMobile %}

@@ -1,0 +1,38 @@
+userRouter.get("/buyCard/:cardId", async (req, res) => {
+  try {
+    console.log(req.session.user);
+    let user = req.session.user;
+
+    //comment recuperer price card plutot que ID ?
+    let card = req.params.cardId;
+
+    /////
+    let test = await cardModel.findOne({ _id: req.params.cardId });
+    console.log(test);
+
+    await userModel.updateOne( { _id: req.session.user }, { $push: { cards: req.params.cardId } });
+    if (user.wallet > card) {
+      
+    }
+    res.redirect("/shopCollections");
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+
+ list = list.filter( function(obj){
+        if(obj.removed == 0){
+            return obj;
+        }
+         
+    });
+
+    cards: {type: [{ type: mongoose.Schema.Types.ObjectId, ref: "card" }]},
+
+    cards: [{card:{ type : mongoose.Schema.Types.ObjectId, ref: 'card' },avalaible:{type: Number, default: 0}}],
+
+    		{% if card == null %}
+					<div>tes null</div>
+				{% else %}
+				{% endif %}

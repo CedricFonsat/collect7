@@ -13,9 +13,17 @@ const userSchema = new mongoose.Schema({
         type:String,
         required: [true, "Pas de mot de passe"]
     },
-    cards: {type: [{ type: mongoose.Schema.Types.ObjectId, ref: "card" }]}
+    cards: {type: [{ type: mongoose.Schema.Types.ObjectId, ref: "card" }]},
+    wallet: {
+        type:Number,
+        required: [true, "Pas de Seven Coins"],
+        default: 300
+    },
   
 })
+
+
+
 
 const userModel = mongoose.model('users', userSchema)
 export default userModel

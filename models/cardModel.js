@@ -17,6 +17,7 @@ const cardSchema = new mongoose.Schema({
         type:String,
         default: "carouselOne.png"
     },
+    ifAvalaible: {type: Number, default: 1},
     collections: {type: mongoose.Schema.Types.ObjectId, ref: "Collection"},
     users: {type: mongoose.Schema.Types.ObjectId, ref: "User"}
 })

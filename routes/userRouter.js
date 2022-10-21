@@ -3,6 +3,7 @@ import userModel from "../models/userModel.js";
 import collectionModel from "../models/collectionModel.js";
 import cardModel from "../models/cardModel.js";
 import cardController from "../controllers/cardController.js";
+import { model } from "mongoose";
 
 const userRouter = Router();
 
@@ -10,12 +11,35 @@ const userRouter = Router();
 
 userRouter.get("/buyCard/:cardId", async (req, res) => {
   try {
-    console.log(req.session.user);
-    await userModel.updateOne(
-      { _id: req.session.user },
-      { $push: { cards: req.params.cardId } }
-    );
-    res.redirect("/shopCollections");
+    let test2 = await userModel.findOne({ _id: req.session.user });
+    //comment recuperer price card plutot que ID ?
+
+    let test = await cardModel.findOne({ _id: req.params.cardId });
+    console.log(test.priceCard);
+    console.log(test2.wallet);
+    let cashResult = test2.wallet - test.priceCard;
+    console.log(cashResult);
+    //etape condition voir cash
+    if (test2.wallet >= test.priceCard) {
+      console.log("ta l'argeent");
+      await userModel.updateOne(
+        { _id: req.session.user },
+        { wallet: cashResult, $push: { cards: req.params.cardId } }
+      );
+      await userModel.updateOne(
+        { _id: process.env.IDADMIN },
+        { wallet: test.priceCard }
+      );
+      await cardModel.updateOne(
+        { _id: req.params.cardId },
+        { ifAvalaible: 0 }
+      );
+      res.redirect("/shopCollections");
+      console.log(test2.wallet);
+    } else if (test2.wallet < test.priceCard) {
+      console.log("tes numllllllle");
+      res.redirect("/shopCollections");
+    }
   } catch (error) {
     res.send(error);
   }
@@ -44,6 +68,7 @@ userRouter.get("/getCards/:id", async (req, res) => {
       .findOne({ _id: req.params.id })
       .populate("cards");
     let cards = collection.cards;
+    console.log(cards);
     res.render("pages/cardOfCollection.twig", {
       collection: collection,
       cards: cards,
@@ -71,7 +96,7 @@ userRouter.get("/shopCollections", async (req, res) => {
     let userConnect = await userModel.findOne({ _id: req.session.user });
     res.render("pages/userShop.twig", {
       collection: collection,
-      userConnect: userConnect
+      userConnect: userConnect,
     });
   } catch (error) {
     res.send(error);
@@ -136,13 +161,19 @@ userRouter.get("/userOverview", async (req, res) => {
       .findOne({ _id: req.session.user })
       .populate("cards");
     let cards = userCo.cards;
+
+    //console.log(userCo.cards[0].ifAvalaible);
+    // console.log(cards);
+
+    //test de map by GROS CAILLOU
+  
+    //
+
     let userConnect = await userModel.findOne({ _id: req.session.user });
     res.render("pages/userView.twig", {
       userConnect: userConnect,
       cards: cards,
     });
-
-
   } catch (error) {
     res.send(error);
   }
